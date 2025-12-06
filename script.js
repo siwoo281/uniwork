@@ -34,7 +34,10 @@ const translations = {
         res_fail_d4: "❌ 불가 (6개월 미만)",
         res_safe_d2: "주중: 25시간 / 주말: 무제한 (권장)",
         res_safe_d4: "주중: 20시간 / 주말: 포함 (최대 20시간)",
+        res_safe_d4: "주중: 20시간 / 주말: 포함 (최대 20시간)",
         res_safe_low: "주중: {hours}시간 / 주말: 10시간",
+        res_title_success: "허가 신청 가능 (Eligible)",
+        res_title_warn: "주의 (시간 제한)",
 
 
 
@@ -108,7 +111,10 @@ const translations = {
         res_fail_d4: "❌ Not Eligible (< 6 months)",
         res_safe_d2: "Weekday: 25hr / Weekend: Unlimited",
         res_safe_d4: "Weekday: 20hr / Weekend: Included (Max 20hr)",
+        res_safe_d4: "Weekday: 20hr / Weekend: Included (Max 20hr)",
         res_safe_low: "Weekday: {hours}hr / Weekend: 10hr",
+        res_title_success: "Eligible to Apply",
+        res_title_warn: "Warning (Limited Hours)",
 
 
 
@@ -182,6 +188,8 @@ const translations = {
         res_safe_d2: "工作日: 25小时 / 周末: 无限制",
         res_safe_d4: "工作日: 20小时 / 周末: 包含 (最大20/周)",
         res_safe_low: "工作日: {hours}小时 / 周末: 10小时",
+        res_title_success: "可以申请许可 (Eligible)",
+        res_title_warn: "注意 (时间限制)",
 
 
 
@@ -254,6 +262,8 @@ const translations = {
         res_safe_d2: "Ngày thường: 25h / Cuối tuần: Không giới hạn",
         res_safe_d4: "Ngày thường: 20h / Cuối tuần: Bao gồm (Max 20h)",
         res_safe_low: "Ngày thường: {hours} giờ / Cuối tuần: 10 giờ",
+        res_title_success: "Có thể đăng ký (Eligible)",
+        res_title_warn: "Cảnh báo (Giới hạn giờ)",
 
 
 
@@ -449,13 +459,13 @@ function calculateVisa() {
         // Safe (Unlimited Weekend)
         box.classList.add('bg-green-50', 'border-green-200', 'text-green-800');
         icon.classList.add('fa-check-circle');
-        title.textContent = "Safe to Work";
+        title.textContent = t.res_title_success;
         desc.innerHTML = `<span class="font-bold text-lg">${resultText.replace('Unlimited', '<u class="text-green-600">Unlimited</u>').replace('무제한', '<u class="text-green-600">무제한</u>')}</span>`;
     } else {
         // Limited (Warning)
         box.classList.add('bg-yellow-50', 'border-yellow-200', 'text-yellow-800');
         icon.classList.add('fa-triangle-exclamation');
-        title.textContent = "Warning (Limited Hours)";
+        title.textContent = t.res_title_warn;
         desc.innerHTML = `<span class="font-bold text-lg">${resultText}</span>`;
     }
 
