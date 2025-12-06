@@ -104,8 +104,8 @@ const translations = {
 
 
         // Result Strings
-        res_fail_gpa: "❌ Illegal (GPA < 2.0)",
-        res_fail_d4: "❌ Illegal (< 6 months)",
+        res_fail_gpa: "❌ Not Eligible (GPA < 2.0)",
+        res_fail_d4: "❌ Not Eligible (< 6 months)",
         res_safe_d2: "Weekday: 25hr / Weekend: Unlimited",
         res_safe_d4: "Weekday: 20hr / Weekend: Included (Max 20hr)",
         res_safe_low: "Weekday: {hours}hr / Weekend: 10hr",
@@ -136,7 +136,7 @@ const translations = {
         pm_title: "Electric Scooter Safety",
         pm_helmet: "No Helmet",
         pm_license: "No License",
-        pm_ride: "2 People Riding",
+        pm_ride: "No Passengers (2+)",
         pm_path: "Sidewalk Riding",
 
         // Validation
