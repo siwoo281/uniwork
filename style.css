@@ -1,0 +1,119 @@
+/* Google Fonts: Noto Sans KR (Body) and Nanum Pen Script (Handwriting) */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@300;400;700&display=swap');
+
+/* Base */
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #1f2937;
+    /* gray-800 */
+}
+
+/* Handwriting Class */
+.font-handwriting {
+    font-family: 'Nanum Pen Script', cursive;
+    letter-spacing: 1px;
+}
+
+/* Tab Active State */
+.tab-active {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    /* gray-200 */
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    color: #2563eb !important;
+    /* blue-600 */
+}
+
+/* Leaflet Map Logic */
+#map {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /* Ensure it stays below headers if needed */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* =========================================
+   PRINT STYLES (@media print)
+   ========================================= */
+@media print {
+
+    /* 1. Global Reset for Print */
+    body {
+        margin: 0;
+        padding: 0;
+        background: white !important;
+        width: 100%;
+        color: black !important;
+    }
+
+    /* 2. Hide Non-Print Elements */
+    #language-modal,
+    header,
+    nav,
+    footer,
+    #section-check,
+    #section-map,
+    .no-print {
+        display: none !important;
+    }
+
+    /* 3. Layout Adjustments */
+    #app-container {
+        display: block !important;
+        position: static !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        visibility: visible !important;
+        animation: none !important;
+    }
+
+    /* 4. Force Paperwork Section to be Visible */
+    #section-paperwork {
+        display: block !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* 5. Paper Preview Styles */
+    .printable-area {
+        display: block !important;
+        position: relative !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 20px !important;
+        /* Some padding for paper edge */
+        box-shadow: none !important;
+        border: none !important;
+        visibility: visible !important;
+    }
+}
+/* Emergency Button Animation */
+@keyframes pulse-custom {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+.btn-emergency:hover {
+    animation: pulse-custom 1s infinite;
+}
