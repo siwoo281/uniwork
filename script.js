@@ -77,6 +77,19 @@ const translations = {
 
         // Footer
         disclaimer: "본 앱의 결과는 참고용이며, 최종 판단은 출입국사무소에 있습니다. 본 정보의 활용으로 인한 불이익에 대해 책임지지 않습니다.",
+
+        // Job Prep (New)
+        tab_paperwork: "취업 준비",
+        resume_title: "1분 알바 지원서",
+        resume_desc: "사장님께 보낼 공손한 지원 문자를 만들어보세요.",
+        name_ph: "이름 (예: 마이클)",
+        age_ph: "나이 (예: 24)",
+        topik_ph: "한국어 능력 (예: 4급)",
+        btn_gen_resume: "문자 생성 및 복사",
+        resume_template: "안녕하세요! 아르바이트 공고 보고 연락드렸습니다.\n이름: {name}\n나이: {age}세\n비자: {visa} (유학생)\n한국어: {topik}\n\n성실하게 일하겠습니다. 면접 기회 주시면 감사하겠습니다!",
+
+        // Holiday Pay
+        holiday_pay_label: "예상 주휴수당 (포함 시):",
     },
     en: {
         tab_check: "Check Status",
@@ -154,6 +167,19 @@ const translations = {
 
         // Footer
         disclaimer: "Results are for reference only. Final authority rests with the Immigration Office. We are not liable for any issues.",
+
+        // Job Prep
+        tab_paperwork: "Job Prep",
+        resume_title: "1-Minute Resume",
+        resume_desc: "Create a polite Korean job application message.",
+        name_ph: "Name (e.g. Michael)",
+        age_ph: "Age",
+        topik_ph: "TOPIK Level (e.g. Level 4)",
+        btn_gen_resume: "Generate & Copy",
+        resume_template: "Hello! I am contacting you regarding the part-time job.\nName: {name}\nAge: {age}\nVisa: {visa} (Student)\nKorean Level: {topik}\n\nI am hardworking and responsible. I would appreciate an interview!",
+
+        // Holiday Pay
+        holiday_pay_label: "Est. Weekly Holiday Pay:",
     },
     cn: {
         tab_check: "资格查询",
@@ -229,6 +255,19 @@ const translations = {
 
         // Footer
         disclaimer: "结果仅供参考，最终决定权归出入境管理事务所所有。对于使用此信息造成的任何问题，我们概不负责。",
+
+        // Job Prep
+        tab_paperwork: "求职准备",
+        resume_title: "1分钟求职信",
+        resume_desc: "生成发送给老板的礼貌求职短信。",
+        name_ph: "姓名",
+        age_ph: "年龄",
+        topik_ph: "韩语等级 (例: 4级)",
+        btn_gen_resume: "生成并复制",
+        resume_template: "您好！看到兼职招聘联系您。\n姓名: {name}\n年龄: {age}岁\n签证: {visa} (留学生)\n韩语: {topik}\n\n我会认真工作的，希望能给我面试机会！",
+
+        // Holiday Pay
+        holiday_pay_label: "预计周休津贴:",
     },
     vn: {
         tab_check: "Kiểm tra",
@@ -303,6 +342,19 @@ const translations = {
 
         // Footer
         disclaimer: "Kết quả chỉ mang tính tham khảo. Quyết định cuối cùng thuộc về Cục Quản lý Xuất nhập cảnh.",
+
+        // Job Prep
+        tab_paperwork: "Chuẩn bị việc làm",
+        resume_title: "Hồ sơ xin việc 1 phút",
+        resume_desc: "Tạo tin nhắn xin việc lịch sự gửi cho chủ quán.",
+        name_ph: "Tên",
+        age_ph: "Tuổi",
+        topik_ph: "Năng lực tiếng Hàn (VD: Cấp 4)",
+        btn_gen_resume: "Tạo và Sao chép",
+        resume_template: "Xin chào! Tôi liên hệ vì thấy tin tuyển dụng.\nTên: {name}\nTuổi: {age}\nVisa: {visa} (Du học sinh)\nTiếng Hàn: {topik}\n\nTôi sẽ làm việc chăm chỉ. Mong nhận được cơ hội phỏng vấn!",
+
+        // Holiday Pay
+        holiday_pay_label: "Trợ cấp nghỉ tuần (Dự kiến):",
     }
 };
 
@@ -486,8 +538,31 @@ function updateSalary() {
     const minWage = 10030;
 
     // 1. Calculate Monthly (Simple 4 weeks)
-    const monthlyText = (wage * hours * 4).toLocaleString();
-    totalDisplay.textContent = `${monthlyText} `;
+    const monthlyBasic = wage * hours * 4;
+    totalDisplay.textContent = `${monthlyBasic.toLocaleString()} `;
+
+    // 1.5 Calculate Holiday Pay (If >= 15 hours)
+    const holidayBox = document.getElementById('holiday-pay-box');
+    const holidayVal = document.getElementById('holiday-pay-val');
+
+    if (hours >= 15) {
+        // Simple Formula: (Hours / 40) * 8 * Wage * 4 weeks? 
+        // Or just Weekly Holiday Pay = (Hours/40)*8*Wage.
+        // Let's show MONTHLY total benefit.
+        // Week: (Hours / 40) * 8 * Wage.
+        // Month: * 4.
+        const weeklyHolidayPay = (hours / 40) * 8 * wage;
+        const monthlyHolidayPay = weeklyHolidayPay * 4;
+
+        holidayBox.classList.remove('hidden');
+        holidayVal.textContent = `+${Math.floor(monthlyHolidayPay).toLocaleString()}`;
+
+        // Add to total? Maybe better to show separate or total.
+        // Let's show Total INCLUDING it for "WOW" effect.
+        totalDisplay.textContent = `${(monthlyBasic + monthlyHolidayPay).toLocaleString()} `;
+    } else {
+        holidayBox.classList.add('hidden');
+    }
 
     // Append Unit Span (re-creating it since textContent wipes it)
     const unitSpan = document.createElement('span');
@@ -589,6 +664,38 @@ function saveFormData() {
         cHours: document.getElementById('calc-hours').value
     };
     localStorage.setItem('visaSafeForm', JSON.stringify(data));
+}
+
+function generateResume() {
+    const name = document.getElementById('resume-name').value;
+    const age = document.getElementById('resume-age').value;
+    const visa = document.getElementById('resume-visa').value;
+    const topik = document.getElementById('resume-topic').value;
+
+    if (!name || !age) {
+        alert("Please enter Name and Age!");
+        return;
+    }
+
+    const t = translations[currentLang];
+    const msg = t.resume_template
+        .replace('{name}', name)
+        .replace('{age}', age)
+        .replace('{visa}', visa)
+        .replace('{topik}', topik);
+
+    const textArea = document.getElementById('resume-text');
+    textArea.value = msg;
+    document.getElementById('resume-result').classList.remove('hidden');
+
+    // Copy
+    textArea.select();
+    document.execCommand('copy'); // Legacy but works everywhere
+    // Or navigator.clipboard.writeText(msg);
+
+    const copyMsg = document.getElementById('resume-copied');
+    copyMsg.classList.remove('hidden');
+    setTimeout(() => copyMsg.classList.add('hidden'), 3000);
 }
 
 function loadFormData() {

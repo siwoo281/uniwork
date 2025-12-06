@@ -113,7 +113,7 @@
                 </button>
                 <button onclick="switchTab('paperwork')" id="tab-paperwork"
                     class="flex-1 py-2 px-4 rounded-lg text-sm font-bold text-gray-600 transition-all hover:text-gray-900 focus:outline-none">
-                    <i class="fa-solid fa-file-signature mr-1"></i> <span data-i18n="tab_paperwork">Paperwork</span>
+                    <i class="fa-solid fa-briefcase mr-1"></i> <span data-i18n="tab_paperwork">Job Prep</span>
                 </button>
                 <button onclick="switchTab('map')" id="tab-map"
                     class="flex-1 py-2 px-4 rounded-lg text-sm font-bold text-gray-600 transition-all hover:text-gray-900 focus:outline-none">
@@ -258,13 +258,66 @@
                             </p>
                             <p class="text-3xl font-bold text-yellow-400" id="calc-total">0 <span
                                     class="text-sm text-gray-300">KRW</span></p>
+
+                            <!-- Holiday Pay Info -->
+                            <div id="holiday-pay-box" class="hidden mt-3 pt-3 border-t border-gray-600">
+                                <p class="text-green-400 text-sm font-bold">
+                                    <i class="fa-solid fa-gift mr-1"></i>
+                                    <span data-i18n="holiday_pay_label">Weekly Holiday Pay Included:</span>
+                                    <br>
+                                    <span id="holiday-pay-val" class="text-lg">+0</span> KRW
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Section 2: Paperwork Helper -->
+            <!-- Section 2: Job Prep (Resume & Docs) -->
             <section id="section-paperwork" class="space-y-6 hidden">
+
+                <!-- Resume Generator (New Feature) -->
+                <div class="bg-indigo-50 p-6 rounded-2xl border border-indigo-200 no-print">
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-pen-nib text-indigo-600 text-2xl mr-3"></i>
+                        <div>
+                            <h2 class="text-xl font-bold text-indigo-900" data-i18n="resume_title">1-Minute Resume</h2>
+                            <p class="text-sm text-indigo-700" data-i18n="resume_desc">Create a polite Korean job
+                                application message.</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3">
+                        <input type="text" id="resume-name" class="w-full p-3 border rounded-lg"
+                            placeholder="Name (e.g. Michael)" data-placeholder="name_ph">
+                        <div class="grid grid-cols-2 gap-3">
+                            <input type="number" id="resume-age" class="w-full p-3 border rounded-lg" placeholder="Age"
+                                data-placeholder="age_ph">
+                            <select id="resume-visa" class="w-full p-3 border rounded-lg bg-white">
+                                <option value="D-2">D-2 Visa</option>
+                                <option value="D-4">D-4 Visa</option>
+                            </select>
+                        </div>
+                        <input type="text" id="resume-topic" class="w-full p-3 border rounded-lg"
+                            placeholder="TOPIK Level (e.g. Level 4)" data-placeholder="topik_ph">
+
+                        <button onclick="generateResume()"
+                            class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 rounded-lg shadow-md transition-all">
+                            <i class="fa-solid fa-wand-magic-sparkles mr-1"></i> <span
+                                data-i18n="btn_gen_resume">Generate & Copy</span>
+                        </button>
+
+                        <div id="resume-result" class="hidden mt-3">
+                            <textarea id="resume-text"
+                                class="w-full p-3 text-sm text-gray-700 bg-white border border-gray-300 rounded-lg h-32"
+                                readonly></textarea>
+                            <p class="text-center text-green-600 text-sm font-bold mt-2 hidden" id="resume-copied">
+                                <i class="fa-solid fa-check"></i> Copied to clipboard!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Checklist Card (New Feature for Admin efficiency) -->
                 <div class="bg-blue-50 p-6 rounded-2xl border border-blue-200 no-print">
                     <div class="flex items-center mb-4">
