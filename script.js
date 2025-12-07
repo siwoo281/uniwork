@@ -3,7 +3,18 @@
 const translations = {
     ko: {
         tab_check: "자격 조회",
+        tab_guide: "규정 가이드",
         tab_paperwork: "서류 작성",
+        tab_map: "지도",
+        guide_title: "시간 제한 가이드",
+        guide_subtitle: "D-2 / D-4 비자 차이점",
+        guide_time_title: "근무 가능 시간",
+        guide_ban_title: "🚫 절대 금지 (적발 시 추방)",
+        guide_ban_desc: "불법 취업 적발 시 비자 취소 가능성 높음",
+        job_delivery: "배달 대행 (라이더)",
+        job_construction: "건설 현장 (일용직)",
+        job_factory: "제조업 (공장)",
+        job_teaching: "개인 과외 (미신고)",
         tab_map: "지도",
         calc_title: "아르바이트 가능 여부 확인",
         ieqas_badge: "🏆 배재대: 교육국제화역량 인증대학 (+5시간)",
@@ -33,7 +44,6 @@ const translations = {
         res_fail_gpa: "❌ 불가 (학점 2.0 미만)",
         res_fail_d4: "❌ 불가 (6개월 미만)",
         res_safe_d2: "주중: 25시간 / 주말: 무제한 (권장)",
-        res_safe_d4: "주중: 20시간 / 주말: 포함 (최대 20시간)",
         res_safe_d4: "주중: 20시간 / 주말: 포함 (최대 20시간)",
         res_safe_low: "주중: {hours}시간 / 주말: 10시간",
         res_title_success: "허가 신청 가능 (Eligible)",
@@ -88,12 +98,77 @@ const translations = {
         btn_gen_resume: "문자 생성 및 복사",
         resume_template: "안녕하세요! 아르바이트 공고 보고 연락드렸습니다.\n이름: {name}\n나이: {age}세\n비자: {visa} (유학생)\n한국어: {topik}\n\n성실하게 일하겠습니다. 면접 기회 주시면 감사하겠습니다!",
 
+        // D-10 & Tax
+        d10_title: "졸업 후에는?",
+        d10_subtitle: "D-10 구직 비자",
+        d10_desc: "D-10으로 변경하여 구직 활동을 할 수 있습니다. 인턴십은 별도 신고 필수!",
+        d10_allowed: "신고 필수",
+        tax_title: "세금 & 보험 가이드",
+
+        // Tax & Insurance Details
+        insurance_mandatory: "의무 가입 조건:",
+        insurance_cond_1: "주 60시간 이상 근무",
+        insurance_cond_2: "주 15시간 이상 근무",
+        insurance_cond_3: "계약 기간 1개월 이상",
+        ins_health: "① 건강보험",
+        ins_health_desc: "병원비 지원",
+        ins_health_auto: "외국인등록증 발급 후 자동 가입",
+        ins_employment: "② 고용보험",
+        ins_employment_desc: "실업급여 (조건 충족 시)",
+        ins_accident: "③ 산재보험",
+        ins_accident_desc: "업무 중 부상 보상",
+        ins_pension: "④ 국민연금",
+        ins_pension_desc: "퇴직후 환급 가능",
+        tax_refund_title: "3. 세금 환급 (5월)",
+        tax_refund_when: "신고 시기:",
+        tax_refund_period: "매년 5월 (종합소득세 신고)",
+        tax_refund_tip: "* 3.3% 세금을 낸 경우 일부 환급 가능! 홈택스 방문 또는 학교 사무실 문의",
+        tab_tax: "세금/보험",
+
+        // Work Permit Guide
+        permit_title: "허가 신청 방법",
+        permit_subtitle: "체류자격외 활동허가",
+        permit_step1_title: "자격 확인",
+        permit_step1_a: "• D-2: GPA ≥ 2.0 + TOPIK 등급",
+        permit_step1_b: "• D-4: 입국 후 6개월 이상 + 출석률 90% 이상",
+        permit_step2_title: "학교 확인서 발급",
+        permit_step2_desc: "국제교류팀 방문하여 '시간제취업확인서' 발급",
+        permit_step3_title: "출입국사무소 방문",
+        permit_step3_desc: "준비물: 여권, 외국인등록증, 학교 확인서, 신청서",
+        permit_step4_title: "승인 대기",
+        permit_step4_desc: "처리 기간: 약 1-2주. 외국인등록증에 스탬프 받음!",
+
+        // Korean Phrases
+        phrases_title: "유용한 한국어 표현",
+        phrases_desc: "구직 및 근무 시",
+        phrases_interview: "💼 면접",
+        phrases_work: "🏪 근무 중",
+        phrases_problem: "⚠️ 문제 발생 시",
+        phrase_when_start: "언제부터 시작할 수 있나요?",
+        phrase_schedule: "근무 시간이 어떻게 되나요?",
+        phrase_understand: "알겠습니다",
+        phrase_help: "도와주실 수 있어요?",
+        phrase_payday: "급여일이 언제예요?",
+        phrase_not_paid: "급여를 못 받았어요",
+        phrase_too_many_hours: "근무 시간이 너무 많아요",
+
         // Holiday Pay
         holiday_pay_label: "예상 주휴수당 (포함 시):",
     },
     en: {
         tab_check: "Check Status",
+        tab_guide: "Rules Guide",
         tab_paperwork: "Paperwork",
+        tab_map: "Map",
+        guide_title: "Time Limits",
+        guide_subtitle: "D-2 vs D-4 Differences",
+        guide_time_title: "Time Limits",
+        guide_ban_title: "🚫 Illegal Jobs (Red Zone)",
+        guide_ban_desc: "Strictly Prohibited. Visa cancelled if caught.",
+        job_delivery: "Delivery (Rider)",
+        job_construction: "Construction",
+        job_factory: "Manufacturing",
+        job_teaching: "Private Tutoring",
         tab_map: "Map",
         tab_safety: "Safety",
         calc_title: "Int'l Student Visa Checker",
@@ -123,7 +198,6 @@ const translations = {
         res_fail_gpa: "❌ Not Eligible (GPA < 2.0)",
         res_fail_d4: "❌ Not Eligible (< 6 months)",
         res_safe_d2: "Weekday: 25hr / Weekend: Unlimited",
-        res_safe_d4: "Weekday: 20hr / Weekend: Included (Max 20hr)",
         res_safe_d4: "Weekday: 20hr / Weekend: Included (Max 20hr)",
         res_safe_low: "Weekday: {hours}hr / Weekend: 10hr",
         res_title_success: "Eligible to Apply",
@@ -178,12 +252,77 @@ const translations = {
         btn_gen_resume: "Generate & Copy",
         resume_template: "Hello! I am contacting you regarding the part-time job.\nName: {name}\nAge: {age}\nVisa: {visa} (Student)\nKorean Level: {topik}\n\nI am hardworking and responsible. I would appreciate an interview!",
 
+        // D-10 & Tax
+        d10_title: "After Graduation?",
+        d10_subtitle: "D-10 Job Seeker Visa",
+        d10_desc: "Switch to D-10 to find a job. Internships require a specific report!",
+        d10_allowed: "Report Required",
+        tax_title: "Tax & Insurance",
+
+        // Tax & Insurance Details
+        insurance_mandatory: "Mandatory if:",
+        insurance_cond_1: "Working > 60 hours/month",
+        insurance_cond_2: "Working > 15 hours/week",
+        insurance_cond_3: "Contract period > 1 month",
+        ins_health: "① Health Insurance (건강보험)",
+        ins_health_desc: "Covers medical expenses at hospitals",
+        ins_health_auto: "Auto-enrolled after getting ARC",
+        ins_employment: "② Employment Insurance (고용보험)",
+        ins_employment_desc: "Unemployment benefits (if applicable)",
+        ins_accident: "③ Industrial Accident Insurance (산재보험)",
+        ins_accident_desc: "Covers workplace injuries",
+        ins_pension: "④ National Pension (국민연금)",
+        ins_pension_desc: "Retirement fund (can get refund when leaving Korea)",
+        tax_refund_title: "3. Tax Refund (May)",
+        tax_refund_when: "When to Report:",
+        tax_refund_period: "Every May (Global Income Tax Reporting)",
+        tax_refund_tip: "* If you paid 3.3% tax as a freelancer, you may get some back! Visit Hometax (홈택스) or ask your school's office for help.",
+        tab_tax: "Tax",
+
+        // Work Permit Guide
+        permit_title: "How to Apply for Work Permit",
+        permit_subtitle: "체류자격외 활동허가",
+        permit_step1_title: "Check Requirements",
+        permit_step1_a: "• D-2: GPA ≥ 2.0 + TOPIK level",
+        permit_step1_b: "• D-4: Stay ≥ 6 months + Attendance ≥ 90%",
+        permit_step2_title: "Get School Confirmation",
+        permit_step2_desc: "Visit your school's International Office and get the 'Part-time Work Confirmation (시간제취업확인서)'",
+        permit_step3_title: "Visit Immigration Office",
+        permit_step3_desc: "Bring: Passport, ARC, School Confirmation, Application Form",
+        permit_step4_title: "Wait for Approval",
+        permit_step4_desc: "Processing time: ~1-2 weeks. You'll get a stamp on your ARC!",
+
+        // Korean Phrases
+        phrases_title: "Useful Korean Phrases",
+        phrases_desc: "For job hunting & work",
+        phrases_interview: "💼 Interview",
+        phrases_work: "🏪 At Work",
+        phrases_problem: "⚠️ If Problems",
+        phrase_when_start: "When can I start?",
+        phrase_schedule: "What's the schedule?",
+        phrase_understand: "I understand",
+        phrase_help: "Can you help me?",
+        phrase_payday: "When is payday?",
+        phrase_not_paid: "I wasn't paid",
+        phrase_too_many_hours: "Too many hours",
+
         // Holiday Pay
         holiday_pay_label: "Est. Weekly Holiday Pay:",
     },
     cn: {
         tab_check: "资格查询",
+        tab_guide: "规定指南",
         tab_paperwork: "필수 서류",
+        tab_map: "地图",
+        guide_title: "打工时间限制",
+        guide_subtitle: "D-2 / D-4 签证区别",
+        guide_time_title: "允许工作时间",
+        guide_ban_title: "🚫 绝对禁止 (非法打工)",
+        guide_ban_desc: "一旦被发现，签证可能被立即取消",
+        job_delivery: "外卖配送 (Rider)",
+        job_construction: "建筑工地 (搬砖)",
+        job_factory: "制造业 (工厂)",
+        job_teaching: "个人家教 (未申报)",
         tab_map: "地图",
         tab_safety: "안전",
         calc_title: "留学生打工资格查询",
@@ -266,12 +405,77 @@ const translations = {
         btn_gen_resume: "生成并复制",
         resume_template: "您好！看到兼职招聘联系您。\n姓名: {name}\n年龄: {age}岁\n签证: {visa} (留学生)\n韩语: {topik}\n\n我会认真工作的，希望能给我面试机会！",
 
+        // D-10 & Tax
+        d10_title: "毕业后?",
+        d10_subtitle: "D-10 求职签证",
+        d10_desc: "可换签为D-10进行求职。实习必须申报！",
+        d10_allowed: "必须申报",
+        tax_title: "税务 & 保险",
+
+        // Tax & Insurance
+        insurance_mandatory: "义务条件:",
+        insurance_cond_1: "每月工作 > 60小时",
+        insurance_cond_2: "每周工作 > 15小时",
+        insurance_cond_3: "合同期 > 1个月",
+        ins_health: "① 健康保险 (건강보험)",
+        ins_health_desc: "医疗费支付",
+        ins_health_auto: "登录证后自动加入",
+        ins_employment: "② 就业保险 (고용보험)",
+        ins_employment_desc: "失业救济金",
+        ins_accident: "③ 工伤保险 (산재보험)",
+        ins_accident_desc: "工伤补偿",
+        ins_pension: "④ 国民年金 (국민연금)",
+        ins_pension_desc: "离韩时可退还",
+        tax_refund_title: "3. 退税 (5月)",
+        tax_refund_when: "申报时期:",
+        tax_refund_period: "每年5月 (综合所得税)",
+        tax_refund_tip: "* 3.3%税可能退还! 访问网上税务 (홈택스) 或咨询学校",
+        tab_tax: "税务",
+
+        // Permit Guide
+        permit_title: "如何申请工作许可",
+        permit_subtitle: "체류자격외 활동허가",
+        permit_step1_title: "检查资格",
+        permit_step1_a: "• D-2: GPA ≥ 2.0 + TOPIK",
+        permit_step1_b: "• D-4: 居住 ≥ 6个月 + 出勤 ≥ 90%",
+        permit_step2_title: "学校确认书",
+        permit_step2_desc: "访问国际交流部门申请'兼职工作确认书'",
+        permit_step3_title: "访问出入境管理局",
+        permit_step3_desc: "带上: 护照, 外国人登录证, 学校确认, 申请表",
+        permit_step4_title: "等待批准",
+        permit_step4_desc: "处理时间: 约1-2周. 登录证盖章!",
+
+        // Phrases
+        phrases_title: "常用韩语",
+        phrases_desc: "求职和工作",
+        phrases_interview: "💼 面试",
+        phrases_work: "🏪 工作中",
+        phrases_problem: "⚠️ 问题时",
+        phrase_when_start: "何时开始?",
+        phrase_schedule: "工作时间?",
+        phrase_understand: "明白了",
+        phrase_help: "可以帮忙吗?",
+        phrase_payday: "发薪日是何时?",
+        phrase_not_paid: "没收到工资",
+        phrase_too_many_hours: "工作时间太多",
+
         // Holiday Pay
         holiday_pay_label: "预计周休津贴:",
     },
     vn: {
         tab_check: "Kiểm tra",
+        tab_guide: "Hướng dẫn",
         tab_paperwork: "Giấy tờ",
+        tab_map: "Bản đồ",
+        guide_title: "Giới hạn thời gian",
+        guide_subtitle: "Sự khác biệt D-2 / D-4",
+        guide_time_title: "Thời gian làm việc",
+        guide_ban_title: "🚫 Tuyệt đối cấm (Việc làm bất hợp pháp)",
+        guide_ban_desc: "Nếu bị bắt, visa sẽ bị hủy ngay lập tức",
+        job_delivery: "Giao hàng (Shipper)",
+        job_construction: "Công trường xây dựng",
+        job_factory: "Nhà máy (Sản xuất)",
+        job_teaching: "Gia sư (Không báo cáo)",
         tab_map: "Bản đồ",
         calc_title: "Kiểm tra điều kiện làm thêm",
         ieqas_badge: "🏆 ĐH Pai Chai: Đạt chuẩn IEQAS (+5 giờ)",
@@ -353,6 +557,60 @@ const translations = {
         btn_gen_resume: "Tạo và Sao chép",
         resume_template: "Xin chào! Tôi liên hệ vì thấy tin tuyển dụng.\nTên: {name}\nTuổi: {age}\nVisa: {visa} (Du học sinh)\nTiếng Hàn: {topik}\n\nTôi sẽ làm việc chăm chỉ. Mong nhận được cơ hội phỏng vấn!",
 
+        // D-10 & Tax
+        d10_title: "Tốt nghiệp thì?",
+        d10_subtitle: "D-10 Visa tìm việc",
+        d10_desc: "Đổi sang D-10 để tìm việc. Thực tập phải báo cáo!",
+        d10_allowed: "Phải báo cáo",
+        tax_title: "Thuế & Bảo hiểm",
+
+        // Tax & Insurance
+        insurance_mandatory: "Bắt buộc nếu:",
+        insurance_cond_1: "Làm > 60 giờ/tháng",
+        insurance_cond_2: "Làm > 15 giờ/tuần",
+        insurance_cond_3: "Hợp đồng > 1 tháng",
+        ins_health: "① Bảo hiểm y tế (건강보험)",
+        ins_health_desc: "Chi phí bệnh viện",
+        ins_health_auto: "Tự động tham gia sau khi có ARC",
+        ins_employment: "② Bảo hiểm thất nghiệp (고용보험)",
+        ins_employment_desc: "Trợ cấp thất nghiệp",
+        ins_accident: "③ Bảo hiểm tai nạn (산재보험)",
+        ins_accident_desc: "Bồi thường chấn thương",
+        ins_pension: "④ Lương hưu (국민연금)",
+        ins_pension_desc: "Có thể hoàn trả khi rời Hàn Quốc",
+        tax_refund_title: "3. Hoàn thuế (Tháng 5)",
+        tax_refund_when: "Thời gian:",
+        tax_refund_period: "Mỗi năm tháng 5",
+        tax_refund_tip: "* Nếu đóng thuế 3.3%, có thể hoàn lại! Truy cập Hometax hoặc hỏi văn phòng trường",
+        tab_tax: "Thuế",
+
+        // Permit Guide
+        permit_title: "Cách xin giấy phép",
+        permit_subtitle: "체류자격외 활동허가",
+        permit_step1_title: "Kiểm tra điều kiện",
+        permit_step1_a: "• D-2: GPA ≥ 2.0 + TOPIK",
+        permit_step1_b: "• D-4: Ở trên 6 tháng + Đi học ≥ 90%",
+        permit_step2_title: "Giấy xác nhận trường",
+        permit_step2_desc: "Thăm văn phòng sinh viên quốc tế lấy 'Giấy xác nhận làm thêm'",
+        permit_step3_title: "Đến Cục Xuất nhập cảnh",
+        permit_step3_desc: "Mang: Hộ chiếu, ARC, Xác nhận, Đơn",
+        permit_step4_title: "Chờ duyệt",
+        permit_step4_desc: "Thời gian: ~1-2 tuần. Đóng dấu ARC!",
+
+        // Phrases
+        phrases_title: "Tiếng Hàn hữu ích",
+        phrases_desc: "Tìm việc và làm việc",
+        phrases_interview: "💼 Phiến vấn",
+        phrases_work: "🏪 Đang làm",
+        phrases_problem: "⚠️ Nếu có vấn đề",
+        phrase_when_start: "Khi nào bắt đầu?",
+        phrase_schedule: "Lịch làm việc?",
+        phrase_understand: "Hiểu rồi",
+        phrase_help: "Giúp tôi được không?",
+        phrase_payday: "Ngày trả lương?",
+        phrase_not_paid: "Chưa nhận lương",
+        phrase_too_many_hours: "Làm quá nhiều giờ",
+
         // Holiday Pay
         holiday_pay_label: "Trợ cấp nghỉ tuần (Dự kiến):",
     }
@@ -400,17 +658,19 @@ function showLanguageModal() {
 
 function switchTab(tabName) {
     // Hide all
-    ['check', 'paperwork', 'map', 'safety'].forEach(id => {
-        document.getElementById(`section-${id}`).classList.add('hidden');
-        document.getElementById(`tab-${id}`).classList.remove('tab-active', 'bg-white', 'shadow-sm', 'text-blue-600');
+    ['check', 'guide', 'paperwork', 'map', 'safety', 'tax'].forEach(id => {
+        const sec = document.getElementById(`section-${id}`);
+        const btn = document.getElementById(`tab-${id}`);
+        if (sec) sec.classList.add('hidden');
+        if (btn) btn.classList.remove('text-blue-600', 'tab-active');
     });
 
     // Show target
     document.getElementById(`section-${tabName}`).classList.remove('hidden');
 
-    // Active style
+    // Active style (Bottom Nav)
     const btn = document.getElementById(`tab-${tabName}`);
-    btn.classList.add('tab-active', 'bg-white', 'shadow-sm', 'text-blue-600');
+    if (btn) btn.classList.add('text-blue-600', 'tab-active');
 
     // Fix Map
     if (tabName === 'map' && map) {
@@ -691,11 +951,16 @@ function generateResume() {
     // Copy
     textArea.select();
     document.execCommand('copy'); // Legacy but works everywhere
-    // Or navigator.clipboard.writeText(msg);
 
-    const copyMsg = document.getElementById('resume-copied');
-    copyMsg.classList.remove('hidden');
-    setTimeout(() => copyMsg.classList.add('hidden'), 3000);
+    // Toast Notification
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toast-msg');
+
+    toast.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+
+    setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+    }, 3000);
 }
 
 function loadFormData() {

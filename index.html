@@ -105,28 +105,319 @@
         <!-- Main Content Area -->
         <main class="flex-grow max-w-3xl w-full mx-auto p-4 space-y-6">
 
-            <!-- Tab Navigation (Mobile Friendly) -->
-            <nav class="flex bg-gray-200 p-1 rounded-xl mb-6">
-                <button onclick="switchTab('check')" id="tab-check"
-                    class="flex-1 py-2 px-4 rounded-lg text-sm font-bold text-gray-600 transition-all hover:text-gray-900 focus:outline-none bg-white shadow-sm tab-active">
-                    <i class="fa-solid fa-check-circle mr-1"></i> <span data-i18n="tab_check">Check Status</span>
-                </button>
-                <button onclick="switchTab('paperwork')" id="tab-paperwork"
-                    class="flex-1 py-2 px-4 rounded-lg text-sm font-bold text-gray-600 transition-all hover:text-gray-900 focus:outline-none">
-                    <i class="fa-solid fa-briefcase mr-1"></i> <span data-i18n="tab_paperwork">Job Prep</span>
-                </button>
-                <button onclick="switchTab('map')" id="tab-map"
-                    class="flex-1 py-2 px-4 rounded-lg text-sm font-bold text-gray-600 transition-all hover:text-gray-900 focus:outline-none">
-                    <i class="fa-solid fa-map-location-dot mr-1"></i> <span data-i18n="tab_map">Map</span>
-                </button>
-                <button onclick="switchTab('safety')" id="tab-safety"
-                    class="flex-1 py-2 px-4 rounded-lg text-sm font-bold text-gray-600 transition-all hover:text-gray-900 focus:outline-none">
-                    <i class="fa-solid fa-shield-heart mr-1"></i> <span data-i18n="tab_safety">Safety</span>
-                </button>
-            </nav>
+            <!-- Section 0: Rules Guide (New) -->
+            <section id="section-guide" class="hidden space-y-6 pb-24">
+                <!-- Card 1: Time Limits -->
+                <div class="bg-indigo-50 p-6 rounded-3xl border border-indigo-100 shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-clock text-indigo-600 text-3xl mr-3"></i>
+                        <div>
+                            <h2 class="text-xl font-bold text-indigo-900" data-i18n="guide_time_title">Time Limits</h2>
+                            <p class="text-sm text-indigo-700" data-i18n="guide_subtitle">D-2 vs D-4 Differences</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- D-2 -->
+                        <div
+                            class="bg-white p-5 rounded-2xl shadow-sm border border-indigo-50 relative overflow-hidden">
+                            <div
+                                class="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl">
+                                BEST
+                            </div>
+                            <h3 class="font-bold text-gray-800 text-lg mb-1">D-2 (Degree)</h3>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Weekday: <strong class="text-indigo-600">25 Hours</strong> <br><span
+                                            class="text-xs text-blue-500">(Pai Chai Univ Benefit 🏆)</span></span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fa-solid fa-check text-green-500 mr-2"></i>
+                                    <span>Weekend: <strong class="text-green-600">Unlimited</strong> 🚀</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- D-4 -->
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
+                            <h3 class="font-bold text-gray-800 text-lg mb-1">D-4 (Language)</h3>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li class="flex items-center">
+                                    <i class="fa-solid fa-check text-green-500 mr-2"></i>
+                                    <span>Weekday: <strong>20 Hours</strong></span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fa-solid fa-triangle-exclamation text-orange-500 mr-2"></i>
+                                    <span>Weekend: <strong class="text-orange-600">Included in Limit</strong></span>
+                                </li>
+                                <li class="flex items-center text-xs text-gray-500 mt-1">
+                                    <i class="fa-solid fa-info-circle mr-1"></i> Must reside 6 months+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Illegal Jobs -->
+                <div class="bg-red-50 p-6 rounded-3xl border border-red-100 shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-ban text-red-600 text-3xl mr-3"></i>
+                        <div>
+                            <h2 class="text-xl font-bold text-red-900" data-i18n="guide_ban_title">Illegal
+                                Jobs</h2>
+                            <p class="text-sm text-red-700" data-i18n="guide_ban_desc">Strictly Prohibited & Red Zone
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <div
+                            class="bg-white p-3 rounded-2xl border border-red-50 flex flex-col items-center text-center shadow-sm">
+                            <i class="fa-solid fa-motorcycle text-2xl text-red-500 mb-2"></i>
+                            <span class="text-sm font-bold text-gray-700" data-i18n="job_delivery">Delivery</span>
+                        </div>
+                        <div
+                            class="bg-white p-3 rounded-2xl border border-red-50 flex flex-col items-center text-center shadow-sm">
+                            <i class="fa-solid fa-hammer text-2xl text-red-500 mb-2"></i>
+                            <span class="text-sm font-bold text-gray-700"
+                                data-i18n="job_construction">Construction</span>
+                        </div>
+                        <div
+                            class="bg-white p-3 rounded-2xl border border-red-50 flex flex-col items-center text-center shadow-sm">
+                            <i class="fa-solid fa-industry text-2xl text-red-500 mb-2"></i>
+                            <span class="text-sm font-bold text-gray-700" data-i18n="job_factory">Factory</span>
+                        </div>
+                        <div
+                            class="bg-white p-3 rounded-2xl border border-red-50 flex flex-col items-center text-center shadow-sm">
+                            <i class="fa-solid fa-chalkboard-user text-2xl text-red-500 mb-2"></i>
+                            <span class="text-sm font-bold text-gray-700" data-i18n="job_teaching">Tutoring<br><span
+                                    class="text-xs font-normal text-gray-400">(No Report)</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: How to Apply for Work Permit (NEW) -->
+                <div class="bg-green-50 p-6 rounded-3xl border border-green-100 shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-file-circle-check text-green-600 text-3xl mr-3"></i>
+                        <div>
+                            <h2 class="text-xl font-bold text-green-900" data-i18n="permit_title">How to Apply for Work
+                                Permit</h2>
+                            <p class="text-sm text-green-700" data-i18n="permit_subtitle">체류자격외 활동허가</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3">
+                        <!-- Step 1 -->
+                        <div class="bg-white p-4 rounded-2xl border border-green-50 shadow-sm">
+                            <div class="flex items-start space-x-3">
+                                <div
+                                    class="bg-green-500 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-0.5">
+                                    1</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1" data-i18n="permit_step1_title">Check
+                                        Requirements</h4>
+                                    <ul class="text-xs text-gray-600 space-y-1">
+                                        <li data-i18n="permit_step1_a">• D-2: GPA ≥ 2.0 + TOPIK level</li>
+                                        <li data-i18n="permit_step1_b">• D-4: Stay ≥ 6 months + Attendance ≥ 90%</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="bg-white p-4 rounded-2xl border border-green-50 shadow-sm">
+                            <div class="flex items-start space-x-3">
+                                <div
+                                    class="bg-green-500 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-0.5">
+                                    2</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1" data-i18n="permit_step2_title">Get School
+                                        Confirmation</h4>
+                                    <p class="text-xs text-gray-600" data-i18n="permit_step2_desc">Visit your school's
+                                        International Office and get the "Part-time Work Confirmation (시간제취업확인서)"</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="bg-white p-4 rounded-2xl border border-green-50 shadow-sm">
+                            <div class="flex items-start space-x-3">
+                                <div
+                                    class="bg-green-500 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-0.5">
+                                    3</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1" data-i18n="permit_step3_title">Visit
+                                        Immigration Office</h4>
+                                    <p class="text-xs text-gray-600 mb-2" data-i18n="permit_step3_desc">Bring: Passport,
+                                        ARC, School Confirmation, Application Form</p>
+                                    <p class="text-xs text-green-700 font-semibold"><i
+                                            class="fa-solid fa-phone mr-1"></i> 1345 (For help)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="bg-white p-4 rounded-2xl border border-green-50 shadow-sm">
+                            <div class="flex items-start space-x-3">
+                                <div
+                                    class="bg-green-500 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-0.5">
+                                    4</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1" data-i18n="permit_step4_title">Wait for
+                                        Approval</h4>
+                                    <p class="text-xs text-gray-600" data-i18n="permit_step4_desc">Processing time: ~1-2
+                                        weeks. You'll get a stamp on your ARC!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: New Post-Graduation (D-10) Guide -->
+                <div class="bg-blue-50 p-6 rounded-3xl border border-blue-100 shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-graduation-cap text-blue-600 text-3xl mr-3"></i>
+                        <div>
+                            <h2 class="text-xl font-bold text-blue-900" data-i18n="d10_title">After Graduation?</h2>
+                            <p class="text-sm text-blue-700" data-i18n="d10_subtitle">D-10 Job Seeker Visa</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl border border-blue-50 shadow-sm space-y-3">
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            <i class="fa-solid fa-info-circle text-blue-500 mr-1"></i>
+                            <span data-i18n="d10_desc">You can switch to D-10 to look for a job. Internships are allowed
+                                only with a specific report!</span>
+                        </p>
+                        <div
+                            class="flex items-center justify-between text-sm font-bold text-gray-700 bg-gray-50 p-3 rounded-xl">
+                            <span><i class="fa-solid fa-briefcase mr-2 text-gray-400"></i>Internship</span>
+                            <span class="text-blue-600" data-i18n="d10_allowed">Report Required</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 0.5: Tax & Insurance (New) -->
+            <section id="section-tax" class="hidden space-y-6 pb-24">
+                <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm">
+                    <h2 class="text-2xl font-bold mb-4 text-gray-800 flex items-center">
+                        <i class="fa-solid fa-receipt text-green-500 mr-2"></i>
+                        <span data-i18n="tax_title">Tax & Insurance</span>
+                    </h2>
+
+                    <!-- 3.3% Tax -->
+                    <div class="mb-6">
+                        <h3 class="font-bold text-lg text-gray-800 mb-2">1. The "3.3%" Tax?</h3>
+                        <div
+                            class="bg-gray-50 p-4 rounded-xl text-sm text-gray-600 leading-relaxed border border-gray-200">
+                            <p class="mb-2"><strong class="text-gray-900">Freelancer Tax:</strong> If you work as a
+                                freelancer, 3.3% is deducted.</p>
+                            <p><i class="fa-solid fa-calculator text-gray-400 mr-1"></i> Ex: Earn 100,000 → Get
+                                <strong>96,700 KRW</strong>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 4 Major Insurances - EXPANDED -->
+                    <div class="mb-6">
+                        <h3 class="font-bold text-lg text-gray-800 mb-3">2. 4 Major Insurances (4대보험)</h3>
+
+                        <!-- When Mandatory -->
+                        <div
+                            class="bg-blue-50 p-4 rounded-xl text-sm text-blue-800 leading-relaxed border border-blue-100 mb-4">
+                            <p class="font-semibold mb-2"><i class="fa-solid fa-circle-exclamation mr-1"></i> <span
+                                    data-i18n="insurance_mandatory">Mandatory if:</span></p>
+                            <ul class="list-disc list-inside ml-1 space-y-1">
+                                <li data-i18n="insurance_cond_1">Working > 60 hours/month</li>
+                                <li data-i18n="insurance_cond_2">Working > 15 hours/week</li>
+                                <li data-i18n="insurance_cond_3">Contract period > 1 month</li>
+                            </ul>
+                        </div>
+
+                        <!-- Insurance Breakdown -->
+                        <div class="grid grid-cols-1 gap-3">
+                            <!-- 1. Health Insurance -->
+                            <div class="bg-white p-4 rounded-xl border border-gray-200">
+                                <div class="flex items-start space-x-3">
+                                    <i class="fa-solid fa-heart-pulse text-red-500 text-xl mt-1"></i>
+                                    <div class="flex-1">
+                                        <h4 class="font-bold text-gray-800 mb-1" data-i18n="ins_health">① Health
+                                            Insurance (건강보험)</h4>
+                                        <p class="text-xs text-gray-600 mb-2" data-i18n="ins_health_desc">Covers medical
+                                            expenses at hospitals</p>
+                                        <div class="bg-green-50 px-3 py-2 rounded-lg text-sm">
+                                            <p class="font-bold text-green-800">~76,390 KRW/month <span
+                                                    class="text-xs font-normal">(2025)</span></p>
+                                            <p class="text-xs text-green-700 mt-1" data-i18n="ins_health_auto">
+                                                Auto-enrolled after getting ARC</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 2. Employment Insurance -->
+                            <div class="bg-white p-4 rounded-xl border border-gray-200">
+                                <div class="flex items-start space-x-3">
+                                    <i class="fa-solid fa-briefcase text-blue-500 text-xl mt-1"></i>
+                                    <div class="flex-1">
+                                        <h4 class="font-bold text-gray-800 mb-1" data-i18n="ins_employment">② Employment
+                                            Insurance (고용보험)</h4>
+                                        <p class="text-xs text-gray-600" data-i18n="ins_employment_desc">Unemployment
+                                            benefits (if applicable)</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 3. Industrial Accident -->
+                            <div class="bg-white p-4 rounded-xl border border-gray-200">
+                                <div class="flex items-start space-x-3">
+                                    <i class="fa-solid fa-helmet-safety text-orange-500 text-xl mt-1"></i>
+                                    <div class="flex-1">
+                                        <h4 class="font-bold text-gray-800 mb-1" data-i18n="ins_accident">③ Industrial
+                                            Accident Insurance (산재보험)</h4>
+                                        <p class="text-xs text-gray-600" data-i18n="ins_accident_desc">Covers workplace
+                                            injuries</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 4. National Pension -->
+                            <div class="bg-white p-4 rounded-xl border border-gray-200">
+                                <div class="flex items-start space-x-3">
+                                    <i class="fa-solid fa-piggy-bank text-purple-500 text-xl mt-1"></i>
+                                    <div class="flex-1">
+                                        <h4 class="font-bold text-gray-800 mb-1" data-i18n="ins_pension">④ National
+                                            Pension (국민연금)</h4>
+                                        <p class="text-xs text-gray-600" data-i18n="ins_pension_desc">Retirement fund
+                                            (can get refund when leaving Korea)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tax Refund Guide -->
+                    <div>
+                        <h3 class="font-bold text-lg text-gray-800 mb-2" data-i18n="tax_refund_title">3. Tax Refund
+                            (May)</h3>
+                        <div class="bg-indigo-50 p-4 rounded-xl text-sm text-indigo-800 border border-indigo-100">
+                            <p class="font-semibold mb-2"><i class="fa-solid fa-coins mr-1"></i> <span
+                                    data-i18n="tax_refund_when">When to Report:</span></p>
+                            <p class="text-xs mb-3" data-i18n="tax_refund_period">Every May (Global Income Tax
+                                Reporting)</p>
+                            <p class="text-xs text-indigo-700 leading-relaxed" data-i18n="tax_refund_tip">
+                                * If you paid 3.3% tax as a freelancer, you may get some back! Visit Hometax (홈택스) or
+                                ask your school's office for help.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <!-- Section 1: Visa Calculator -->
-            <section id="section-check" class="space-y-6">
+            <section id="section-check" class="space-y-6 hidden pb-24">
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
                     <h2 class="text-2xl font-bold mb-2 text-gray-800" data-i18n="calc_title">Visa Checker</h2>
                     <div class="mb-5">
@@ -273,11 +564,13 @@
                 </div>
             </section>
 
+
+
             <!-- Section 2: Job Prep (Resume & Docs) -->
-            <section id="section-paperwork" class="space-y-6 hidden">
+            <section id="section-paperwork" class="space-y-6 hidden pb-24">
 
                 <!-- Resume Generator (New Feature) -->
-                <div class="bg-indigo-50 p-6 rounded-2xl border border-indigo-200 no-print">
+                <div class="bg-indigo-50 p-6 rounded-3xl border border-indigo-100 no-print">
                     <div class="flex items-center mb-4">
                         <i class="fa-solid fa-pen-nib text-indigo-600 text-2xl mr-3"></i>
                         <div>
@@ -288,38 +581,105 @@
                     </div>
 
                     <div class="space-y-3">
-                        <input type="text" id="resume-name" class="w-full p-3 border rounded-lg"
+                        <input type="text" id="resume-name" class="w-full p-4 border rounded-xl"
                             placeholder="Name (e.g. Michael)" data-placeholder="name_ph">
                         <div class="grid grid-cols-2 gap-3">
-                            <input type="number" id="resume-age" class="w-full p-3 border rounded-lg" placeholder="Age"
+                            <input type="number" id="resume-age" class="w-full p-4 border rounded-xl" placeholder="Age"
                                 data-placeholder="age_ph">
-                            <select id="resume-visa" class="w-full p-3 border rounded-lg bg-white">
+                            <select id="resume-visa" class="w-full p-4 border rounded-xl bg-white">
                                 <option value="D-2">D-2 Visa</option>
                                 <option value="D-4">D-4 Visa</option>
                             </select>
                         </div>
-                        <input type="text" id="resume-topic" class="w-full p-3 border rounded-lg"
+                        <input type="text" id="resume-topic" class="w-full p-4 border rounded-xl"
                             placeholder="TOPIK Level (e.g. Level 4)" data-placeholder="topik_ph">
 
                         <button onclick="generateResume()"
-                            class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 rounded-lg shadow-md transition-all">
+                            class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 rounded-xl shadow-md transition-all">
                             <i class="fa-solid fa-wand-magic-sparkles mr-1"></i> <span
-                                data-i18n="btn_gen_resume">Generate & Copy</span>
+                                data-i18n="btn_gen_resume">Generate &
+                                Copy</span>
                         </button>
 
                         <div id="resume-result" class="hidden mt-3">
                             <textarea id="resume-text"
-                                class="w-full p-3 text-sm text-gray-700 bg-white border border-gray-300 rounded-lg h-32"
+                                class="w-full p-4 text-sm text-gray-700 bg-white border border-gray-300 rounded-xl h-32"
                                 readonly></textarea>
-                            <p class="text-center text-green-600 text-sm font-bold mt-2 hidden" id="resume-copied">
-                                <i class="fa-solid fa-check"></i> Copied to clipboard!
-                            </p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Practical Korean Phrases (NEW) -->
+                <div class="bg-yellow-50 p-6 rounded-3xl border border-yellow-100 no-print">
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-language text-yellow-600 text-2xl mr-3"></i>
+                        <div>
+                            <h2 class="text-xl font-bold text-yellow-900" data-i18n="phrases_title">Useful Korean
+                                Phrases</h2>
+                            <p class="text-sm text-yellow-700" data-i18n="phrases_desc">For job hunting & work</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3">
+                        <!-- Interview -->
+                        <div class="bg-white p-4 rounded-2xl border border-yellow-50 shadow-sm">
+                            <h4 class="font-bold text-gray-800 mb-2 text-sm" data-i18n="phrases_interview">💼 Interview
+                            </h4>
+                            <div class="space-y-2 text-xs">
+                                <div class="flex justify-between items-start">
+                                    <span class="text-gray-600 flex-1" data-i18n="phrase_when_start">When can I
+                                        start?</span>
+                                    <span class="text-gray-900 font-semibold ml-2">언제부터 일할 수 있어요?</span>
+                                </div>
+                                <div class="flex justify-between items-start">
+                                    <span class="text-gray-600 flex-1" data-i18n="phrase_schedule">What's the
+                                        schedule?</span>
+                                    <span class="text-gray-900 font-semibold ml-2">근무 시간이 어떻게 돼요?</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- At Work -->
+                        <div class="bg-white p-4 rounded-2xl border border-yellow-50 shadow-sm">
+                            <h4 class="font-bold text-gray-800 mb-2 text-sm" data-i18n="phrases_work">🏪 At Work</h4>
+                            <div class="space-y-2 text-xs">
+                                <div class="flex justify-between items-start">
+                                    <span class="text-gray-600 flex-1" data-i18n="phrase_understand">I understand</span>
+                                    <span class="text-gray-900 font-semibold ml-2">알겠습니다</span>
+                                </div>
+                                <div class="flex justify-between items-start">
+                                    <span class="text-gray-600 flex-1" data-i18n="phrase_help">Can you help me?</span>
+                                    <span class="text-gray-900 font-semibold ml-2">도와주실 수 있어요?</span>
+                                </div>
+                                <div class="flex justify-between items-start">
+                                    <span class="text-gray-600 flex-1" data-i18n="phrase_payday">When is payday?</span>
+                                    <span class="text-gray-900 font-semibold ml-2">급여일이 언제예요?</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Emergency -->
+                        <div class="bg-white p-4 rounded-2xl border border-yellow-50 shadow-sm">
+                            <h4 class="font-bold text-gray-800 mb-2 text-sm" data-i18n="phrases_problem">⚠️ If Problems
+                            </h4>
+                            <div class="space-y-2 text-xs">
+                                <div class="flex justify-between items-start">
+                                    <span class="text-gray-600 flex-1" data-i18n="phrase_not_paid">I wasn't paid</span>
+                                    <span class="text-gray-900 font-semibold ml-2">급여를 못 받았어요</span>
+                                </div>
+                                <div class="flex justify-between items-start">
+                                    <span class="text-gray-600 flex-1" data-i18n="phrase_too_many_hours">Too many
+                                        hours</span>
+                                    <span class="text-gray-900 font-semibold ml-2">근무 시간이 너무 많아요</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Checklist Card (New Feature for Admin efficiency) -->
-                <div class="bg-blue-50 p-6 rounded-2xl border border-blue-200 no-print">
+                <div class="bg-blue-50 p-6 rounded-3xl border border-blue-100 no-print">
                     <div class="flex items-center mb-4">
                         <i class="fa-solid fa-clipboard-check text-blue-600 text-2xl mr-3"></i>
                         <div>
@@ -331,35 +691,35 @@
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                         <label
-                            class="flex items-center space-x-3 bg-white p-3 rounded-lg shadow-sm cursor-pointer hover:bg-gray-50 transition-colors">
+                            class="flex items-center space-x-3 bg-white p-3 rounded-xl shadow-sm cursor-pointer hover:bg-gray-50 transition-colors">
                             <input type="checkbox" class="w-5 h-5 text-blue-600 rounded focus:ring-blue-500">
                             <span class="text-gray-700 font-medium" data-i18n="doc_passport">Passport</span>
                         </label>
                         <label
-                            class="flex items-center space-x-3 bg-white p-3 rounded-lg shadow-sm cursor-pointer hover:bg-gray-50 transition-colors">
+                            class="flex items-center space-x-3 bg-white p-3 rounded-xl shadow-sm cursor-pointer hover:bg-gray-50 transition-colors">
                             <input type="checkbox" class="w-5 h-5 text-blue-600 rounded focus:ring-blue-500">
                             <span class="text-gray-700 font-medium" data-i18n="doc_arc">Alien Registration Card
                                 (ARC)</span>
                         </label>
                         <label
-                            class="flex items-center space-x-3 bg-white p-3 rounded-lg shadow-sm cursor-pointer hover:bg-gray-50 transition-colors">
+                            class="flex items-center space-x-3 bg-white p-3 rounded-xl shadow-sm cursor-pointer hover:bg-gray-50 transition-colors">
                             <input type="checkbox" class="w-5 h-5 text-blue-600 rounded focus:ring-blue-500">
                             <span class="text-gray-700 font-medium" data-i18n="doc_form">Integrated Application
                                 Form</span>
                         </label>
                         <label
-                            class="flex items-center space-x-3 bg-white p-3 rounded-lg shadow-sm cursor-pointer hover:bg-gray-50 transition-colors">
+                            class="flex items-center space-x-3 bg-white p-3 rounded-xl shadow-sm cursor-pointer hover:bg-gray-50 transition-colors">
                             <input type="checkbox" class="w-5 h-5 text-blue-600 rounded focus:ring-blue-500">
                             <span class="text-gray-700 font-medium" data-i18n="doc_biz">Business License Copy</span>
                         </label>
                         <label
-                            class="flex items-center space-x-3 bg-white p-3 rounded-lg shadow-sm cursor-pointer hover:bg-gray-50 transition-colors">
+                            class="flex items-center space-x-3 bg-white p-3 rounded-xl shadow-sm cursor-pointer hover:bg-gray-50 transition-colors">
                             <input type="checkbox" class="w-5 h-5 text-blue-600 rounded focus:ring-blue-500">
                             <span class="text-gray-700 font-medium" data-i18n="doc_contract">Standard Labor
                                 Contract</span>
                         </label>
                         <label
-                            class="flex items-center space-x-3 bg-white p-3 rounded-lg shadow-sm cursor-pointer hover:bg-gray-50 transition-colors">
+                            class="flex items-center space-x-3 bg-white p-3 rounded-xl shadow-sm cursor-pointer hover:bg-gray-50 transition-colors">
                             <input type="checkbox" class="w-5 h-5 text-blue-600 rounded focus:ring-blue-500">
                             <span class="text-gray-700 font-medium" data-i18n="doc_confirm">Part-time Work
                                 Confirmation</span>
@@ -369,13 +729,13 @@
             </section>
 
             <!-- Section 3: Map -->
-            <section id="section-map" class="space-y-6 hidden h-full">
-                <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 h-[600px] flex flex-col">
+            <section id="section-map" class="space-y-6 hidden h-full pb-24">
+                <div class="bg-white p-4 rounded-3xl shadow-sm border border-gray-100 h-[600px] flex flex-col">
                     <h2 class="text-xl font-bold mb-4 text-gray-800 flex items-center">
                         <i class="fa-solid fa-map-marked-alt text-blue-500 mr-2"></i>
                         <span data-i18n="map_title">Nearby Locations</span>
                     </h2>
-                    <div id="map" class="flex-grow rounded-xl z-0"></div>
+                    <div id="map" class="flex-grow rounded-2xl z-0"></div>
                     <div class="mt-4 grid grid-cols-2 gap-2 text-sm">
                         <div class="flex items-center space-x-2 text-gray-600">
                             <i class="fa-solid fa-location-dot text-blue-500"></i>
@@ -390,23 +750,23 @@
             </section>
 
             <!-- Section 4: Safety & Insurance -->
-            <section id="section-safety" class="space-y-6 hidden">
+            <section id="section-safety" class="space-y-6 hidden pb-24">
                 <!-- Card 1: Emergency Quick Dial -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
                     <h2 class="text-xl font-bold mb-4 text-gray-800" data-i18n="safety_title">Emergency Contacts</h2>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-white font-bold">
                         <a href="tel:112"
-                            class="btn-emergency bg-red-600 hover:bg-red-700 rounded-xl p-4 flex flex-col items-center justify-center space-y-2 shadow-lg transform hover:-translate-y-1 transition-all">
+                            class="btn-emergency bg-red-600 hover:bg-red-700 rounded-2xl p-4 flex flex-col items-center justify-center space-y-2 shadow-lg transform hover:-translate-y-1 transition-all">
                             <i class="fa-solid fa-bell text-2xl"></i>
                             <span class="text-sm" data-i18n="emerg_police">Police (112)</span>
                         </a>
                         <a href="tel:119"
-                            class="btn-emergency bg-orange-500 hover:bg-orange-600 rounded-xl p-4 flex flex-col items-center justify-center space-y-2 shadow-lg transform hover:-translate-y-1 transition-all">
+                            class="btn-emergency bg-orange-500 hover:bg-orange-600 rounded-2xl p-4 flex flex-col items-center justify-center space-y-2 shadow-lg transform hover:-translate-y-1 transition-all">
                             <i class="fa-solid fa-truck-medical text-2xl"></i>
                             <span class="text-sm" data-i18n="emerg_fire">Fire/Medical (119)</span>
                         </a>
                         <a href="tel:1345"
-                            class="btn-emergency bg-blue-600 hover:bg-blue-700 rounded-xl p-4 flex flex-col items-center justify-center space-y-2 shadow-lg transform hover:-translate-y-1 transition-all">
+                            class="btn-emergency bg-blue-600 hover:bg-blue-700 rounded-2xl p-4 flex flex-col items-center justify-center space-y-2 shadow-lg transform hover:-translate-y-1 transition-all">
                             <i class="fa-solid fa-user-shield text-2xl"></i>
                             <span class="text-sm" data-i18n="emerg_immi">Immi (1345)</span>
                         </a>
@@ -414,7 +774,7 @@
                 </div>
 
                 <!-- Card 1.5: 1345 Help Center (New) -->
-                <div class="bg-blue-50 p-6 rounded-2xl border border-blue-200">
+                <div class="bg-blue-50 p-6 rounded-3xl border border-blue-100">
                     <div class="flex items-start space-x-3">
                         <i class="fa-solid fa-headset text-blue-600 text-3xl mt-1"></i>
                         <div>
@@ -440,7 +800,7 @@
                 </div>
 
                 <!-- Card 2: Health Insurance -->
-                <div class="bg-green-50 p-6 rounded-2xl border border-green-200">
+                <div class="bg-green-50 p-6 rounded-3xl border border-green-100">
                     <div class="flex items-start space-x-3">
                         <i class="fa-solid fa-notes-medical text-green-600 text-3xl mt-1"></i>
                         <div>
@@ -456,7 +816,7 @@
                 </div>
 
                 <!-- Card 3: Crime Prevention -->
-                <div class="bg-red-50 p-6 rounded-2xl border border-red-200">
+                <div class="bg-red-50 p-6 rounded-3xl border border-red-100">
                     <div class="flex items-start space-x-3">
                         <i class="fa-solid fa-ban text-red-600 text-3xl mt-1"></i>
                         <div>
@@ -471,7 +831,7 @@
                 </div>
 
                 <!-- Card 4: PM (Scooter) Safety Rules -->
-                <div class="bg-indigo-50 p-6 rounded-2xl border border-indigo-200">
+                <div class="bg-indigo-50 p-6 rounded-3xl border border-indigo-100">
 
                     <div class="flex items-center mb-4">
                         <i class="fa-solid fa-scooter text-indigo-600 text-3xl mr-3"></i>
@@ -480,14 +840,14 @@
                     </div>
                     <div class="grid grid-cols-2 gap-4">
                         <div
-                            class="bg-white p-3 rounded-xl border border-indigo-100 flex flex-col items-center text-center">
+                            class="bg-white p-3 rounded-2xl border border-indigo-50 flex flex-col items-center text-center">
                             <i class="fa-solid fa-helmet-safety text-3xl text-red-500 mb-2"></i>
                             <span class="text-xs font-bold text-gray-500" data-i18n="pm_helmet">No Helmet</span>
                             <span class="text-sm font-black text-red-600 mt-1 bg-red-50 px-2 py-1 rounded">20,000
                                 W</span>
                         </div>
                         <div
-                            class="bg-white p-3 rounded-xl border border-indigo-100 flex flex-col items-center text-center">
+                            class="bg-white p-3 rounded-2xl border border-indigo-50 flex flex-col items-center text-center">
                             <i class="fa-solid fa-id-card text-3xl text-red-500 mb-2"></i>
                             <span class="text-xs font-bold text-gray-500" data-i18n="pm_license">No
                                 License</span>
@@ -495,7 +855,7 @@
                                 W</span>
                         </div>
                         <div
-                            class="bg-white p-3 rounded-xl border border-indigo-100 flex flex-col items-center text-center">
+                            class="bg-white p-3 rounded-2xl border border-indigo-50 flex flex-col items-center text-center">
                             <i class="fa-solid fa-user-group text-3xl text-red-500 mb-2"></i>
                             <span class="text-xs font-bold text-gray-500" data-i18n="pm_ride">2 People
                                 Riding</span>
@@ -503,7 +863,7 @@
                                 W</span>
                         </div>
                         <div
-                            class="bg-white p-3 rounded-xl border border-indigo-100 flex flex-col items-center text-center">
+                            class="bg-white p-3 rounded-2xl border border-indigo-50 flex flex-col items-center text-center">
                             <i class="fa-solid fa-road text-3xl text-red-500 mb-2"></i>
                             <span class="text-xs font-bold text-gray-500" data-i18n="pm_path">Sidewalk
                                 Riding</span>
@@ -516,10 +876,47 @@
     </section>
     </main>
 
-    <!-- Safety Tips Footer -->
-    <footer class="mt-auto p-6 bg-gray-100 text-center">
+    <!-- Fixed Bottom Navigation (Mobile App Context) -->
+    <nav
+        class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 flex justify-around items-center p-3 pb-6 z-50 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] text-gray-400">
+        <button onclick="switchTab('guide')" id="tab-guide"
+            class="flex flex-col items-center space-y-1 w-full tab-active text-blue-600">
+            <i class="fa-solid fa-book-open text-xl"></i>
+            <span class="text-[10px] font-bold" data-i18n="tab_guide">Guide</span>
+        </button>
+        <button onclick="switchTab('check')" id="tab-check"
+            class="flex flex-col items-center space-y-1 w-full hover:text-blue-500 transition-colors">
+            <i class="fa-solid fa-check-circle text-xl"></i>
+            <span class="text-[10px] font-bold" data-i18n="tab_check">Work</span>
+        </button>
+        <button onclick="switchTab('tax')" id="tab-tax"
+            class="flex flex-col items-center space-y-1 w-full hover:text-blue-500 transition-colors">
+            <i class="fa-solid fa-receipt text-xl"></i>
+            <span class="text-[10px] font-bold" data-i18n="tab_tax">Tax</span>
+        </button>
+        <button onclick="switchTab('paperwork')" id="tab-paperwork"
+            class="flex flex-col items-center space-y-1 w-full hover:text-blue-500 transition-colors">
+            <i class="fa-solid fa-file-signature text-xl"></i>
+            <span class="text-[10px] font-bold" data-i18n="tab_paperwork">Prep</span>
+        </button>
+        <button onclick="switchTab('safety')" id="tab-safety"
+            class="flex flex-col items-center space-y-1 w-full hover:text-blue-500 transition-colors">
+            <i class="fa-solid fa-shield-heart text-xl"></i>
+            <span class="text-[10px] font-bold" data-i18n="tab_safety">Safety</span>
+        </button>
+    </nav>
+
+    <!-- Toast Notification -->
+    <div id="toast"
+        class="fixed top-20 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-6 py-3 rounded-full shadow-2xl z-50 transition-all duration-300 opacity-0 pointer-events-none flex items-center space-x-2">
+        <i class="fa-solid fa-check-circle text-green-400"></i>
+        <span id="toast-msg">Copied!</span>
+    </div>
+
+    <!-- Safety Tips Footer (Hidden on mobile or moved?) -> Adjusted to be content footer -->
+    <footer class="mt-auto p-6 pb-24 bg-gray-50 text-center">
         <div class="max-w-3xl mx-auto">
-            <div class="bg-red-50 border border-red-200 rounded-lg p-3 text-red-800 text-sm font-semibold mb-3">
+            <div class="bg-red-50 border border-red-100 rounded-lg p-3 text-red-800 text-sm font-semibold mb-3">
                 <i class="fa-solid fa-triangle-exclamation mr-1"></i>
                 <span data-i18n="footer_warning">Working without permission = Max 20M KRW Fine!</span>
             </div>
