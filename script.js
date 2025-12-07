@@ -625,7 +625,7 @@ function setLanguage(lang) {
     document.documentElement.lang = lang;
 
     // Save to LocalStorage
-    localStorage.setItem('visaSafeLang', lang);
+    localStorage.setItem('uniWorkLang', lang);
 
     // Update Text
     document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -883,7 +883,7 @@ function initMap() {
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Language Check (LocalStorage)
-    const savedLang = localStorage.getItem('visaSafeLang');
+    const savedLang = localStorage.getItem('uniWorkLang');
     if (savedLang) {
         setLanguage(savedLang);
         // Ensure app is visible immediately if lang is known
@@ -923,7 +923,7 @@ function saveFormData() {
         cWage: document.getElementById('calc-wage').value,
         cHours: document.getElementById('calc-hours').value
     };
-    localStorage.setItem('visaSafeForm', JSON.stringify(data));
+    localStorage.setItem('uniWorkForm', JSON.stringify(data));
 }
 
 function generateResume() {
@@ -964,7 +964,7 @@ function generateResume() {
 }
 
 function loadFormData() {
-    const saved = localStorage.getItem('visaSafeForm');
+    const saved = localStorage.getItem('uniWorkForm');
     if (!saved) return;
     try {
         const d = JSON.parse(saved);
