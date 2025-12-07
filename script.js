@@ -21,6 +21,7 @@ const translations = {
         label_topik: "TOPIK 등급",
         label_gpa: "직전 학기 학점 (0.0 - 4.5)",
         label_residence: "입국 6개월 미만 (D-4 인 경우)",
+        label_first_sem: "신입생/편입생 (첫 학기) - 성적 면제",
         btn_check: "결과 확인",
 
 
@@ -45,6 +46,7 @@ const translations = {
         res_safe_d2: "학기 중: 주 25시간 (주말 포함) / 방학: 무제한",
         res_safe_d4: "주중: 20시간 / 주말: 포함 (최대 20시간)",
         res_safe_low: "주중: {hours}시간 / 주말: 10시간",
+        res_gpa_exempt: "(성적 요건 면제)",
         res_title_success: "허가 신청 가능 (Eligible)",
         res_title_warn: "주의 (시간 제한)",
 
@@ -235,6 +237,7 @@ const translations = {
         label_topik: "TOPIK Level",
         label_gpa: "Prev. Semester GPA (0.0 - 4.5)",
         label_residence: "Residence < 6 months (D-4 only)",
+        label_first_sem: "Freshman/Transfer (First Semester) - GPA Exempt",
         btn_check: "Check Result",
 
 
@@ -258,6 +261,7 @@ const translations = {
         res_safe_d2: "Semester: 25hr/week (incl. weekends) / Vacation: Unlimited",
         res_safe_d4: "Weekday: 20hr / Weekend: Included (Max 20hr)",
         res_safe_low: "Weekday: {hours}hr / Weekend: 10hr",
+        res_gpa_exempt: "(GPA Exempted)",
         res_title_success: "Eligible to Apply",
         res_title_warn: "Warning (Limited Hours)",
 
@@ -448,6 +452,7 @@ const translations = {
         label_topik: "韩语等级 (TOPIK)",
         label_gpa: "上学期绩点 (GPA)",
         label_residence: "入境不满6个月 (D-4)",
+        label_first_sem: "新生/插班生 (第一学期) - 成绩豁免",
         btn_check: "查询结果",
 
 
@@ -470,6 +475,7 @@ const translations = {
         res_safe_d2: "学期中: 周25小时 (含周末) / 假期: 无限制",
         res_safe_d4: "工作日: 20小时 / 周末: 包含 (最大20/周)",
         res_safe_low: "工作日: {hours}小时 / 周末: 10小时",
+        res_gpa_exempt: "(成绩豁免)",
         res_title_success: "可以申请许可 (Eligible)",
         res_title_warn: "注意 (时间限制)",
 
@@ -659,6 +665,7 @@ const translations = {
         label_topik: "Cấp TOPIK",
         label_gpa: "Điểm GPA kỳ trước",
         label_residence: "Dưới 6 tháng (D-4)",
+        label_first_sem: "Sinh viên mới/Chuyển trường (Kỳ đầu) - Miễn GPA",
         btn_check: "Xem kết quả",
 
 
@@ -681,6 +688,7 @@ const translations = {
         res_safe_d2: "Học kỳ: 25h/tuần (bao gồm cuối tuần) / Kỳ nghỉ: Không giới hạn",
         res_safe_d4: "Ngày thường: 20h / Cuối tuần: Bao gồm (Max 20h)",
         res_safe_low: "Ngày thường: {hours} giờ / Cuối tuần: 10 giờ",
+        res_gpa_exempt: "(Miễn GPA)",
         res_title_success: "Có thể đăng ký (Eligible)",
         res_title_warn: "Cảnh báo (Giới hạn giờ)",
 
@@ -928,29 +936,35 @@ function switchTab(tabName) {
 function calculateVisa() {
     const visa = document.querySelector('input[name="visa"]:checked')?.value || 'D-2';
     const topik = parseInt(document.getElementById('input-topik').value);
-    const gpa = parseFloat(document.getElementById('input-gpa').value);
+    const gpaInput = document.getElementById('input-gpa');
+    const gpa = parseFloat(gpaInput.value);
     const isUnder6Months = document.getElementById('input-residence').checked;
+    const isFirstSem = document.getElementById('input-first-sem').checked;
 
     const t = translations[currentLang];
 
     let resultText = "";
     let isSafe = true; // green vs red/yellow
+    let isExempt = false;
 
     // Logic Tree
-    if (isNaN(gpa)) {
-        // Validation: Empty GPA
-        resultText = t.msg_req_gpa;
-        isSafe = null; // Neutral state
-    } else if (gpa < 2.0) {
-        // FAIL: GPA
-        resultText = t.res_fail_gpa;
-        isSafe = false;
-    } else if (visa === 'D-4' && isUnder6Months) {
-        // FAIL: D-4 Residence
+    if (visa === 'D-4' && isUnder6Months) {
+        // FAIL: D-4 Residence (Strict rule, no exemption?)
+        // Assuming residence rule applies regardless of school semester
         resultText = t.res_fail_d4;
         isSafe = false;
+    } else if (!isFirstSem && (isNaN(gpa) || gpa < 2.0)) {
+        // FAIL: GPA (Only checks if NOT first semester)
+        if (isNaN(gpa)) {
+            resultText = t.msg_req_gpa;
+            isSafe = null;
+        } else {
+            resultText = t.res_fail_gpa;
+            isSafe = false;
+        }
     } else {
         // SUCCESS PATHS
+        isExempt = isFirstSem; // Flag for UI
         let weekdayLimit = 10;
         let weekendUnlimited = false;
 
@@ -1013,13 +1027,14 @@ function calculateVisa() {
         // Safe (Unlimited Weekend)
         box.classList.add('bg-green-50', 'border-green-200', 'text-green-800');
         icon.classList.add('fa-check-circle');
-        title.textContent = t.res_title_success;
+        if (isExempt) title.textContent += " " + t.res_gpa_exempt;
         desc.innerHTML = `<span class="font-bold text-lg">${resultText.replace('Unlimited', '<u class="text-green-600">Unlimited</u>').replace('무제한', '<u class="text-green-600">무제한</u>')}</span>`;
     } else {
         // Limited (Warning)
         box.classList.add('bg-yellow-50', 'border-yellow-200', 'text-yellow-800');
         icon.classList.add('fa-triangle-exclamation');
         title.textContent = t.res_title_warn;
+        if (isExempt) title.textContent += " " + t.res_gpa_exempt;
         desc.innerHTML = `<span class="font-bold text-lg">${resultText}</span>`;
     }
 
@@ -1150,6 +1165,30 @@ document.addEventListener('DOMContentLoaded', () => {
         el.addEventListener('input', saveFormData);
     });
 
+    // 5.1 Toggle Input on Checkbox
+    const semCheckbox = document.getElementById('input-first-sem');
+    const gpaInput = document.getElementById('input-gpa');
+
+    // Function to toggle
+    function toggleGpa() {
+        if (semCheckbox.checked) {
+            gpaInput.value = '';
+            gpaInput.disabled = true;
+            gpaInput.classList.add('bg-gray-100', 'cursor-not-allowed');
+        } else {
+            gpaInput.disabled = false;
+            gpaInput.classList.remove('bg-gray-100', 'cursor-not-allowed');
+        }
+    }
+
+    semCheckbox.addEventListener('change', () => {
+        toggleGpa();
+        saveFormData();
+    });
+
+    // Call once on init (after loadFormData)
+    setTimeout(toggleGpa, 100);
+
     // 6. Salary Listeners
     ['calc-wage', 'calc-hours'].forEach(id => {
         document.getElementById(id).addEventListener('input', updateSalary);
@@ -1162,6 +1201,7 @@ function saveFormData() {
         topik: document.getElementById('input-topik').value,
         gpa: document.getElementById('input-gpa').value,
         residence: document.getElementById('input-residence').checked,
+        firstSem: document.getElementById('input-first-sem').checked,
         cWage: document.getElementById('calc-wage').value,
         cHours: document.getElementById('calc-hours').value
     };
@@ -1232,6 +1272,7 @@ function loadFormData() {
         if (d.topik) document.getElementById('input-topik').value = d.topik;
         if (d.gpa) document.getElementById('input-gpa').value = d.gpa;
         if (d.residence !== undefined) document.getElementById('input-residence').checked = d.residence;
+        if (d.firstSem !== undefined) document.getElementById('input-first-sem').checked = d.firstSem;
 
         if (d.cWage) document.getElementById('calc-wage').value = d.cWage;
         if (d.cHours) document.getElementById('calc-hours').value = d.cHours;
