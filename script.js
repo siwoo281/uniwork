@@ -1179,8 +1179,11 @@ function generateResume() {
         return;
     }
 
+    // Always use Korean template for the output message (for Korean employers)
     const t = translations[currentLang];
-    const msg = t.resume_template
+    const template = translations['ko'].resume_template;
+
+    const msg = template
         .replace('{name}', name)
         .replace('{age}', age)
         .replace('{visa}', visa)
