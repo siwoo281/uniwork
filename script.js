@@ -644,6 +644,9 @@ function setLanguage(lang) {
             document.getElementById('app-container').classList.remove('hidden');
             document.getElementById('app-container').classList.add('animate-fade-in');
 
+            // Default to Check Status Tab
+            switchTab('check');
+
             // Map resize fix if loaded directly
             if (map) map.invalidateSize();
         }, 300);
