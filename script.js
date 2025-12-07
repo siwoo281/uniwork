@@ -911,6 +911,9 @@ function switchTab(tabName) {
     const btn = document.getElementById(`tab-${tabName}`);
     if (btn) btn.classList.add('text-blue-600', 'tab-active');
 
+    // Reset Scroll Position
+    window.scrollTo(0, 0);
+
     // Fix Map
     if (tabName === 'living' && map) {
         setTimeout(() => {
