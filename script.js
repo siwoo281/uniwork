@@ -15,7 +15,6 @@ const translations = {
         job_construction: "건설 현장 (일용직)",
         job_factory: "제조업 (공장)",
         job_teaching: "개인 과외 (미신고)",
-        tab_map: "지도",
         calc_title: "아르바이트 가능 여부 확인",
         ieqas_badge: "🏆 배재대: 교육국제화역량 인증대학 (+5시간)",
         label_visa: "비자 종류",
@@ -37,13 +36,13 @@ const translations = {
         doc_confirm: "시간제취업 확인서 (학교 직인 필수)",
 
         map_title: "주요 기관 안내",
-        footer_warning: "허가 없이 일하면 최대 2천만 원 벌금!",
+        footer_warning: "허가 없이 일하면 최대 3천만 원 벌금!",
 
 
         // Result Strings
         res_fail_gpa: "❌ 불가 (학점 2.0 미만)",
         res_fail_d4: "❌ 불가 (6개월 미만)",
-        res_safe_d2: "주중: 25시간 / 주말: 무제한 (권장)",
+        res_safe_d2: "학기 중: 주 25시간 (주말 포함) / 방학: 무제한",
         res_safe_d4: "주중: 20시간 / 주말: 포함 (최대 20시간)",
         res_safe_low: "주중: {hours}시간 / 주말: 10시간",
         res_title_success: "허가 신청 가능 (Eligible)",
@@ -88,8 +87,41 @@ const translations = {
         // Footer
         disclaimer: "본 앱의 결과는 참고용이며, 최종 판단은 출입국사무소에 있습니다. 본 정보의 활용으로 인한 불이익에 대해 책임지지 않습니다.",
 
-        // Job Prep (New)
-        tab_paperwork: "취업 준비",
+        // Job Hunting & Housing
+        tab_job: "취업",
+        tab_living: "생활",
+        job_sites_title: "일자리 찾기",
+        job_sites_desc: "한국에서 가장 많이 쓰는 알바 앱",
+        job_tip_title: "검색 팁",
+        job_tip_1: "'외국인가능' 공고 확인",
+        job_tip_2: "'초보가능' (경력 무관) 추천",
+
+        housing_title: "방 구하기",
+        housing_desc: "어플 & 부동산",
+        house_app_title: "1. 부동산 어플 (시세 확인용)",
+
+        // Dorm
+        dorm_title: "학교 기숙사",
+        dorm_subtitle: "배재대학교 기숙사",
+        dorm_contact_label: "연락처",
+        dorm_price_label: "예상 비용",
+        dorm_price: "~65-70만원/학기 (룸 타입별 상이)",
+
+        // Apps
+        apps_title: "필수 앱",
+        apps_desc: "한국 생활 필수템",
+        app_delivery_title: "배달 앱",
+        app_transport_title: "교통 & 길찾기",
+        app_payment_title: "결제 & 송금",
+        app_shopping_title: "쇼핑",
+        house_app_desc: "평균 월세 가격을 확인하기 좋아요.",
+        house_agent_title: "2. 공인중개사 (부동산)",
+        house_agent_desc: "학교 후문/정문 근처 부동산을 방문하는 것이 가장 안전합니다.",
+        house_check_title: "계약 전 확인:",
+        house_check_1: "보증금 (Deposit)",
+        house_check_2: "월세 (Monthly Rent)",
+        house_check_3: "관리비 (가스/인터넷 포함 여부)",
+
         resume_title: "1분 알바 지원서",
         resume_desc: "사장님께 보낼 공손한 지원 문자를 만들어보세요.",
         name_ph: "이름 (예: 마이클)",
@@ -134,7 +166,34 @@ const translations = {
         permit_step2_title: "학교 확인서 발급",
         permit_step2_desc: "국제교류팀 방문하여 '시간제취업확인서' 발급",
         permit_step3_title: "출입국사무소 방문",
-        permit_step3_desc: "준비물: 여권, 외국인등록증, 학교 확인서, 신청서",
+        permit_step3_desc: "여권, 외국인등록증, 확인서, 사업자등록증, 근로계약서 지참",
+
+        // Visa Travel
+        travel_title: "비자 & 여행",
+        travel_subtitle: "방학 때 고향 가도 되나요?",
+        travel_expiry_title: "⛔ 비자 만료일 주의",
+        travel_expiry_desc: "외국인등록증 뒷면 만료일 전에 반드시 출국해야 합니다.",
+        travel_reentry_title: "재입국 (방학 등)",
+        travel_reentry_1: "• 유효기간 남음 + 출국일 = 재입국 가능",
+        travel_reentry_2: "• 비자 만료됨 = 같은 비자로 재입국 불가 (새로 발급 필요)",
+
+        // Trash
+        trash_title: "쓰레기 배출",
+        trash_subtitle: "과태료 조심하세요!",
+        trash_general_title: "일반 쓰레기",
+        trash_general_desc: "흰색 종량제 봉투 (편의점 구매)",
+        trash_food_title: "음식물 쓰레기",
+        trash_food_desc: "노란색 봉투 (뼈/껍질 제외)",
+        trash_recycle_title: "재활용",
+        trash_recycle_desc: "투명 봉투 (캔, 병, 플라스틱)",
+
+        // Medicine
+        med_title: "약국 & 상비약",
+        med_subtitle: "아플 때 어디로?",
+        med_conv_title: "24시 편의점",
+        med_conv_desc: "안전 상비약 (가벼운 증상)",
+        med_pharm_title: "약국 (Yak-guk)",
+        med_pharm_desc: "전문 의약품 (처방전 등)",
         permit_step4_title: "승인 대기",
         permit_step4_desc: "처리 기간: 약 1-2주. 외국인등록증에 스탬프 받음!",
 
@@ -169,7 +228,6 @@ const translations = {
         job_construction: "Construction",
         job_factory: "Manufacturing",
         job_teaching: "Private Tutoring",
-        tab_map: "Map",
         tab_safety: "Safety",
         calc_title: "Int'l Student Visa Checker",
         ieqas_badge: "🏆 Pai Chai Univ: IEQAS Certified (+5hr)",
@@ -191,13 +249,13 @@ const translations = {
         doc_confirm: "Part-time Work Confirmation",
 
         map_title: "Nearby Locations",
-        footer_warning: "Working without permission = Max 20M KRW Fine!",
+        footer_warning: "Working without permission = Max 30M KRW Fine!",
 
 
         // Result Strings
         res_fail_gpa: "❌ Not Eligible (GPA < 2.0)",
         res_fail_d4: "❌ Not Eligible (< 6 months)",
-        res_safe_d2: "Weekday: 25hr / Weekend: Unlimited",
+        res_safe_d2: "Semester: 25hr/week (incl. weekends) / Vacation: Unlimited",
         res_safe_d4: "Weekday: 20hr / Weekend: Included (Max 20hr)",
         res_safe_low: "Weekday: {hours}hr / Weekend: 10hr",
         res_title_success: "Eligible to Apply",
@@ -242,8 +300,41 @@ const translations = {
         // Footer
         disclaimer: "Results are for reference only. Final authority rests with the Immigration Office. We are not liable for any issues.",
 
-        // Job Prep
-        tab_paperwork: "Job Prep",
+        // Job Hunting & Housing
+        tab_job: "Job",
+        tab_living: "Living",
+        job_sites_title: "Find Jobs",
+        job_sites_desc: "Most popular apps in Korea",
+        job_tip_title: "Search Tips",
+        job_tip_1: "Look for 'Foreigner Possible' (외국인가능)",
+        job_tip_2: "Look for 'No Experience' (초보가능)",
+
+        housing_title: "Finding Housing",
+        housing_desc: "Apps & Real Estate",
+        house_app_title: "1. Real Estate Apps",
+
+        // Dorm
+        dorm_title: "School Dormitory",
+        dorm_subtitle: "Pai Chai University Housing",
+        dorm_contact_label: "Contact",
+        dorm_price_label: "Approx. Price",
+        dorm_price: "~650,000-700,000 KRW/semester (varies by room type)",
+
+        // Apps
+        apps_title: "Essential Apps",
+        apps_desc: "Life in Korea",
+        app_delivery_title: "Food Delivery",
+        app_transport_title: "Transport & Navigation",
+        app_payment_title: "Payment & Banking",
+        app_shopping_title: "Shopping",
+        house_app_desc: "Good for checking average prices (Market Price).",
+        house_agent_title: "2. Real Estate Agent (Budongsan)",
+        house_agent_desc: "It is safest to visit a real estate agent near the school (West Gate/Main Gate).",
+        house_check_title: "Checklist:",
+        house_check_1: "Deposit (Bo-jeung-geum)",
+        house_check_2: "Monthly Rent (Wol-se)",
+        house_check_3: "Maintenance Fee (Gwan-ri-bi) - Ask what's included!",
+
         resume_title: "1-Minute Resume",
         resume_desc: "Create a polite Korean job application message.",
         name_ph: "Name (e.g. Michael)",
@@ -281,14 +372,41 @@ const translations = {
 
         // Work Permit Guide
         permit_title: "How to Apply for Work Permit",
-        permit_subtitle: "체류자격외 활동허가",
+        permit_subtitle: "Part-time Work Permit",
         permit_step1_title: "Check Requirements",
         permit_step1_a: "• D-2: GPA ≥ 2.0 + TOPIK level",
         permit_step1_b: "• D-4: Stay ≥ 6 months + Attendance ≥ 90%",
         permit_step2_title: "Get School Confirmation",
         permit_step2_desc: "Visit your school's International Office and get the 'Part-time Work Confirmation (시간제취업확인서)'",
         permit_step3_title: "Visit Immigration Office",
-        permit_step3_desc: "Bring: Passport, ARC, School Confirmation, Application Form",
+        permit_step3_desc: "Passport, ARC, Confirmation Form, Business License, Contract",
+
+        // Visa Travel
+        travel_title: "Visa & Travel",
+        travel_subtitle: "Can I go home?",
+        travel_expiry_title: "⛔ Visa Expiry Rule",
+        travel_expiry_desc: "You MUST leave Korea before the expiration date on your ARC.",
+        travel_reentry_title: "Re-entry (Vacation)",
+        travel_reentry_1: "• Valid ARC + Date left = OK to re-enter",
+        travel_reentry_2: "• Expired ARC = Cannot return on same visa",
+
+        // Trash
+        trash_title: "Recycling Guide",
+        trash_subtitle: "Don't get fined!",
+        trash_general_title: "General Waste",
+        trash_general_desc: "Standard White Bag (Jongnyangje)",
+        trash_food_title: "Food Waste",
+        trash_food_desc: "Yellow Bag (No bones/shells!)",
+        trash_recycle_title: "Recycling",
+        trash_recycle_desc: "Clear plastic bags (Glass, Can, PET)",
+
+        // Medicine
+        med_title: "Medicine",
+        med_subtitle: "Where to buy?",
+        med_conv_title: "24h Store",
+        med_conv_desc: "Safe Medicine (Basic)",
+        med_pharm_title: "Pharmacy",
+        med_pharm_desc: "Professional Help",
         permit_step4_title: "Wait for Approval",
         permit_step4_desc: "Processing time: ~1-2 weeks. You'll get a stamp on your ARC!",
 
@@ -323,8 +441,7 @@ const translations = {
         job_construction: "建筑工地 (搬砖)",
         job_factory: "制造业 (工厂)",
         job_teaching: "个人家教 (未申报)",
-        tab_map: "地图",
-        tab_safety: "안전",
+        tab_safety: "安全/保险",
         calc_title: "留学生打工资格查询",
         ieqas_badge: "🏆 培材大学: 教育国际化认证大学 (+5小时)",
         label_visa: "签证类型",
@@ -345,12 +462,12 @@ const translations = {
         doc_confirm: "打工确认书",
 
         map_title: "主要地点",
-        footer_warning: "非法打工最高罚款2000万韩元！",
+        footer_warning: "非法打工最高罚款3000万韩元！",
 
 
         res_fail_gpa: "❌ 不可打工 (GPA < 2.0)",
         res_fail_d4: "❌ 不可打工 (入境不满6个月)",
-        res_safe_d2: "工作日: 25小时 / 周末: 无限制",
+        res_safe_d2: "学期中: 周25小时 (含周末) / 假期: 无限制",
         res_safe_d4: "工作日: 20小时 / 周末: 包含 (最大20/周)",
         res_safe_low: "工作日: {hours}小时 / 周末: 10小时",
         res_title_success: "可以申请许可 (Eligible)",
@@ -395,8 +512,41 @@ const translations = {
         // Footer
         disclaimer: "结果仅供参考，最终决定权归出入境管理事务所所有。对于使用此信息造成的任何问题，我们概不负责。",
 
-        // Job Prep
-        tab_paperwork: "求职准备",
+        // Job Hunting & Housing
+        tab_job: "求职",
+        tab_living: "生活",
+        job_sites_title: "找工作",
+        job_sites_desc: "韩国最常用的兼职APP",
+        job_tip_title: "搜索技巧",
+        job_tip_1: "寻找 '外国人可能' (외국인가능)",
+        job_tip_2: "寻找 '新手可能' (초보가능)",
+
+        housing_title: "找房子",
+        housing_desc: "APP & 不动产",
+        house_app_title: "1. 找房APP (确认行情)",
+
+        // Dorm
+        dorm_title: "学校宿舍",
+        dorm_subtitle: "培材大学宿舍",
+        dorm_contact_label: "联系方式",
+        dorm_price_label: "预计费用",
+        dorm_price: "~65-70万韩元/学期 (房型不同)",
+
+        // Apps
+        apps_title: "必备APP",
+        apps_desc: "韩国生活必需",
+        app_delivery_title: "外卖APP",
+        app_transport_title: "交通 & 地图",
+        app_payment_title: "支付 & 银行",
+        app_shopping_title: "购物",
+        house_app_desc: "适合确认平均月租价格。",
+        house_agent_title: "2. 公인중개사 (부동산)",
+        house_agent_desc: "最安全的方法是访问学校后门/正门附近的房产中介。",
+        house_check_title: "签约前确认:",
+        house_check_1: "保证金 (Deposit)",
+        house_check_2: "月租 (Monthly Rent)",
+        house_check_3: "管理费 (是否包含水网)",
+
         resume_title: "1分钟求职信",
         resume_desc: "生成发送给老板的礼貌求职短信。",
         name_ph: "姓名",
@@ -434,14 +584,41 @@ const translations = {
 
         // Permit Guide
         permit_title: "如何申请工作许可",
-        permit_subtitle: "체류자격외 활동허가",
+        permit_subtitle: "资格外活动许可",
         permit_step1_title: "检查资格",
         permit_step1_a: "• D-2: GPA ≥ 2.0 + TOPIK",
         permit_step1_b: "• D-4: 居住 ≥ 6个月 + 出勤 ≥ 90%",
         permit_step2_title: "学校确认书",
         permit_step2_desc: "访问国际交流部门申请'兼职工作确认书'",
         permit_step3_title: "访问出入境管理局",
-        permit_step3_desc: "带上: 护照, 外国人登录证, 学校确认, 申请表",
+        permit_step3_desc: "护照, 外国人登录证, 确认书, 营业执照, 劳动合同",
+
+        // Visa Travel
+        travel_title: "签证 & 旅行",
+        travel_subtitle: "放假可以回国吗？",
+        travel_expiry_title: "⛔ 签证到期注意",
+        travel_expiry_desc: "必须在外国人登录证背面的到期日之前离境。",
+        travel_reentry_title: "再入境 (假期)",
+        travel_reentry_1: "• 有效期内 + 出境日期 = 可再入境",
+        travel_reentry_2: "• 签证过期 = 不可持同签证入境 (需重新申请)",
+
+        // Trash
+        trash_title: "垃圾分类",
+        trash_subtitle: "小心罚款!",
+        trash_general_title: "一般垃圾",
+        trash_general_desc: "白色计量袋 (便利店购买)",
+        trash_food_title: "食物垃圾",
+        trash_food_desc: "黄色袋子 (去骨/壳)",
+        trash_recycle_title: "回收垃圾",
+        trash_recycle_desc: "透明袋 (罐, 瓶, 塑料)",
+
+        // Medicine
+        med_title: "药店 & 药品",
+        med_subtitle: "生病去哪里？",
+        med_conv_title: "24小时便利店",
+        med_conv_desc: "安全常备药 (轻微症状)",
+        med_pharm_title: "药店 (Yak-guk)",
+        med_pharm_desc: "专业药品 (处方药等)",
         permit_step4_title: "等待批准",
         permit_step4_desc: "处理时间: 约1-2周. 登录证盖章!",
 
@@ -476,7 +653,6 @@ const translations = {
         job_construction: "Công trường xây dựng",
         job_factory: "Nhà máy (Sản xuất)",
         job_teaching: "Gia sư (Không báo cáo)",
-        tab_map: "Bản đồ",
         calc_title: "Kiểm tra điều kiện làm thêm",
         ieqas_badge: "🏆 ĐH Pai Chai: Đạt chuẩn IEQAS (+5 giờ)",
         label_visa: "Loại Visa",
@@ -497,12 +673,12 @@ const translations = {
         doc_confirm: "Giấy xác nhận làm thêm",
 
         map_title: "Địa điểm chính",
-        footer_warning: "Làm chui phạt tới 20 triệu won!",
+        footer_warning: "Làm chui phạt tới 30 triệu won!",
 
 
         res_fail_gpa: "❌ Không được làm (GPA < 2.0)",
         res_fail_d4: "❌ Không được làm (Dưới 6 tháng)",
-        res_safe_d2: "Ngày thường: 25h / Cuối tuần: Không giới hạn",
+        res_safe_d2: "Học kỳ: 25h/tuần (bao gồm cuối tuần) / Kỳ nghỉ: Không giới hạn",
         res_safe_d4: "Ngày thường: 20h / Cuối tuần: Bao gồm (Max 20h)",
         res_safe_low: "Ngày thường: {hours} giờ / Cuối tuần: 10 giờ",
         res_title_success: "Có thể đăng ký (Eligible)",
@@ -547,8 +723,41 @@ const translations = {
         // Footer
         disclaimer: "Kết quả chỉ mang tính tham khảo. Quyết định cuối cùng thuộc về Cục Quản lý Xuất nhập cảnh.",
 
-        // Job Prep
-        tab_paperwork: "Chuẩn bị việc làm",
+        // Job Hunting & Housing
+        tab_job: "Việc làm",
+        tab_living: "Sống",
+        job_sites_title: "Tìm việc làm",
+        job_sites_desc: "Ứng dụng tìm việc phổ biến nhất",
+        job_tip_title: "Mẹo tìm kiếm",
+        job_tip_1: "Tìm 'Người nước ngoài' (외국인가능)",
+        job_tip_2: "Tìm 'Không kinh nghiệm' (초보가능)",
+
+        housing_title: "Tìm phòng",
+        housing_desc: "Ứng dụng & Bất động sản",
+        house_app_title: "1. Ứng dụng BĐS",
+
+        // Dorm
+        dorm_title: "Ký túc xá trường",
+        dorm_subtitle: "Ký túc xá ĐH Pai Chai",
+        dorm_contact_label: "Liên hệ",
+        dorm_price_label: "Chi phí",
+        dorm_price: "~650,000-700,000 won/học kỳ (tùy loại phòng)",
+
+        // Apps
+        apps_title: "Ứng dụng cần thiết",
+        apps_desc: "Cuộc sống Hàn Quốc",
+        app_delivery_title: "Giao đồ ăn",
+        app_transport_title: "Giao thông & Bản đồ",
+        app_payment_title: "Thanh toán & Ngân hàng",
+        app_shopping_title: "Mua sắm",
+        house_app_desc: "Tốt để kiểm tra giá thuê trung bình.",
+        house_agent_title: "2. Môi giới BĐS (Budongsan)",
+        house_agent_desc: "An toàn nhất là đến văn phòng BĐS gần cổng trường.",
+        house_check_title: "Kiểm tra:",
+        house_check_1: "Tiền cọc (Deposit)",
+        house_check_2: "Tiền thuê (Monthly)",
+        house_check_3: "Phí quản lý (Điện/Nước/Net?)",
+
         resume_title: "Hồ sơ xin việc 1 phút",
         resume_desc: "Tạo tin nhắn xin việc lịch sự gửi cho chủ quán.",
         name_ph: "Tên",
@@ -586,21 +795,48 @@ const translations = {
 
         // Permit Guide
         permit_title: "Cách xin giấy phép",
-        permit_subtitle: "체류자격외 활동허가",
+        permit_subtitle: "Giấy phép làm thêm",
         permit_step1_title: "Kiểm tra điều kiện",
         permit_step1_a: "• D-2: GPA ≥ 2.0 + TOPIK",
         permit_step1_b: "• D-4: Ở trên 6 tháng + Đi học ≥ 90%",
         permit_step2_title: "Giấy xác nhận trường",
         permit_step2_desc: "Thăm văn phòng sinh viên quốc tế lấy 'Giấy xác nhận làm thêm'",
         permit_step3_title: "Đến Cục Xuất nhập cảnh",
-        permit_step3_desc: "Mang: Hộ chiếu, ARC, Xác nhận, Đơn",
+        permit_step3_desc: "Hộ chiếu, Thẻ cư trú, Giấy xác nhận, Giấy phép KD, Hợp đồng",
+
+        // Visa Travel
+        travel_title: "Visa & Du lịch",
+        travel_subtitle: "Có thể về nước không?",
+        travel_expiry_title: "⛔ Hết hạn Visa",
+        travel_expiry_desc: "BẠN PHẢI rời Hàn Quốc trước ngày hết hạn trên thẻ ARC.",
+        travel_reentry_title: "Tái nhập cảnh",
+        travel_reentry_1: "• Còn hạn ARC = Được phép quay lại",
+        travel_reentry_2: "• Hết hạn ARC = Không thể quay lại (Xin mới)",
+
+        // Trash
+        trash_title: "Phân loại rác",
+        trash_subtitle: "Cẩn thận bị phạt!",
+        trash_general_title: "Rác thường",
+        trash_general_desc: "Túi trắng tiêu chuẩn (Mua ở cửa hàng)",
+        trash_food_title: "Rác thực phẩm",
+        trash_food_desc: "Túi vàng (Không xương/vỏ!)",
+        trash_recycle_title: "Tái chế",
+        trash_recycle_desc: "Túi trong suốt (Lon, Chai, Nhựa)",
+
+        // Medicine
+        med_title: "Thuốc & Nhà thuốc",
+        med_subtitle: "Mua thuốc ở đâu?",
+        med_conv_title: "Cửa hàng 24h",
+        med_conv_desc: "Thuốc cơ bản (Cảm nhẹ)",
+        med_pharm_title: "Nhà thuốc (Yak-guk)",
+        med_pharm_desc: "Thuốc chuyên dụng (Kê đơn)",
         permit_step4_title: "Chờ duyệt",
         permit_step4_desc: "Thời gian: ~1-2 tuần. Đóng dấu ARC!",
 
         // Phrases
         phrases_title: "Tiếng Hàn hữu ích",
         phrases_desc: "Tìm việc và làm việc",
-        phrases_interview: "💼 Phiến vấn",
+        phrases_interview: "💼 Phỏng vấn",
         phrases_work: "🏪 Đang làm",
         phrases_problem: "⚠️ Nếu có vấn đề",
         phrase_when_start: "Khi nào bắt đầu?",
@@ -661,7 +897,7 @@ function showLanguageModal() {
 
 function switchTab(tabName) {
     // Hide all
-    ['check', 'guide', 'paperwork', 'map', 'safety', 'tax'].forEach(id => {
+    ['check', 'guide', 'job', 'living', 'safety'].forEach(id => {
         const sec = document.getElementById(`section-${id}`);
         const btn = document.getElementById(`tab-${id}`);
         if (sec) sec.classList.add('hidden');
@@ -676,7 +912,7 @@ function switchTab(tabName) {
     if (btn) btn.classList.add('text-blue-600', 'tab-active');
 
     // Fix Map
-    if (tabName === 'map' && map) {
+    if (tabName === 'living' && map) {
         setTimeout(() => {
             map.invalidateSize();
             map.panTo([36.322, 127.369]);
@@ -951,11 +1187,26 @@ function generateResume() {
     textArea.value = msg;
     document.getElementById('resume-result').classList.remove('hidden');
 
-    // Copy
-    textArea.select();
-    document.execCommand('copy'); // Legacy but works everywhere
+    // Copy - Modern Clipboard API with fallback
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        // Modern browsers
+        navigator.clipboard.writeText(msg).then(() => {
+            showToast();
+        }).catch(() => {
+            // Fallback if clipboard API fails
+            textArea.select();
+            document.execCommand('copy');
+            showToast();
+        });
+    } else {
+        // Legacy browsers
+        textArea.select();
+        document.execCommand('copy');
+        showToast();
+    }
+}
 
-    // Toast Notification
+function showToast() {
     const toast = document.getElementById('toast');
     const toastMsg = document.getElementById('toast-msg');
 

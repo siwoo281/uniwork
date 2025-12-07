@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UniWork - International Student Job Partner</title>
 
-    <!-- jQuery (Optional, but often useful with legacy plugins, though we are using Vanilla JS as requested) -->
-    <!-- We stuck to Vanilla JS as per requirements -->
+
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -135,7 +134,7 @@
                                 </li>
                                 <li class="flex items-center">
                                     <i class="fa-solid fa-check text-green-500 mr-2"></i>
-                                    <span>Weekend: <strong class="text-green-600">Unlimited</strong> 🚀</span>
+                                    <span>Vacation Periods: <strong class="text-green-600">Unlimited</strong> 🚀</span>
                                 </li>
                             </ul>
                         </div>
@@ -252,7 +251,7 @@
                                     <h4 class="font-bold text-gray-800 mb-1" data-i18n="permit_step3_title">Visit
                                         Immigration Office</h4>
                                     <p class="text-xs text-gray-600 mb-2" data-i18n="permit_step3_desc">Bring: Passport,
-                                        ARC, School Confirmation, Application Form</p>
+                                        ARC, Confirmation Form, Business License, Contract</p>
                                     <p class="text-xs text-green-700 font-semibold"><i
                                             class="fa-solid fa-phone mr-1"></i> 1345 (For help)</p>
                                 </div>
@@ -272,6 +271,33 @@
                                         weeks. You'll get a stamp on your ARC!</p>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visa Travel & Re-entry Info (NEW) -->
+                <div class="bg-purple-50 p-6 rounded-3xl border border-purple-100 shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-plane-departure text-purple-600 text-3xl mr-3"></i>
+                        <div>
+                            <h2 class="text-xl font-bold text-purple-900" data-i18n="travel_title">Visa & Travel</h2>
+                            <p class="text-sm text-purple-700" data-i18n="travel_subtitle">Can I go home?</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-4 rounded-2xl border border-purple-50 shadow-sm space-y-3">
+                        <div class="p-3 bg-red-50 rounded-lg border border-red-100">
+                            <h4 class="font-bold text-red-800 text-sm mb-1" data-i18n="travel_expiry_title">⛔ Visa
+                                Expiry Rule</h4>
+                            <p class="text-xs text-red-600" data-i18n="travel_expiry_desc">You MUST leave Korea before
+                                the expiration date on your ARC.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-1" data-i18n="travel_reentry_title">Re-entry
+                                (Vacation)</h4>
+                            <ul class="text-xs text-gray-600 space-y-1">
+                                <li data-i18n="travel_reentry_1">• Valid ARC + Date left = OK to re-enter</li>
+                                <li data-i18n="travel_reentry_2">• Expired ARC = Cannot return on same visa</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -298,10 +324,8 @@
                         </div>
                     </div>
                 </div>
-            </section>
-
-            <!-- Section 0.5: Tax & Insurance (New) -->
-            <section id="section-tax" class="hidden space-y-6 pb-24">
+                <!-- Combined Tax Section into Rules Guide -->
+                <div class="border-t-2 border-dashed border-gray-200 my-8"></div>
                 <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm">
                     <h2 class="text-2xl font-bold mb-4 text-gray-800 flex items-center">
                         <i class="fa-solid fa-receipt text-green-500 mr-2"></i>
@@ -567,10 +591,43 @@
 
 
 
-            <!-- Section 2: Job Prep (Resume & Docs) -->
-            <section id="section-paperwork" class="space-y-6 hidden pb-24">
+            <!-- Section 2: Job Hunting (Renamed from Paperwork) -->
+            <section id="section-job" class="space-y-6 hidden pb-24">
 
-                <!-- Resume Generator (New Feature) -->
+                <!-- Job Search Platforms (New) -->
+                <div class="bg-blue-50 p-6 rounded-3xl border border-blue-100">
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-magnifying-glass-location text-blue-600 text-2xl mr-3"></i>
+                        <div>
+                            <h2 class="text-xl font-bold text-blue-900" data-i18n="job_sites_title">Find Jobs</h2>
+                            <p class="text-sm text-blue-700" data-i18n="job_sites_desc">Most popular apps in Korea</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <a href="https://m.alba.co.kr/" target="_blank"
+                            class="bg-white p-4 rounded-2xl border border-blue-50 shadow-sm flex flex-col items-center justify-center hover:bg-blue-50 transition-colors group">
+                            <span class="text-4xl mb-2 group-hover:scale-110 transition-transform">🐝</span>
+                            <span class="font-bold text-gray-800 text-sm">AlbaHeaven</span>
+                            <span class="text-xs text-gray-400">알바천국</span>
+                        </a>
+                        <a href="https://m.albamon.com/" target="_blank"
+                            class="bg-white p-4 rounded-2xl border border-blue-50 shadow-sm flex flex-col items-center justify-center hover:bg-blue-50 transition-colors group">
+                            <span class="text-4xl mb-2 group-hover:scale-110 transition-transform">👾</span>
+                            <span class="font-bold text-gray-800 text-sm">Albamon</span>
+                            <span class="text-xs text-gray-400">알바몬</span>
+                        </a>
+                    </div>
+                    <div class="mt-4 bg-white p-4 rounded-xl text-sm text-blue-800">
+                        <p class="font-bold mb-1"><i class="fa-solid fa-lightbulb text-yellow-500 mr-2"></i><span
+                                data-i18n="job_tip_title">Search Tips</span></p>
+                        <ul class="list-disc list-inside text-xs space-y-1 text-gray-600">
+                            <li data-i18n="job_tip_1">"Foreigner Possible" (외국인가능)</li>
+                            <li data-i18n="job_tip_2">"No Experience" (초보가능)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Resume Generator (Existing) -->
                 <div class="bg-indigo-50 p-6 rounded-3xl border border-indigo-100 no-print">
                     <div class="flex items-center mb-4">
                         <i class="fa-solid fa-pen-nib text-indigo-600 text-2xl mr-3"></i>
@@ -729,9 +786,222 @@
                 </div>
             </section>
 
-            <!-- Section 3: Map -->
-            <section id="section-map" class="space-y-6 hidden h-full pb-24">
-                <div class="bg-white p-4 rounded-3xl shadow-sm border border-gray-100 h-[600px] flex flex-col">
+            <!-- Section 3: Living (Housing & Map) -->
+            <section id="section-living" class="space-y-6 hidden h-full pb-24">
+
+                <!-- Housing Guide (New) -->
+                <div class="bg-orange-50 p-6 rounded-3xl border border-orange-100">
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-house-chimney text-orange-600 text-2xl mr-3"></i>
+                        <div>
+                            <h2 class="text-xl font-bold text-orange-900" data-i18n="housing_title">Finding Housing</h2>
+                            <p class="text-sm text-orange-700" data-i18n="housing_desc">Apps & Real Estate</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Method 1: Apps -->
+                        <div class="bg-white p-4 rounded-2xl border border-orange-50 shadow-sm">
+                            <h3 class="font-bold text-gray-800 mb-2" data-i18n="house_app_title">1. Real Estate Apps
+                            </h3>
+                            <div class="flex space-x-4">
+                                <div class="text-center group cursor-pointer"
+                                    onclick="window.open('https://www.zigbang.com')">
+                                    <div
+                                        class="w-12 h-12 bg-yellow-400 rounded-xl mx-auto mb-1 flex items-center justify-center text-white font-bold text-xs shadow-md group-hover:scale-110 transition-transform">
+                                        Zig<br>bang</div>
+                                    <span class="text-xs font-bold text-gray-600">Zigbang</span>
+                                </div>
+                                <div class="text-center group cursor-pointer"
+                                    onclick="window.open('https://www.dabangapp.com')">
+                                    <div
+                                        class="w-12 h-12 bg-blue-500 rounded-xl mx-auto mb-1 flex items-center justify-center text-white font-bold text-xs shadow-md group-hover:scale-110 transition-transform">
+                                        Da<br>bang</div>
+                                    <span class="text-xs font-bold text-gray-600">Dabang</span>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-2" data-i18n="house_app_desc">Good for checking average
+                                prices (Market Price).</p>
+                        </div>
+
+                        <!-- Method 2: Offline -->
+                        <div class="bg-white p-4 rounded-2xl border border-orange-50 shadow-sm">
+                            <h3 class="font-bold text-gray-800 mb-2" data-i18n="house_agent_title">2. Real Estate Agent
+                                (Budongsan)</h3>
+                            <p class="text-sm text-gray-600 mb-2" data-i18n="house_agent_desc">It is safest to visit a
+                                real
+                                estate agent near the school (West Gate/Main Gate).</p>
+                            <div class="bg-gray-50 p-3 rounded-lg text-xs space-y-1">
+                                <p class="font-bold text-gray-700" data-i18n="house_check_title">Checklist:</p>
+                                <p>✅ <span data-i18n="house_check_1">Deposit (Bo-jeung-geum)</span></p>
+                                <p>✅ <span data-i18n="house_check_2">Monthly Rent (Wol-se)</span></p>
+                                <p>✅ <span data-i18n="house_check_3">Maintenance Fee (Gwan-ri-bi)</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trash & Recycling Guide (NEW) -->
+                <div class="bg-blue-50 p-6 rounded-3xl border border-blue-100">
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-trash-can text-blue-600 text-2xl mr-3"></i>
+                        <div>
+                            <h2 class="text-xl font-bold text-blue-900" data-i18n="trash_title">Recycling Guide</h2>
+                            <p class="text-sm text-blue-700" data-i18n="trash_subtitle">Don't get fined!</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-4 rounded-2xl border border-blue-50 shadow-sm space-y-3">
+                        <div class="flex items-start space-x-3">
+                            <div
+                                class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-xs border border-gray-200">
+                                ⚪</div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-sm" data-i18n="trash_general_title">General
+                                    Waste</h4>
+                                <p class="text-xs text-gray-500" data-i18n="trash_general_desc">Standard White Bag
+                                    (Jongnyangje)
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div
+                                class="w-8 h-8 rounded-full bg-yellow-100 flex items-center justify-center text-xs border border-yellow-200">
+                                🟡</div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-sm" data-i18n="trash_food_title">Food Waste</h4>
+                                <p class="text-xs text-gray-500" data-i18n="trash_food_desc">Yellow Bag (No
+                                    bones/shells!)</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div
+                                class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-xs border border-green-200">
+                                ♻️</div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-sm" data-i18n="trash_recycle_title">Recycling
+                                </h4>
+                                <p class="text-xs text-gray-500" data-i18n="trash_recycle_desc">Clear plastic bags
+                                    (Glass, Can,
+                                    PET)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dorm Information (Pai Chai University) -->
+                <div class="bg-purple-50 p-6 rounded-3xl border border-purple-100">
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-building text-purple-600 text-2xl mr-3"></i>
+                        <div>
+                            <h2 class="text-xl font-bold text-purple-900" data-i18n="dorm_title">School Dormitory</h2>
+                            <p class="text-sm text-purple-700" data-i18n="dorm_subtitle">Pai Chai University Housing</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-4 rounded-2xl border border-purple-50 shadow-sm space-y-3">
+                        <div class="flex items-start space-x-2">
+                            <i class="fa-solid fa-phone text-purple-500 mt-1"></i>
+                            <div>
+                                <p class="text-xs text-gray-500" data-i18n="dorm_contact_label">Contact</p>
+                                <p class="font-bold text-gray-800">042-520-5229</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-2">
+                            <i class="fa-solid fa-won-sign text-purple-500 mt-1"></i>
+                            <div>
+                                <p class="text-xs text-gray-500" data-i18n="dorm_price_label">Approx. Price</p>
+                                <p class="text-sm text-gray-700" data-i18n="dorm_price">~650,000-700,000 KRW/semester
+                                    (varies by room type)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Popular Apps in Korea (NEW) -->
+                <div class="bg-green-50 p-6 rounded-3xl border border-green-100">
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-mobile-screen-button text-green-600 text-2xl mr-3"></i>
+                        <div>
+                            <h2 class="text-xl font-bold text-green-900" data-i18n="apps_title">Essential Apps</h2>
+                            <p class="text-sm text-green-700" data-i18n="apps_desc">Life in Korea</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3">
+                        <!-- Delivery -->
+                        <div class="bg-white p-4 rounded-2xl border border-green-50 shadow-sm">
+                            <h3 class="font-bold text-gray-800 mb-2 flex items-center">
+                                <i class="fa-solid fa-bowl-food text-orange-500 mr-2"></i>
+                                <span data-i18n="app_delivery_title">Food Delivery</span>
+                            </h3>
+                            <div class="grid grid-cols-2 gap-2 text-sm">
+                                <div class="bg-teal-50 p-2 rounded-lg text-center">
+                                    <p class="font-bold text-gray-700">배달의민족</p>
+                                    <p class="text-xs text-gray-500">Baemin</p>
+                                </div>
+                                <div class="bg-purple-50 p-2 rounded-lg text-center">
+                                    <p class="font-bold text-gray-700">쿠팡이츠</p>
+                                    <p class="text-xs text-gray-500">Coupang Eats</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Transport -->
+                        <div class="bg-white p-4 rounded-2xl border border-green-50 shadow-sm">
+                            <h3 class="font-bold text-gray-800 mb-2 flex items-center">
+                                <i class="fa-solid fa-bus text-blue-500 mr-2"></i>
+                                <span data-i18n="app_transport_title">Transport & Navigation</span>
+                            </h3>
+                            <div class="grid grid-cols-2 gap-2 text-sm">
+                                <div class="bg-blue-50 p-2 rounded-lg text-center">
+                                    <p class="font-bold text-gray-700">카카오맵</p>
+                                    <p class="text-xs text-gray-500">Kakao Map</p>
+                                </div>
+                                <div class="bg-green-50 p-2 rounded-lg text-center">
+                                    <p class="font-bold text-gray-700">네이버지도</p>
+                                    <p class="text-xs text-gray-500">Naver Map</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Banking & Payment -->
+                        <div class="bg-white p-4 rounded-2xl border border-green-50 shadow-sm">
+                            <h3 class="font-bold text-gray-800 mb-2 flex items-center">
+                                <i class="fa-solid fa-credit-card text-yellow-500 mr-2"></i>
+                                <span data-i18n="app_payment_title">Payment & Banking</span>
+                            </h3>
+                            <div class="grid grid-cols-2 gap-2 text-sm">
+                                <div class="bg-yellow-50 p-2 rounded-lg text-center">
+                                    <p class="font-bold text-gray-700">카카오페이</p>
+                                    <p class="text-xs text-gray-500">Kakao Pay</p>
+                                </div>
+                                <div class="bg-green-50 p-2 rounded-lg text-center">
+                                    <p class="font-bold text-gray-700">토스</p>
+                                    <p class="text-xs text-gray-500">Toss</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Shopping -->
+                        <div class="bg-white p-4 rounded-2xl border border-green-50 shadow-sm">
+                            <h3 class="font-bold text-gray-800 mb-2 flex items-center">
+                                <i class="fa-solid fa-shopping-cart text-pink-500 mr-2"></i>
+                                <span data-i18n="app_shopping_title">Shopping</span>
+                            </h3>
+                            <div class="grid grid-cols-2 gap-2 text-sm">
+                                <div class="bg-orange-50 p-2 rounded-lg text-center">
+                                    <p class="font-bold text-gray-700">쿠팡</p>
+                                    <p class="text-xs text-gray-500">Coupang</p>
+                                </div>
+                                <div class="bg-red-50 p-2 rounded-lg text-center">
+                                    <p class="font-bold text-gray-700">마켓컬리</p>
+                                    <p class="text-xs text-gray-500">Market Kurly</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-4 rounded-3xl shadow-sm border border-gray-100 h-[500px] flex flex-col">
                     <h2 class="text-xl font-bold mb-4 text-gray-800 flex items-center">
                         <i class="fa-solid fa-map-marked-alt text-blue-500 mr-2"></i>
                         <span data-i18n="map_title">Nearby Locations</span>
@@ -880,25 +1150,25 @@
     <!-- Fixed Bottom Navigation (Mobile App Context) -->
     <nav
         class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 flex justify-around items-center p-3 pb-6 z-50 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] text-gray-400">
-        <button onclick="switchTab('guide')" id="tab-guide"
-            class="flex flex-col items-center space-y-1 w-full tab-active text-blue-600">
-            <i class="fa-solid fa-book-open text-xl"></i>
-            <span class="text-[10px] font-bold" data-i18n="tab_guide">Guide</span>
-        </button>
         <button onclick="switchTab('check')" id="tab-check"
             class="flex flex-col items-center space-y-1 w-full hover:text-blue-500 transition-colors">
             <i class="fa-solid fa-check-circle text-xl"></i>
-            <span class="text-[10px] font-bold" data-i18n="tab_check">Work</span>
+            <span class="text-[10px] font-bold" data-i18n="tab_check">Check</span>
         </button>
-        <button onclick="switchTab('tax')" id="tab-tax"
+        <button onclick="switchTab('guide')" id="tab-guide"
             class="flex flex-col items-center space-y-1 w-full hover:text-blue-500 transition-colors">
-            <i class="fa-solid fa-receipt text-xl"></i>
-            <span class="text-[10px] font-bold" data-i18n="tab_tax">Tax</span>
+            <i class="fa-solid fa-book-open text-xl"></i>
+            <span class="text-[10px] font-bold" data-i18n="tab_guide">Rules</span>
         </button>
-        <button onclick="switchTab('paperwork')" id="tab-paperwork"
+        <button onclick="switchTab('job')" id="tab-job"
             class="flex flex-col items-center space-y-1 w-full hover:text-blue-500 transition-colors">
-            <i class="fa-solid fa-file-signature text-xl"></i>
-            <span class="text-[10px] font-bold" data-i18n="tab_paperwork">Prep</span>
+            <i class="fa-solid fa-briefcase text-xl"></i>
+            <span class="text-[10px] font-bold" data-i18n="tab_job">Job</span>
+        </button>
+        <button onclick="switchTab('living')" id="tab-living"
+            class="flex flex-col items-center space-y-1 w-full hover:text-blue-500 transition-colors">
+            <i class="fa-solid fa-house text-xl"></i>
+            <span class="text-[10px] font-bold" data-i18n="tab_living">Living</span>
         </button>
         <button onclick="switchTab('safety')" id="tab-safety"
             class="flex flex-col items-center space-y-1 w-full hover:text-blue-500 transition-colors">
@@ -919,7 +1189,7 @@
         <div class="max-w-3xl mx-auto">
             <div class="bg-red-50 border border-red-100 rounded-lg p-3 text-red-800 text-sm font-semibold mb-3">
                 <i class="fa-solid fa-triangle-exclamation mr-1"></i>
-                <span data-i18n="footer_warning">Working without permission = Max 20M KRW Fine!</span>
+                <span data-i18n="footer_warning">Working without permission = Max 30M KRW Fine!</span>
             </div>
 
             <p class="text-xs text-gray-400 leading-relaxed px-4" data-i18n="disclaimer">
