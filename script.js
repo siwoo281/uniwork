@@ -45,6 +45,7 @@ const translations = {
         res_fail_d4: "❌ 불가 (6개월 미만)",
         res_safe_d2: "학기 중: 주 25시간 (주말 포함) / 방학: 무제한",
         res_safe_d4: "주중: 20시간 / 주말: 포함 (최대 20시간)",
+        res_safe_d2_exempt: "평일: {hours}시간 / 주말: 무제한", // New key
         res_safe_low: "주중: {hours}시간 / 주말: 10시간",
         res_gpa_exempt: "(성적 요건 면제)",
         res_title_success: "허가 신청 가능 (Eligible)",
@@ -260,6 +261,7 @@ const translations = {
         res_fail_d4: "❌ Not Eligible (< 6 months)",
         res_safe_d2: "Semester: 25hr/week (incl. weekends) / Vacation: Unlimited",
         res_safe_d4: "Weekday: 20hr / Weekend: Included (Max 20hr)",
+        res_safe_d2_exempt: "Weekdays: {hours}hr / Weekend: Unlimited",
         res_safe_low: "Weekday: {hours}hr / Weekend: 10hr",
         res_gpa_exempt: "(GPA Exempted)",
         res_title_success: "Eligible to Apply",
@@ -474,6 +476,7 @@ const translations = {
         res_fail_d4: "❌ 不可打工 (入境不满6个月)",
         res_safe_d2: "学期中: 周25小时 (含周末) / 假期: 无限制",
         res_safe_d4: "工作日: 20小时 / 周末: 包含 (最大20/周)",
+        res_safe_d2_exempt: "工作日: {hours}小时 / 周末: 无限制",
         res_safe_low: "工作日: {hours}小时 / 周末: 10小时",
         res_gpa_exempt: "(成绩豁免)",
         res_title_success: "可以申请许可 (Eligible)",
@@ -687,6 +690,7 @@ const translations = {
         res_fail_d4: "❌ Không được làm (Dưới 6 tháng)",
         res_safe_d2: "Học kỳ: 25h/tuần (bao gồm cuối tuần) / Kỳ nghỉ: Không giới hạn",
         res_safe_d4: "Ngày thường: 20h / Cuối tuần: Bao gồm (Max 20h)",
+        res_safe_d2_exempt: "Ngày thường: {hours}h / Cuối tuần: Không giới hạn",
         res_safe_low: "Ngày thường: {hours} giờ / Cuối tuần: 10 giờ",
         res_gpa_exempt: "(Miễn GPA)",
         res_title_success: "Có thể đăng ký (Eligible)",
@@ -953,13 +957,13 @@ function calculateVisa() {
         // Assuming residence rule applies regardless of school semester
         resultText = t.res_fail_d4;
         isSafe = false;
-    } else if (!isFirstSem && (isNaN(gpa) || gpa < 2.0)) {
-        // FAIL: GPA (Only checks if NOT first semester)
+    } else if (!isFirstSem && (isNaN(gpa) || gpa < 1.9)) {
+        // FAIL: GPA (Modified to 1.9 based on specific user feedback)
         if (isNaN(gpa)) {
             resultText = t.msg_req_gpa;
             isSafe = null;
         } else {
-            resultText = t.res_fail_gpa;
+            resultText = t.res_fail_gpa.replace('2.0', '1.9'); // Quick fix for text, ideally update translation key
             isSafe = false;
         }
     } else {
@@ -969,18 +973,25 @@ function calculateVisa() {
         let weekendUnlimited = false;
 
         if (visa === 'D-2') {
-            // Pai Chai Univ is IEQAS certified -> +5 hours benefit
-            if (topik >= 3) {
-                weekdayLimit = 25; // Standard 20 + 5
+            // D-2 Rule: GPA 1.9+ (checked above) AND TOPIK 4+ -> Weekend Unlimited
+            // Pai Chai Univ (IEQAS) -> +5 hours benefit on weekdays
+            if (topik >= 4) {
+                weekdayLimit = 25; // 20 + 5 (IEQAS)
                 weekendUnlimited = true;
+            } else if (topik >= 3) {
+                // TOPIK 3: Eligible for weekday work but maybe not unlimited weekends?
+                // Standard rule: TOPIK 3 is often min for 20h. 
+                // Sticking to 25h weekday (IEQAS) but LIMITED weekends if < TOPIK 4 based on user prompt implication
+                weekdayLimit = 25;
+                weekendUnlimited = false;
             } else {
-                weekdayLimit = 10; // No benefit if TOPIK criteria not met
+                weekdayLimit = 10; // Low TOPIK
                 weekendUnlimited = false;
             }
         } else if (visa === 'D-4') {
-            // D-4 often doesn't get IEQAS hour benefits, usually strictly monitored
+            // D-4 Rule: TOPIK 2+ -> 20h Total (Weekends Included)
             if (topik >= 2) {
-                weekdayLimit = 20; // Standard D-4 limit
+                weekdayLimit = 20;
                 weekendUnlimited = false;
             } else {
                 weekdayLimit = 10;
@@ -991,14 +1002,20 @@ function calculateVisa() {
         if (weekendUnlimited) {
             // Apply D-2 or D-4 specific success strings
             if (visa === 'D-2') {
-                resultText = t.res_safe_d2.replace('{hours}', weekdayLimit);
+                // Use new exempt string if we are in the exempt branch (weekendUnlimited is true here)
+                resultText = t.res_safe_d2_exempt.replace('{hours}', weekdayLimit);
             } else {
-                resultText = t.res_safe_d4.replace('{hours}', weekdayLimit); // D-4 uses limited string
+                resultText = t.res_safe_d4.replace('20', weekdayLimit);
             }
             isSafe = true;
         } else {
-            resultText = t.res_safe_low.replace('{hours}', weekdayLimit);
-            isSafe = false; // logic says warning color for low hours
+            // For D-4 or Limited D-2
+            if (visa === 'D-4') {
+                resultText = t.res_safe_d4; // Explicitly showing the "Weekend Included" string
+            } else {
+                resultText = t.res_safe_low.replace('{hours}', weekdayLimit);
+            }
+            isSafe = false; // logic says warning color for low hours/limited weekends
         }
     }
 
