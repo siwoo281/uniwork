@@ -433,6 +433,436 @@ const translations = {
         // Holiday Pay
         holiday_pay_label: "Est. Weekly Holiday Pay:",
     },
+    jp: {
+        tab_check: "資格確認",
+        tab_guide: "規定ガイド",
+        tab_paperwork: "必要書類",
+        tab_map: "地図",
+        guide_title: "時間制限ガイド",
+        guide_subtitle: "D-2 / D-4 ビザの違い",
+        guide_time_title: "勤務可能時間",
+        guide_ban_title: "🚫 絶対禁止 (摘発時追放)",
+        guide_ban_desc: "不法就労摘発時、ビザ取消の可能性大",
+        job_delivery: "配達代行 (ライダー)",
+        job_construction: "建設現場 (日雇い)",
+        job_factory: "製造業 (工場)",
+        job_teaching: "個人レッスン (未申告)",
+        tab_safety: "安全/保険",
+        calc_title: "アルバイト資格確認",
+        ieqas_badge: "🏆 培材大: 教育国際化力量認証大学 (+5時間)",
+        label_visa: "ビザの種類",
+        label_topik: "TOPIK等級",
+        label_gpa: "直前学期の成績 (GPA)",
+        label_residence: "入国6ヶ月未満 (D-4の場合)",
+        label_first_sem: "新入生/編入生 (初学期) - 成績免除",
+        btn_check: "結果確認",
+
+
+        // Docs
+        check_title: "必須持参書類リスト",
+        check_desc: "訪問前に必ず確認してください！",
+        doc_passport: "パスポート (Passport)",
+        doc_arc: "外国人登録証 (ARC)",
+        doc_form: "統合申請書",
+        doc_biz: "事業者登録証の写し",
+        doc_contract: "標準勤労契約書 (写し)",
+        doc_confirm: "時間制就業確認書",
+
+        map_title: "主要機関案内",
+        footer_warning: "無許可就労時、最大3千万ウォンの罰金！",
+
+
+        res_fail_gpa: "❌ 不可 (成績 2.0未満)",
+        res_fail_d4: "❌ 不可 (6ヶ月未満)",
+        res_safe_d2: "学期中: 週25時間 (週末含む) / 放学: 無制限",
+        res_safe_d4: "平日: 20時間 / 週末: 含む (最大20時間)",
+        res_safe_d2_exempt: "平日: {hours}時間 / 週末: 無制限",
+        res_safe_low: "平日: {hours}時間 / 週末: 10時間",
+        res_gpa_exempt: "(成績要件免除)",
+        res_title_success: "許可申請可能 (Eligible)",
+        res_title_warn: "注意 (時間制限)",
+
+
+
+        // Salary Calc
+        salary_title: "給与計算機",
+        min_wage_label: "2025年 法定最低時給",
+        label_my_wage: "私の時給",
+        label_hours: "週間勤務時間",
+        label_monthly: "予想月給 (4週基準)",
+        msg_low_wage: "🚨 違法です！最低賃金より低いです。",
+
+        // Safety
+        tab_safety: "安全/保険",
+        safety_title: "緊急連絡先",
+        emerg_police: "警察 (112)",
+        emerg_fire: "消防/救急 (119)",
+        emerg_immi: "出入国管理 (1345)",
+        ins_title: "健康保険必須加入！",
+        ins_desc: "全ての留学生は国民健康保険への加入が義務です。保険がないと医療費が非常に高額になります。",
+        warn_title: "⚠️ 絶対にしないでください！",
+        warn_bank: "口座を貸さないでください (ボイスフィッシング共犯処罰)",
+        warn_drug: "麻薬は韓国で重犯罪です。",
+
+        // PM Safety
+        pm_title: "電動キックボード安全規則",
+        pm_helmet: "ヘルメット未着用",
+        pm_license: "無免許運転",
+        pm_ride: "2人以上搭乗",
+        pm_path: "歩道走行",
+
+        // Validation
+        msg_req_gpa: "直前学期の成績を入力してください。",
+
+        // 1345 Help
+        help_title: "外国人総合案内センター (1345)",
+        help_desc_1: "留学生の人権侵害および賃金未払い相談支援",
+
+        // Footer
+        disclaimer: "本アプリの結果は参考用であり、最終的な判断は出入国管理事務所にあります。本情報の活用による不利益について責任を負いません。",
+
+        // Job Hunting & Housing
+        tab_job: "就職",
+        tab_living: "生活",
+        job_sites_title: "仕事探し",
+        job_sites_desc: "韓国で最も使われているバイトアプリ",
+        job_tip_title: "検索のヒント",
+        job_tip_1: "「外国人可能 (외국인가능)」を確認",
+        job_tip_2: "「初心者可能 (초보가능)」推奨",
+
+        housing_title: "部屋探し",
+        housing_desc: "アプリ & 不動産",
+        house_app_title: "1. 不動産アプリ (相場確認用)",
+
+        // Dorm
+        dorm_title: "学校寮",
+        dorm_subtitle: "培材大学寮",
+        dorm_contact_label: "連絡先",
+        dorm_price_label: "予想費用",
+        dorm_price: "~65-70万ウォン/学期 (部屋タイプ別)",
+
+        // Apps
+        apps_title: "必須アプリ",
+        apps_desc: "韓国生活の必需品",
+        app_delivery_title: "デリバリー",
+        app_transport_title: "交通 & 地図",
+        app_payment_title: "決済 & 送金",
+        app_shopping_title: "ショッピング",
+        house_app_desc: "平均家賃を確認するのに適しています。",
+        house_agent_title: "2. 公認仲介士 (不動産屋)",
+        house_agent_desc: "学校の後門/正門近くの不動産を訪問するのが最も安全です。",
+        house_check_title: "契約前確認:",
+        house_check_1: "保証金 (Deposit)",
+        house_check_2: "家賃 (Monthly Rent)",
+        house_check_3: "管理費 (ガス/ネット等の有無)",
+
+        resume_title: "1分バイト志願書",
+        resume_desc: "社長に送る丁寧な志願メッセージを作成してみましょう。",
+        name_ph: "名前 (例: マイケル)",
+        age_ph: "年齢",
+        topik_ph: "韓国語能力 (例: 4級)",
+        btn_gen_resume: "作成してコピー",
+        resume_template: "こんにちは！アルバイトの募集を見て連絡しました。\n名前: {name}\n年齢: {age}歳\nビザ: {visa} (留学生)\n韓国語: {topik}\n\n誠実に働きます。面接の機会をいただければ幸いです！",
+
+        // D-10 & Tax
+        d10_title: "卒業後は？",
+        d10_subtitle: "D-10 求職ビザ",
+        d10_desc: "D-10に変更して求職活動ができます。インターンシップは別途申告必須！",
+        d10_allowed: "申告必須",
+        tax_title: "税金 & 保険",
+
+        // Tax & Insurance
+        insurance_mandatory: "義務加入条件:",
+        insurance_cond_1: "月60時間以上勤務",
+        insurance_cond_2: "週15時間以上勤務",
+        insurance_cond_3: "契約期間1ヶ月以上",
+        ins_health: "① 健康保険",
+        ins_health_desc: "病院費支援",
+        ins_health_auto: "外国人登録証発給後自動加入",
+        ins_employment: "② 雇用保険",
+        ins_employment_desc: "失業給付 (条件満たせば)",
+        ins_accident: "③ 労災保険",
+        ins_accident_desc: "業務中の怪我補償",
+        ins_pension: "④ 国民年金",
+        ins_pension_desc: "帰国時返還可能",
+        tax_refund_title: "3. 税金還付 (5月)",
+        tax_refund_when: "申告時期:",
+        tax_refund_period: "毎年5月 (総合所得税申告)",
+        tax_refund_tip: "* 3.3%税金を払った場合、一部還付可能！ホームタックス (홈택스) 訪問または学校へ問い合わせ",
+        tab_tax: "税金",
+
+        // Permit Guide
+        permit_title: "就労許可申請方法",
+        permit_subtitle: "資格外活動許可",
+        permit_step1_title: "資格確認",
+        permit_step1_a: "• D-2: GPA ≥ 2.0 + TOPIK等",
+        permit_step1_b: "• D-4: 入国6ヶ月以上 + 出席率 90%以上",
+        permit_step2_title: "学校確認書発給",
+        permit_step2_desc: "国際交流チームを訪問し「時間制就業確認書」を発給",
+        permit_step3_title: "出入国事務所訪問",
+        permit_step3_desc: "パスポート, 外国人登録証, 確認書, 事業者登録証, 標準勤労契約書",
+
+        // Visa Travel
+        travel_title: "ビザ & 旅行",
+        travel_subtitle: "休みに帰国してもいい？",
+        travel_expiry_title: "⛔ ビザ満了日注意",
+        travel_expiry_desc: "外国人登録証裏面の満了日前に必ず出国しなければなりません。",
+        travel_reentry_title: "再入国 (放学など)",
+        travel_reentry_1: "• 有効期間残存 + 出国日 = 再入国可能",
+        travel_reentry_2: "• ビザ満了 = 同じビザで再入国不可 (新規発給必要)",
+
+        // Trash
+        trash_title: "ゴミの出し方",
+        trash_subtitle: "過料に注意！",
+        trash_general_title: "一般ゴミ",
+        trash_general_desc: "白い従量制袋 (コンビニ購入)",
+        trash_food_title: "生ゴミ",
+        trash_food_desc: "黄色い袋 (骨/殻は除く)",
+        trash_recycle_title: "リサイクル",
+        trash_recycle_desc: "透明な袋 (缶, 瓶, 廃プラ)",
+
+        // Medicine
+        med_title: "薬局 & 常備薬",
+        med_subtitle: "病気の時は？",
+        med_conv_title: "24時間コンビニ",
+        med_conv_desc: "安全常備薬 (軽い症状)",
+        med_pharm_title: "薬局 (Yak-guk)",
+        med_pharm_desc: "専門医薬品 (処方箋など)",
+        permit_step4_title: "承認待機",
+        permit_step4_desc: "処理期間: 約1-2週間。外国人登録証にスタンプをもらいます！",
+
+        // Phrases
+        phrases_title: "便利な韓国語表現",
+        phrases_desc: "求職および勤務時",
+        phrases_interview: "💼 面接",
+        phrases_work: "🏪 勤務中",
+        phrases_problem: "⚠️ 問題発生時",
+        phrase_when_start: "いつから働けますか？",
+        phrase_schedule: "勤務時間はどうなりますか？",
+        phrase_understand: "分かりました",
+        phrase_help: "手伝ってもらえますか？",
+        phrase_payday: "給料日はいつですか？",
+        phrase_not_paid: "給料をもらっていません",
+        phrase_too_many_hours: "勤務時間が多すぎます",
+
+        // Holiday Pay
+        holiday_pay_label: "予想週休手当:",
+    },
+    ru: {
+        tab_check: "Проверка",
+        tab_guide: "Правила",
+        tab_paperwork: "Документы",
+        tab_map: "Карта",
+        guide_title: "Ограничения времени",
+        guide_subtitle: "Разница D-2 / D-4",
+        guide_time_title: "Часы работы",
+        guide_ban_title: "🚫 Строго запрещено",
+        guide_ban_desc: "При нарушении виза будет аннулирована",
+        job_delivery: "Доставка (Курьер)",
+        job_construction: "Стройка (Разнорабочий)",
+        job_factory: "Завод (Производство)",
+        job_teaching: "Репетиторство (Без отчета)",
+        tab_safety: "Безопасность",
+        calc_title: "Проверка права на работу",
+        ieqas_badge: "🏆 Pai Chai Univ: Сертификат IEQAS (+5ч)",
+        label_visa: "Тип визы",
+        label_topik: "Уровень TOPIK",
+        label_gpa: "GPA за прошлый семестр",
+        label_residence: "Менее 6 месяцев (для D-4)",
+        label_first_sem: "Первокурсник (1-й сем) - GPA не нужен",
+        btn_check: "Проверить",
+
+
+        // Docs
+        check_title: "Список документов",
+        check_desc: "Проверьте перед посещением офиса!",
+        doc_passport: "Паспорт",
+        doc_arc: "ID карта (ARC)",
+        doc_form: "Единая форма заявления",
+        doc_biz: "Копия бизнес-лицензии",
+        doc_contract: "Трудовой договор",
+        doc_confirm: "Подтверждение о подработке",
+
+        map_title: "Важные места",
+        footer_warning: "Штраф до 30 млн вон за нелегальную работу!",
+
+
+        res_fail_gpa: "❌ Нельзя (GPA < 2.0)",
+        res_fail_d4: "❌ Нельзя (Менее 6 мес)",
+        res_safe_d2: "Семестр: 25ч/нед (вкл. выходные) / Каникулы: Безлим.",
+        res_safe_d4: "Будни: 20ч / Выходные: Включено (Макс 20ч)",
+        res_safe_d2_exempt: "Будни: {hours}ч / Выходные: Безлим.",
+        res_safe_low: "Будни: {hours}ч / Выходные: 10ч",
+        res_gpa_exempt: "(Без учета GPA)",
+        res_title_success: "Можно подавать (Eligible)",
+        res_title_warn: "Внимание (Лимит времени)",
+
+
+
+        // Salary Calc
+        salary_title: "Калькулятор ЗП",
+        min_wage_label: "Мин. оплата 2025",
+        label_my_wage: "Моя часовая ставка",
+        label_hours: "Часов в неделю",
+        label_monthly: "Прим. месячный доход (4 нед)",
+        msg_low_wage: "🚨 Незаконно! Ниже минимума.",
+
+        // Safety
+        tab_safety: "Безопасность",
+        safety_title: "Экстренные службы",
+        emerg_police: "Полиция (112)",
+        emerg_fire: "Пожарная/Скорая (119)",
+        emerg_immi: "Иммиграция (1345)",
+        ins_title: "Страховка обязательна!",
+        ins_desc: "Все студенты обязаны иметь национальную страховку. Без нее лечение очень дорогое.",
+        warn_title: "⚠️ НИКОГДА не делайте это!",
+        warn_bank: "Не давайте свой банковский счет (Мошенничество).",
+        warn_drug: "Наркотики - тяжкое преступление в Корее.",
+
+        // PM Safety
+        pm_title: "Правила для электросамокатов",
+        pm_helmet: "Без шлема",
+        pm_license: "Без прав",
+        pm_ride: "Вдвоем",
+        pm_path: "Езда по тротуару",
+
+        // Validation
+        msg_req_gpa: "Введите GPA за прошлый семестр.",
+
+        // 1345 Help
+        help_title: "Контакт-центр (1345)",
+        help_desc_1: "Поддержка по правам и невыплате зарплаты",
+
+        // Footer
+        disclaimer: "Результаты только для справки. Окончательное решение за Иммиграционной службой. Мы не несем ответственности.",
+
+        // Job Hunting & Housing
+        tab_job: "Работа",
+        tab_living: "Жизнь",
+        job_sites_title: "Поиск работы",
+        job_sites_desc: "Популярные приложения в Корее",
+        job_tip_title: "Советы",
+        job_tip_1: "Ищите 'Иностранцы' (외국인가능)",
+        job_tip_2: "Ищите 'Без опыта' (초보가능)",
+
+        housing_title: "Поиск жилья",
+        housing_desc: "Приложения и Недвижимость",
+        house_app_title: "1. Приложения (Проверка цен)",
+
+        // Dorm
+        dorm_title: "Общежитие",
+        dorm_subtitle: "Общежитие Pai Chai Univ",
+        dorm_contact_label: "Контакты",
+        dorm_price_label: "Прим. цена",
+        dorm_price: "~650-700 тыс. вон/семестр (зависит от комнаты)",
+
+        // Apps
+        apps_title: "Важные приложения",
+        apps_desc: "Жизнь в Корее",
+        app_delivery_title: "Доставка еды",
+        app_transport_title: "Транспорт и карты",
+        app_payment_title: "Оплата и Банки",
+        app_shopping_title: "Шоппинг",
+        house_app_desc: "Хорошо для проверки средних цен.",
+        house_agent_title: "2. Агентство (Budongsan)",
+        house_agent_desc: "Безопаснее всего посетить агентство рядом с университетом (Западные/Главные ворота).",
+        house_check_title: "Проверьте:",
+        house_check_1: "Залог (Deposit)",
+        house_check_2: "Аренда (Wol-se)",
+        house_check_3: "Комуналка (Вкл. газ/интернет?)",
+
+        resume_title: "Резюме за 1 минуту",
+        resume_desc: "Создайте вежливое сообщение для заявки на работу.",
+        name_ph: "Имя (напр. Михаил)",
+        age_ph: "Возраст",
+        topik_ph: "Уровень TOPIK (напр. 4)",
+        btn_gen_resume: "Создать и копировать",
+        resume_template: "Здравствуйте! Пишу по поводу вакансии.\nИмя: {name}\nВозраст: {age}\nВиза: {visa} (Студент)\nКорейский: {topik}\n\nБуду усердно работать. Буду благодарен за собеседование!",
+
+        // D-10 & Tax
+        d10_title: "После выпуска?",
+        d10_subtitle: "Виза D-10 (Поиск работы)",
+        d10_desc: "Смените на D-10 для поиска работы. Для стажировки нужен отчет!",
+        d10_allowed: "Отчет обязателен",
+        tax_title: "Налоги и Страховка",
+
+        // Tax & Insurance
+        insurance_mandatory: "Обязательно, если:",
+        insurance_cond_1: "Работа > 60 часов/мес",
+        insurance_cond_2: "Работа > 15 часов/нед",
+        insurance_cond_3: "Контракт > 1 месяца",
+        ins_health: "① Мед. страховка (건강보험)",
+        ins_health_desc: "Покрывает лечение",
+        ins_health_auto: "Авто-подключение после получения ARC",
+        ins_employment: "② Страхование занятости (고용보험)",
+        ins_employment_desc: "Пособие по безработице",
+        ins_accident: "③ Страхование от несчастных случаев",
+        ins_accident_desc: "Травмы на работе",
+        ins_pension: "④ Пенсионное страхование",
+        ins_pension_desc: "Возврат при выезде из Кореи",
+        tax_refund_title: "3. Возврат налогов (Май)",
+        tax_refund_when: "Когда подавать:",
+        tax_refund_period: "Каждый май (Global Income Tax)",
+        tax_refund_tip: "* Если платили 3.3%, можно вернуть часть! Посетите Hometax или спросите в школе.",
+        tab_tax: "Налог",
+
+        // Permit Guide
+        permit_title: "Разрешение на работу",
+        permit_subtitle: "Как получить",
+        permit_step1_title: "Проверка требований",
+        permit_step1_a: "• D-2: GPA ≥ 2.0 + TOPIK",
+        permit_step1_b: "• D-4: Пребывание ≥ 6 мес + Посещаемость ≥ 90%",
+        permit_step2_title: "Подтверждение школы",
+        permit_step2_desc: "Получите 'Part-time Work Confirmation' в международном отделе",
+        permit_step3_title: "Визит в иммиграцию",
+        permit_step3_desc: "Паспорт, ARC, Форма подтверждения, Лицензия бизнеса, Контракт",
+
+        // Visa Travel
+        travel_title: "Виза и Путешествия",
+        travel_subtitle: "Можно ли домой?",
+        travel_expiry_title: "⛔ Срок действия визы",
+        travel_expiry_desc: "Вы ОБЯЗАНЫ выехать до даты истечения на ARC.",
+        travel_reentry_title: "Повторный въезд",
+        travel_reentry_1: "• Виза валидна + Выехали = Можно вернуться",
+        travel_reentry_2: "• Виза истекла = Нельзя вернуться (Нужна новая)",
+
+        // Trash
+        trash_title: "Мусор",
+        trash_subtitle: "Не получите штраф!",
+        trash_general_title: "Обычный мусор",
+        trash_general_desc: "Белый пакет (Купить в магазине)",
+        trash_food_title: "Пищевые отходы",
+        trash_food_desc: "Желтый пакет (Без костей!)",
+        trash_recycle_title: "Переработка",
+        trash_recycle_desc: "Прозрачный пакет (Банки, Пластик)",
+
+        // Medicine
+        med_title: "Лекарства",
+        med_subtitle: "Где купить?",
+        med_conv_title: "24ч Магазин",
+        med_conv_desc: "Базовые лекарства",
+        med_pharm_title: "Аптека (Yak-guk)",
+        med_pharm_desc: "Профессиональная помощь",
+        permit_step4_title: "Ожидание",
+        permit_step4_desc: "Обработка: ~1-2 недели. Вам поставят штамп на ARC!",
+
+        // Phrases
+        phrases_title: "Полезные фразы",
+        phrases_desc: "Для работы",
+        phrases_interview: "💼 Собеседование",
+        phrases_work: "🏪 На работе",
+        phrases_problem: "⚠️ Проблемы",
+        phrase_when_start: "Когда можно начать?",
+        phrase_schedule: "Какой график?",
+        phrase_understand: "Я понял(а)",
+        phrase_help: "Можете помочь?",
+        phrase_payday: "Когда зарплата?",
+        phrase_not_paid: "Мне не заплатили",
+        phrase_too_many_hours: "Слишком много часов",
+
+        // Holiday Pay
+        holiday_pay_label: "Прим. отпускные (в неделю):",
+    },
     cn: {
         tab_check: "资格查询",
         tab_guide: "规定指南",
@@ -948,23 +1378,22 @@ function calculateVisa() {
     const t = translations[currentLang];
 
     let resultText = "";
-    let isSafe = true; // green vs red/yellow
+    let status = 'safe'; // 'safe', 'warning', 'error', 'neutral'
     let isExempt = false;
 
     // Logic Tree
     if (visa === 'D-4' && isUnder6Months) {
-        // FAIL: D-4 Residence (Strict rule, no exemption?)
-        // Assuming residence rule applies regardless of school semester
+        // FAIL: D-4 Residence
         resultText = t.res_fail_d4;
-        isSafe = false;
+        status = 'error';
     } else if (!isFirstSem && (isNaN(gpa) || gpa < 1.9)) {
-        // FAIL: GPA (Modified to 1.9 based on specific user feedback)
+        // FAIL: GPA
         if (isNaN(gpa)) {
             resultText = t.msg_req_gpa;
-            isSafe = null;
+            status = 'neutral';
         } else {
-            resultText = t.res_fail_gpa.replace('2.0', '1.9'); // Quick fix for text, ideally update translation key
-            isSafe = false;
+            resultText = t.res_fail_gpa.replace('2.0', '1.9');
+            status = 'error';
         }
     } else {
         // SUCCESS PATHS
@@ -980,8 +1409,6 @@ function calculateVisa() {
                 weekendUnlimited = true;
             } else if (topik >= 3) {
                 // TOPIK 3: Eligible for weekday work but maybe not unlimited weekends?
-                // Standard rule: TOPIK 3 is often min for 20h. 
-                // Sticking to 25h weekday (IEQAS) but LIMITED weekends if < TOPIK 4 based on user prompt implication
                 weekdayLimit = 25;
                 weekendUnlimited = false;
             } else {
@@ -1002,20 +1429,19 @@ function calculateVisa() {
         if (weekendUnlimited) {
             // Apply D-2 or D-4 specific success strings
             if (visa === 'D-2') {
-                // Use new exempt string if we are in the exempt branch (weekendUnlimited is true here)
                 resultText = t.res_safe_d2_exempt.replace('{hours}', weekdayLimit);
             } else {
                 resultText = t.res_safe_d4.replace('20', weekdayLimit);
             }
-            isSafe = true;
+            status = 'safe';
         } else {
             // For D-4 or Limited D-2
             if (visa === 'D-4') {
-                resultText = t.res_safe_d4; // Explicitly showing the "Weekend Included" string
+                resultText = t.res_safe_d4;
             } else {
                 resultText = t.res_safe_low.replace('{hours}', weekdayLimit);
             }
-            isSafe = false; // logic says warning color for low hours/limited weekends
+            status = 'warning';
         }
     }
 
@@ -1028,19 +1454,19 @@ function calculateVisa() {
     box.classList.remove('hidden', 'bg-green-50', 'bg-red-50', 'bg-yellow-50', 'border-green-200', 'border-red-200', 'border-yellow-200', 'text-green-800', 'text-red-800', 'text-yellow-800');
     icon.className = "fa-solid text-4xl mb-3";
 
-    if (isSafe === null) {
+    if (status === 'neutral') {
         // Input Required (Neutral/Warning)
         box.classList.add('bg-yellow-50', 'border-yellow-200', 'text-yellow-800');
         icon.classList.add('fa-circle-exclamation');
         title.textContent = "Check Required";
         desc.innerHTML = `<span class="font-bold text-lg">${resultText}</span>`;
-    } else if (resultText.includes('❌') || isSafe === false) {
+    } else if (status === 'error') {
         // Illegal
         box.classList.add('bg-red-50', 'border-red-200', 'text-red-800');
         icon.classList.add('fa-ban');
-        title.textContent = t.calc_title; // Just reuse generic title or 'Illegal' if translated
+        title.textContent = t.calc_title;
         desc.innerHTML = `<span class="font-bold text-xl">${resultText}</span>`;
-    } else if (isSafe) {
+    } else if (status === 'safe') {
         // Safe (Unlimited Weekend)
         box.classList.add('bg-green-50', 'border-green-200', 'text-green-800');
         icon.classList.add('fa-check-circle');
@@ -1054,10 +1480,10 @@ function calculateVisa() {
         if (isExempt) title.textContent += " " + t.res_gpa_exempt;
         desc.innerHTML = `<span class="font-bold text-lg">${resultText}</span>`;
     }
-
-
-
 }
+
+
+
 
 // --- 5. SALARY CALCULATOR LOGIC ---
 
@@ -1083,9 +1509,9 @@ function updateSalary() {
         // Simple Formula: (Hours / 40) * 8 * Wage * 4 weeks? 
         // Or just Weekly Holiday Pay = (Hours/40)*8*Wage.
         // Let's show MONTHLY total benefit.
-        // Week: (Hours / 40) * 8 * Wage.
-        // Month: * 4.
-        const weeklyHolidayPay = (hours / 40) * 8 * wage;
+        // Week: (Hours / 40) * 8 * Wage. (Capped at 40h)
+        const calcHours = Math.min(hours, 40);
+        const weeklyHolidayPay = (calcHours / 40) * 8 * wage;
         const monthlyHolidayPay = weeklyHolidayPay * 4;
 
         holidayBox.classList.remove('hidden');
@@ -1153,21 +1579,27 @@ function initMap() {
     `);
 }
 
+// --- 7. UTILS ---
+
+// --- App Store Redirection Logic ---
+function openApp(iosId, androidPackage) {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    // Check for iOS (iPhone, iPad, iPod)
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        window.location.href = `https://apps.apple.com/app/id${iosId}`;
+    } else {
+        // Default to Android/Play Store for everyone else
+        window.location.href = `https://play.google.com/store/apps/details?id=${androidPackage}`;
+    }
+}
+
 // --- 7. INITIALIZATION (DOMContentLoaded) ---
 
 document.addEventListener('DOMContentLoaded', () => {
     // --- App Store Redirection Logic ---
-    function openApp(iosId, androidPackage) {
-        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-        // Check for iOS (iPhone, iPad, iPod)
-        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-            window.location.href = `https://apps.apple.com/app/id${iosId}`;
-        } else {
-            // Default to Android/Play Store for everyone else
-            window.location.href = `https://play.google.com/store/apps/details?id=${androidPackage}`;
-        }
-    }
+    // Moved to global scope
+    // -----------------------------------
     // -----------------------------------
 
     // Language Data
