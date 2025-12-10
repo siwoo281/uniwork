@@ -1156,13 +1156,27 @@ function initMap() {
 // --- 7. INITIALIZATION (DOMContentLoaded) ---
 
 document.addEventListener('DOMContentLoaded', () => {
+    // --- App Store Redirection Logic ---
+    function openApp(iosId, androidPackage) {
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+        // Check for iOS (iPhone, iPad, iPod)
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            window.location.href = `https://apps.apple.com/app/id${iosId}`;
+        } else {
+            // Default to Android/Play Store for everyone else
+            window.location.href = `https://play.google.com/store/apps/details?id=${androidPackage}`;
+        }
+    }
+    // -----------------------------------
+
+    // Language Data
     // 1. Language Check (LocalStorage)
     const savedLang = localStorage.getItem('uniWorkLang');
     if (savedLang) {
         setLanguage(savedLang);
         // Ensure app is visible immediately if lang is known
         document.getElementById('language-modal').classList.add('hidden');
-        document.getElementById('app-container').classList.remove('hidden');
     }
 
     // 2. Init components

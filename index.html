@@ -3,7 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <title>UniWork - International Student Job Partner</title>
 
 
@@ -46,7 +49,7 @@
     </script>
 </head>
 
-<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+<body class="bg-gray-50 text-gray-800 font-sans antialiased overflow-x-hidden">
 
     <!-- Language Selection Modal (Overlay) -->
     <div id="language-modal"
@@ -942,11 +945,13 @@
                                 <span data-i18n="app_delivery_title">Food Delivery</span>
                             </h3>
                             <div class="grid grid-cols-2 gap-2 text-sm">
-                                <div class="bg-teal-50 p-2 rounded-lg text-center">
+                                <div class="bg-teal-50 p-2 rounded-lg text-center cursor-pointer hover:bg-teal-100 transition-colors"
+                                    onclick="openApp('376885233', 'com.woowahan.baemin')">
                                     <p class="font-bold text-gray-700">배달의민족</p>
                                     <p class="text-xs text-gray-500">Baemin</p>
                                 </div>
-                                <div class="bg-purple-50 p-2 rounded-lg text-center">
+                                <div class="bg-purple-50 p-2 rounded-lg text-center cursor-pointer hover:bg-purple-100 transition-colors"
+                                    onclick="openApp('1451551027', 'com.coupang.mobile.eatscustomer')">
                                     <p class="font-bold text-gray-700">쿠팡이츠</p>
                                     <p class="text-xs text-gray-500">Coupang Eats</p>
                                 </div>
@@ -960,11 +965,13 @@
                                 <span data-i18n="app_transport_title">Transport & Navigation</span>
                             </h3>
                             <div class="grid grid-cols-2 gap-2 text-sm">
-                                <div class="bg-blue-50 p-2 rounded-lg text-center">
+                                <div class="bg-blue-50 p-2 rounded-lg text-center cursor-pointer hover:bg-blue-100 transition-colors"
+                                    onclick="openApp('304608425', 'net.daum.android.map')">
                                     <p class="font-bold text-gray-700">카카오맵</p>
                                     <p class="text-xs text-gray-500">Kakao Map</p>
                                 </div>
-                                <div class="bg-green-50 p-2 rounded-lg text-center">
+                                <div class="bg-green-50 p-2 rounded-lg text-center cursor-pointer hover:bg-green-100 transition-colors"
+                                    onclick="openApp('311867728', 'com.nhn.android.nmap')">
                                     <p class="font-bold text-gray-700">네이버지도</p>
                                     <p class="text-xs text-gray-500">Naver Map</p>
                                 </div>
@@ -978,11 +985,13 @@
                                 <span data-i18n="app_payment_title">Payment & Banking</span>
                             </h3>
                             <div class="grid grid-cols-2 gap-2 text-sm">
-                                <div class="bg-yellow-50 p-2 rounded-lg text-center">
+                                <div class="bg-yellow-50 p-2 rounded-lg text-center cursor-pointer hover:bg-yellow-100 transition-colors"
+                                    onclick="openApp('1162316652', 'com.kakaopay.app')">
                                     <p class="font-bold text-gray-700">카카오페이</p>
                                     <p class="text-xs text-gray-500">Kakao Pay</p>
                                 </div>
-                                <div class="bg-green-50 p-2 rounded-lg text-center">
+                                <div class="bg-green-50 p-2 rounded-lg text-center cursor-pointer hover:bg-green-100 transition-colors"
+                                    onclick="openApp('839333328', 'viva.republica.toss')">
                                     <p class="font-bold text-gray-700">토스</p>
                                     <p class="text-xs text-gray-500">Toss</p>
                                 </div>
@@ -996,11 +1005,13 @@
                                 <span data-i18n="app_shopping_title">Shopping</span>
                             </h3>
                             <div class="grid grid-cols-2 gap-2 text-sm">
-                                <div class="bg-orange-50 p-2 rounded-lg text-center">
+                                <div class="bg-orange-50 p-2 rounded-lg text-center cursor-pointer hover:bg-orange-100 transition-colors"
+                                    onclick="openApp('451735955', 'com.coupang.mobile')">
                                     <p class="font-bold text-gray-700">쿠팡</p>
                                     <p class="text-xs text-gray-500">Coupang</p>
                                 </div>
-                                <div class="bg-red-50 p-2 rounded-lg text-center">
+                                <div class="bg-red-50 p-2 rounded-lg text-center cursor-pointer hover:bg-red-100 transition-colors"
+                                    onclick="openApp('1006509420', 'com.dbs.kurly.m2')">
                                     <p class="font-bold text-gray-700">마켓컬리</p>
                                     <p class="text-xs text-gray-500">Market Kurly</p>
                                 </div>
