@@ -6,6 +6,31 @@ body {
     font-family: 'Noto Sans KR', sans-serif;
     color: #1f2937;
     /* gray-800 */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* iOS Safe Area Support */
+@supports (padding: max(0px)) {
+    body {
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+    }
+}
+
+/* Prevent text size adjustment on iOS */
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+/* Better touch targets for mobile */
+button, a, input, select, textarea {
+    -webkit-tap-highlight-color: rgba(59, 130, 246, 0.1);
+}
+
+/* Smooth scrolling for mobile */
+html {
+    scroll-behavior: smooth;
 }
 
 /* Handwriting Class */
@@ -30,6 +55,14 @@ body {
     height: 100%;
     z-index: 1;
     /* Ensure it stays below headers if needed */
+    touch-action: pan-x pan-y;
+}
+
+/* Mobile optimization for map container */
+@media (max-width: 768px) {
+    #map {
+        min-height: 300px;
+    }
 }
 
 /* Animations */
@@ -102,12 +135,12 @@ body {
         max-width: none !important;
         margin: 0 !important;
         padding: 20px !important;
-        /* Some padding for paper edge */
         box-shadow: none !important;
         border: none !important;
         visibility: visible !important;
     }
 }
+
 /* Emergency Button Animation */
 @keyframes pulse-custom {
     0%, 100% { transform: scale(1); }
@@ -116,4 +149,35 @@ body {
 
 .btn-emergency:hover {
     animation: pulse-custom 1s infinite;
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 640px) {
+    /* Ensure minimum touch target size */
+    button, a[href^="tel:"] {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Better spacing for small screens */
+    .space-y-6 > * + * {
+        margin-top: 1.25rem;
+    }
+    
+    /* Optimize card padding */
+    .p-6 {
+        padding: 1rem;
+    }
+    
+    /* Readable font sizes */
+    .text-xs {
+        font-size: 0.813rem;
+    }
+}
+
+/* Landscape mode optimization for small devices */
+@media (max-width: 896px) and (orientation: landscape) {
+    body {
+        padding-bottom: 60px;
+    }
 }

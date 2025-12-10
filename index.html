@@ -53,44 +53,54 @@
 
     <!-- Language Selection Modal (Overlay) -->
     <div id="language-modal"
-        class="fixed inset-0 z-50 bg-gray-900 bg-opacity-95 flex items-center justify-center transition-opacity duration-300">
+        class="fixed inset-0 z-50 bg-gray-900 bg-opacity-95 flex items-center justify-center transition-opacity duration-300 p-4">
         <div
-            class="bg-white rounded-2xl p-6 md:p-8 max-w-md w-full text-center shadow-2xl mx-4 max-h-[90vh] overflow-y-auto">
-            <div class="mb-4">
-                <i class="fa-solid fa-earth-asia text-4xl text-blue-500 mb-2"></i>
-                <h1 class="text-xl font-bold mb-1">Select Language</h1>
-                <p class="text-xs text-gray-500">Please choose your preferred language</p>
+            class="bg-white rounded-2xl p-6 md:p-8 max-w-md w-full text-center shadow-2xl max-h-[85vh] overflow-y-auto">
+            <!-- 스크롤바 스타일링 -->
+            <style>
+                #language-modal > div::-webkit-scrollbar {
+                    width: 4px;
+                }
+                #language-modal > div::-webkit-scrollbar-thumb {
+                    background: #cbd5e0;
+                    border-radius: 2px;
+                }
+            </style>
+            <div class="mb-5">
+                <i class="fa-solid fa-earth-asia text-5xl text-blue-500 mb-3"></i>
+                <h1 class="text-2xl font-bold mb-2">Select Language</h1>
+                <p class="text-sm text-gray-600">Please choose your preferred language</p>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
                 <button onclick="setLanguage('ko')"
-                    class="lang-btn flex flex-col items-center justify-center py-4 border-2 border-gray-200 rounded-xl hover:border-blue-500 hover:bg-blue-50 transition-all group">
-                    <span class="text-3xl block mb-2">🇰🇷</span>
-                    <span class="font-bold text-gray-700 group-hover:text-blue-600">한국어</span>
+                    class="lang-btn flex flex-col items-center justify-center py-5 min-h-[100px] border-2 border-gray-200 rounded-xl hover:border-blue-500 hover:bg-blue-50 transition-all group active:scale-95">
+                    <span class="text-4xl block mb-2">🇰🇷</span>
+                    <span class="font-bold text-base text-gray-700 group-hover:text-blue-600">한국어</span>
                 </button>
                 <button onclick="setLanguage('en')"
-                    class="lang-btn flex flex-col items-center justify-center py-4 border-2 border-gray-200 rounded-xl hover:border-blue-500 hover:bg-blue-50 transition-all group">
-                    <span class="text-3xl block mb-2">🇺🇸</span>
-                    <span class="font-bold text-gray-700 group-hover:text-blue-600">English</span>
+                    class="lang-btn flex flex-col items-center justify-center py-5 min-h-[100px] border-2 border-gray-200 rounded-xl hover:border-blue-500 hover:bg-blue-50 transition-all group active:scale-95">
+                    <span class="text-4xl block mb-2">🇺🇸</span>
+                    <span class="font-bold text-base text-gray-700 group-hover:text-blue-600">English</span>
                 </button>
                 <button onclick="setLanguage('jp')"
-                    class="lang-btn flex flex-col items-center justify-center py-4 border-2 border-gray-200 rounded-xl hover:border-blue-500 hover:bg-blue-50 transition-all group">
-                    <span class="text-3xl block mb-2">🇯🇵</span>
-                    <span class="font-bold text-gray-700 group-hover:text-blue-600">日本語</span>
+                    class="lang-btn flex flex-col items-center justify-center py-5 min-h-[100px] border-2 border-gray-200 rounded-xl hover:border-blue-500 hover:bg-blue-50 transition-all group active:scale-95">
+                    <span class="text-4xl block mb-2">🇯🇵</span>
+                    <span class="font-bold text-base text-gray-700 group-hover:text-blue-600">日本語</span>
                 </button>
                 <button onclick="setLanguage('cn')"
-                    class="lang-btn flex flex-col items-center justify-center py-4 border-2 border-gray-200 rounded-xl hover:border-blue-500 hover:bg-blue-50 transition-all group">
-                    <span class="text-3xl block mb-2">🇨🇳</span>
-                    <span class="font-bold text-gray-700 group-hover:text-blue-600">中文</span>
+                    class="lang-btn flex flex-col items-center justify-center py-5 min-h-[100px] border-2 border-gray-200 rounded-xl hover:border-blue-500 hover:bg-blue-50 transition-all group active:scale-95">
+                    <span class="text-4xl block mb-2">🇨🇳</span>
+                    <span class="font-bold text-base text-gray-700 group-hover:text-blue-600">中文</span>
                 </button>
                 <button onclick="setLanguage('vn')"
-                    class="lang-btn flex flex-col items-center justify-center py-4 border-2 border-gray-200 rounded-xl hover:border-blue-500 hover:bg-blue-50 transition-all group">
-                    <span class="text-3xl block mb-2">🇻🇳</span>
-                    <span class="font-bold text-gray-700 group-hover:text-blue-600">Tiếng Việt</span>
+                    class="lang-btn flex flex-col items-center justify-center py-5 min-h-[100px] border-2 border-gray-200 rounded-xl hover:border-blue-500 hover:bg-blue-50 transition-all group active:scale-95">
+                    <span class="text-4xl block mb-2">🇻🇳</span>
+                    <span class="font-bold text-base text-gray-700 group-hover:text-blue-600">Tiếng Việt</span>
                 </button>
                 <button onclick="setLanguage('ru')"
-                    class="lang-btn flex flex-col items-center justify-center py-4 border-2 border-gray-200 rounded-xl hover:border-blue-500 hover:bg-blue-50 transition-all group">
-                    <span class="text-3xl block mb-2">🇷🇺</span>
-                    <span class="font-bold text-gray-700 group-hover:text-blue-600">Русский</span>
+                    class="lang-btn flex flex-col items-center justify-center py-5 min-h-[100px] border-2 border-gray-200 rounded-xl hover:border-blue-500 hover:bg-blue-50 transition-all group active:scale-95">
+                    <span class="text-4xl block mb-2">🇷🇺</span>
+                    <span class="font-bold text-base text-gray-700 group-hover:text-blue-600">Русский</span>
                 </button>
             </div>
         </div>
@@ -119,7 +129,7 @@
         <main class="flex-grow max-w-3xl w-full mx-auto p-4 space-y-6">
 
             <!-- Section 0: Rules Guide (New) -->
-            <section id="section-guide" class="hidden space-y-6 pb-24">
+            <section id="section-guide" class="hidden space-y-6 pb-32 md:pb-24">
                 <!-- Card 1: Time Limits -->
                 <div class="bg-indigo-50 p-6 rounded-3xl border border-indigo-100 shadow-sm">
                     <div class="flex items-center mb-4">
@@ -455,7 +465,7 @@
             </section>
 
             <!-- Section 1: Visa Calculator -->
-            <section id="section-check" class="space-y-6 hidden pb-24">
+            <section id="section-check" class="space-y-6 hidden pb-32 md:pb-24">
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
                     <h2 class="text-2xl font-bold mb-2 text-gray-800" data-i18n="calc_title">Visa Checker</h2>
                     <div class="mb-5">
@@ -510,23 +520,23 @@
                             <label class="block text-sm font-semibold text-gray-700 mb-2" data-i18n="label_gpa">Previous
                                 Semester GPA (0.0 - 4.5)</label>
                             <input type="number" id="input-gpa"
-                                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-base"
                                 placeholder="e.g. 3.5" min="0" max="4.5" step="0.1">
                         </div>
 
                         <!-- First Semester Checkbox (New) -->
-                        <div class="flex items-center space-x-3 bg-gray-50 p-3 rounded-lg mb-4">
+                        <div class="flex items-center space-x-3 bg-gray-50 p-4 rounded-lg mb-4">
                             <input type="checkbox" id="input-first-sem"
-                                class="w-5 h-5 text-blue-600 rounded focus:ring-blue-500">
-                            <label for="input-first-sem" class="text-sm text-gray-700"
+                                class="w-6 h-6 text-blue-600 rounded focus:ring-blue-500">
+                            <label for="input-first-sem" class="text-sm text-gray-700 cursor-pointer"
                                 data-i18n="label_first_sem">Freshman/Transfer (First Semester)</label>
                         </div>
 
                         <!-- D-4 specific -->
-                        <div class="flex items-center space-x-3 bg-gray-50 p-3 rounded-lg">
+                        <div class="flex items-center space-x-3 bg-gray-50 p-4 rounded-lg">
                             <input type="checkbox" id="input-residence"
-                                class="w-5 h-5 text-blue-600 rounded focus:ring-blue-500">
-                            <label for="input-residence" class="text-sm text-gray-700"
+                                class="w-6 h-6 text-blue-600 rounded focus:ring-blue-500">
+                            <label for="input-residence" class="text-sm text-gray-700 cursor-pointer"
                                 data-i18n="label_residence">Residence < 6 months (D-4 only)</label>
                         </div>
 
@@ -613,7 +623,7 @@
 
 
             <!-- Section 2: Job Hunting (Renamed from Paperwork) -->
-            <section id="section-job" class="space-y-6 hidden pb-24">
+            <section id="section-job" class="space-y-6 hidden pb-32 md:pb-24">
 
                 <!-- Job Search Platforms (New) -->
                 <div class="bg-blue-50 p-6 rounded-3xl border border-blue-100">
@@ -808,7 +818,7 @@
             </section>
 
             <!-- Section 3: Living (Housing & Map) -->
-            <section id="section-living" class="space-y-6 hidden h-full pb-24">
+            <section id="section-living" class="space-y-6 hidden h-full pb-32 md:pb-24">
 
                 <!-- Housing Guide (New) -->
                 <div class="bg-orange-50 p-6 rounded-3xl border border-orange-100">
@@ -1030,12 +1040,12 @@
                     </div>
                 </div>
 
-                <div class="bg-white p-4 rounded-3xl shadow-sm border border-gray-100 h-[500px] flex flex-col">
+                <div class="bg-white p-4 rounded-3xl shadow-sm border border-gray-100 h-[400px] md:h-[500px] flex flex-col">
                     <h2 class="text-xl font-bold mb-4 text-gray-800 flex items-center">
                         <i class="fa-solid fa-map-marked-alt text-blue-500 mr-2"></i>
                         <span data-i18n="map_title">Nearby Locations</span>
                     </h2>
-                    <div id="map" class="flex-grow rounded-2xl z-0"></div>
+                    <div id="map" class="flex-grow rounded-2xl z-0 touch-pan-y"></div>
                     <div class="mt-4 grid grid-cols-2 gap-2 text-sm">
                         <div class="flex items-center space-x-2 text-gray-600">
                             <i class="fa-solid fa-location-dot text-blue-500"></i>
@@ -1050,7 +1060,7 @@
             </section>
 
             <!-- Section 4: Safety & Insurance -->
-            <section id="section-safety" class="space-y-6 hidden pb-24">
+            <section id="section-safety" class="space-y-6 hidden pb-32 md:pb-24">
                 <!-- Card 1: Emergency Quick Dial -->
                 <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
                     <h2 class="text-xl font-bold mb-4 text-gray-800" data-i18n="safety_title">Emergency Contacts</h2>
@@ -1104,9 +1114,9 @@
                     <div class="flex items-start space-x-3">
                         <i class="fa-solid fa-notes-medical text-green-600 text-3xl mt-1"></i>
                         <div>
-                            <h3 class="font-bold text-green-800 text-lg mb-1" data-i18n="ins_title">Health Insurance is
+                            <h3 class="font-bold text-green-800 text-lg mb-2" data-i18n="ins_title">Health Insurance is
                                 Mandatory!</h3>
-                            <p class="text-sm text-green-700 leading-relaxed whitespace-normal break-words"
+                            <p class="text-sm text-green-700 leading-relaxed break-words"
                                 data-i18n="ins_desc">
                                 All international students must enroll in National Health Insurance (NHIS) or a private
                                 equivalent. Hospital bills can be very expensive without it.
@@ -1178,30 +1188,31 @@
 
     <!-- Fixed Bottom Navigation (Mobile App Context) -->
     <nav
-        class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 flex justify-around items-center p-3 pb-6 z-50 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] text-gray-400">
+        class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 flex justify-around items-center p-3 pb-safe z-50 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] text-gray-400"
+        style="padding-bottom: max(0.75rem, env(safe-area-inset-bottom));">
         <button onclick="switchTab('check')" id="tab-check"
-            class="flex flex-col items-center space-y-1 w-full hover:text-blue-500 transition-colors">
-            <i class="fa-solid fa-check-circle text-xl"></i>
+            class="flex flex-col items-center space-y-1 w-full hover:text-blue-500 transition-colors min-h-[48px] justify-center">
+            <i class="fa-solid fa-check-circle text-2xl"></i>
             <span class="text-[10px] font-bold" data-i18n="tab_check">Check</span>
         </button>
         <button onclick="switchTab('guide')" id="tab-guide"
-            class="flex flex-col items-center space-y-1 w-full hover:text-blue-500 transition-colors">
-            <i class="fa-solid fa-book-open text-xl"></i>
+            class="flex flex-col items-center space-y-1 w-full hover:text-blue-500 transition-colors min-h-[48px] justify-center">
+            <i class="fa-solid fa-book-open text-2xl"></i>
             <span class="text-[10px] font-bold" data-i18n="tab_guide">Rules</span>
         </button>
         <button onclick="switchTab('job')" id="tab-job"
-            class="flex flex-col items-center space-y-1 w-full hover:text-blue-500 transition-colors">
-            <i class="fa-solid fa-briefcase text-xl"></i>
+            class="flex flex-col items-center space-y-1 w-full hover:text-blue-500 transition-colors min-h-[48px] justify-center">
+            <i class="fa-solid fa-briefcase text-2xl"></i>
             <span class="text-[10px] font-bold" data-i18n="tab_job">Job</span>
         </button>
         <button onclick="switchTab('living')" id="tab-living"
-            class="flex flex-col items-center space-y-1 w-full hover:text-blue-500 transition-colors">
-            <i class="fa-solid fa-house text-xl"></i>
+            class="flex flex-col items-center space-y-1 w-full hover:text-blue-500 transition-colors min-h-[48px] justify-center">
+            <i class="fa-solid fa-house text-2xl"></i>
             <span class="text-[10px] font-bold" data-i18n="tab_living">Living</span>
         </button>
         <button onclick="switchTab('safety')" id="tab-safety"
-            class="flex flex-col items-center space-y-1 w-full hover:text-blue-500 transition-colors">
-            <i class="fa-solid fa-shield-heart text-xl"></i>
+            class="flex flex-col items-center space-y-1 w-full hover:text-blue-500 transition-colors min-h-[48px] justify-center">
+            <i class="fa-solid fa-shield-heart text-2xl"></i>
             <span class="text-[10px] font-bold" data-i18n="tab_safety">Safety</span>
         </button>
     </nav>
@@ -1214,7 +1225,7 @@
     </div>
 
     <!-- Safety Tips Footer (Hidden on mobile or moved?) -> Adjusted to be content footer -->
-    <footer class="mt-auto p-6 pb-24 bg-gray-50 text-center">
+    <footer class="mt-auto p-6 pb-32 md:pb-24 bg-gray-50 text-center">
         <div class="max-w-3xl mx-auto">
             <div class="bg-red-50 border border-red-100 rounded-lg p-3 text-red-800 text-sm font-semibold mb-3">
                 <i class="fa-solid fa-triangle-exclamation mr-1"></i>
