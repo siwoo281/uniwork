@@ -2,8 +2,8 @@
 
 const translations = {
     ko: {
-        landing_title: "배재대학교에서 이루는 당신의 꿈",
-        landing_desc: "'내 비자로 일할 수 있을까?', '급여는 제대로 받는 걸까?'\n막막했던 모든 질문에, UniWork가 답해드릴게요.\n배재대학교 유학생 여러분의 한국 생활을 응원합니다.",
+        landing_title: "배재대학교에서 이루는\n당신의 꿈",
+        landing_desc: "'내 비자로 일할 수 있을까?',\n'급여는 제대로 받는 걸까?'\n막막했던 모든 질문에, UniWork가 답해드릴게요.\n 유학생 여러분의 한국 생활을 응원합니다.",
         btn_start: "시작하기",
         tab_check: "자격 조회",
         tab_guide: "규정 가이드",
