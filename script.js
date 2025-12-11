@@ -1496,6 +1496,11 @@ function calculateVisa() {
         if (isExempt) title.textContent += " " + t.res_gpa_exempt;
         desc.innerHTML = `<span class="font-bold text-lg">${resultText}</span>`;
     }
+
+    // Auto-scroll to result (UX Improvement)
+    setTimeout(() => {
+        box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 100);
 }
 
 
