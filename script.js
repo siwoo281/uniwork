@@ -2,6 +2,9 @@
 
 const translations = {
     ko: {
+        landing_title: "배재대학교에서 이루는 당신의 꿈",
+        landing_desc: "'내 비자로 일할 수 있을까?', '급여는 제대로 받는 걸까?'\n막막했던 모든 질문에, UniWork가 답해드릴게요.\n배재대학교 유학생 여러분의 한국 생활을 응원합니다.",
+        btn_start: "시작하기",
         tab_check: "자격 조회",
         tab_guide: "규정 가이드",
         tab_paperwork: "서류 작성",
@@ -220,6 +223,9 @@ const translations = {
         holiday_pay_label: "예상 주휴수당 (포함 시):",
     },
     en: {
+        landing_title: "Your Dream at Pai Chai University",
+        landing_desc: "'Can I work with my visa?', 'Will I get paid fairly?'\nUniWork has all the answers you need.\nSupporting Pai Chai Univ students in Korea.",
+        btn_start: "Start Now",
         tab_check: "Check Status",
         tab_guide: "Rules Guide",
         tab_paperwork: "Paperwork",
@@ -438,6 +444,9 @@ const translations = {
         holiday_pay_label: "Est. Weekly Holiday Pay:",
     },
     jp: {
+        landing_title: "培材大学で叶えるあなたの夢",
+        landing_desc: "「私のビザで働けるかな？」「給料はちゃんともらえるかな？」\n不安だったすべての疑問に、UniWorkがお答えします。\n培材大学留学生の皆さんの韓国生活を応援します。",
+        btn_start: "始める",
         tab_check: "資格確認",
         tab_guide: "規定ガイド",
         tab_paperwork: "必要書類",
@@ -655,6 +664,9 @@ const translations = {
         holiday_pay_label: "予想週休手当:",
     },
     ru: {
+        landing_title: "Ваша мечта в Университете Пэчжэ",
+        landing_desc: "'Можно ли работать с моей визой? честно ли мне заплатят?'\nUniWork ответит на все ваши вопросы.\nПоддержка студентов Университета Пэчжэ.",
+        btn_start: "Начать",
         tab_check: "Проверка",
         tab_guide: "Правила",
         tab_paperwork: "Документы",
@@ -872,6 +884,9 @@ const translations = {
         holiday_pay_label: "Прим. отпускные (в неделю):",
     },
     cn: {
+        landing_title: "在培材大学实现你的梦想",
+        landing_desc: "'我的签证能工作吗？''工资会正常发吗？'\n所有让你不安的问题，UniWork都会为你解答。\n我们支持培材大学留学生的韩国生活。",
+        btn_start: "开始使用",
         tab_check: "资格查询",
         tab_guide: "规定指南",
         tab_paperwork: "필수 서류",
@@ -1089,6 +1104,9 @@ const translations = {
         holiday_pay_label: "预计周休津贴:",
     },
     vn: {
+        landing_title: "Ước mơ của bạn tại Đại học Pai Chai",
+        landing_desc: "'Visa này có được làm việc không? Lương có đúng không?'\nMọi thắc mắc của bạn, UniWork sẽ giải đáp.\nĐồng hành cùng du học sinh ĐH Pai Chai.",
+        btn_start: "Bắt đầu ngay",
         tab_check: "Kiểm tra",
         tab_guide: "Hướng dẫn",
         tab_paperwork: "Giấy tờ",
@@ -1334,8 +1352,8 @@ function setLanguage(lang) {
             document.getElementById('app-container').classList.remove('hidden');
             document.getElementById('app-container').classList.add('animate-fade-in');
 
-            // Default to Check Status Tab
-            switchTab('check');
+            // Default to Landing Page
+            switchTab('landing');
 
             // Map resize fix if loaded directly
             if (map) map.invalidateSize();
@@ -1351,7 +1369,7 @@ function showLanguageModal() {
 
 function switchTab(tabName) {
     // Hide all
-    ['check', 'guide', 'job', 'living', 'safety'].forEach(id => {
+    ['landing', 'check', 'guide', 'job', 'living', 'safety'].forEach(id => {
         const sec = document.getElementById(`section-${id}`);
         const btn = document.getElementById(`tab-${id}`);
         if (sec) sec.classList.add('hidden');
@@ -1378,6 +1396,16 @@ function switchTab(tabName) {
             map.invalidateSize();
             map.panTo([36.322, 127.369]);
         }, 100);
+    }
+
+    // Toggle Bottom Nav
+    const bottomNav = document.getElementById('bottom-nav');
+    if (bottomNav) {
+        if (tabName === 'landing') {
+            bottomNav.classList.add('hidden');
+        } else {
+            bottomNav.classList.remove('hidden');
+        }
     }
 }
 
