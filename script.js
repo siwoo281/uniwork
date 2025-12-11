@@ -1603,14 +1603,18 @@ function initMap() {
 // --- 7. UTILS ---
 
 // --- App Store Redirection Logic ---
+// --- App Store Redirection Logic ---
 function openApp(iosId, androidPackage) {
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
     // Check for iOS (iPhone, iPad, iPod)
     if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
         window.location.href = `https://apps.apple.com/app/id${iosId}`;
+    } else if (/android/i.test(userAgent)) {
+        // Android: Open directly in Play Store app
+        window.location.href = `market://details?id=${androidPackage}`;
     } else {
-        // Default to Android/Play Store for everyone else
+        // Desktop / Other: Open in Browser
         window.location.href = `https://play.google.com/store/apps/details?id=${androidPackage}`;
     }
 }
