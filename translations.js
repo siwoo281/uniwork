@@ -114,12 +114,31 @@ const translations = {
         // Apps
         apps_title: "필수 앱",
         apps_desc: "한국 생활 필수템",
-        app_messenger_title: "메신저",
-        app_delivery_title: "배달 앱",
-        app_transport_title: "교통 & 길찾기",
-        app_payment_title: "결제 & 송금",
-        app_shopping_title: "쇼핑",
-        app_market_title: "중고거래",
+
+        // 1. Messenger
+        app_1_title: "1. 카카오톡(Kakao Talk)",
+        app_1_desc: "한국인 필수 채팅 앱",
+
+        // 2. Map
+        app_2_title: "2. 지도: 카카오맵, 네이버맵",
+        app_2_desc: "길찾기 및 맛집 검색",
+
+        // 3. Translation
+        app_3_title: "3. 파파고(Papago)",
+        app_3_desc: "가장 정확한 번역기",
+
+        // 4. Payment
+        app_4_title: "4. 온라인결제: 네이버페이, 카카오페이",
+        app_4_desc: "간편한 온/오프라인 결제",
+
+        // 5. Delivery
+        app_5_title: "5. 음식배달: 배달의 민족, 요기요, 쿠팡이츠",
+        app_5_desc: "배달 음식 필수 앱",
+
+        // 6. University
+        app_6_title: "6. 대학생활: 에브리타임, 캠퍼스픽, 슥삭",
+        app_6_desc: "시간표 및 학교 생활 정보",
+
         house_app_desc: "평균 월세 가격을 확인하기 좋아요.",
         house_agent_title: "2. 공인중개사 (부동산)",
         house_agent_desc: "학교 후문/정문 근처 부동산을 방문하는 것이 가장 안전합니다.",
@@ -335,12 +354,25 @@ const translations = {
         // Apps
         apps_title: "Essential Apps",
         apps_desc: "Life in Korea",
-        app_messenger_title: "Messenger",
-        app_delivery_title: "Food Delivery",
-        app_transport_title: "Transport & Navigation",
-        app_payment_title: "Payment & Banking",
-        app_shopping_title: "Shopping",
-        app_market_title: "Second-hand Market",
+
+        app_1_title: "1. KakaoTalk",
+        app_1_desc: "Korea's No.1 Messenger",
+
+        app_2_title: "2. Map: KakaoMap, Naver Map",
+        app_2_desc: "Fast navigation & restaurant finder",
+
+        app_3_title: "3. Papago",
+        app_3_desc: "Best translator for Korean life",
+
+        app_4_title: "4. Payment: Naver Pay, Kakao Pay",
+        app_4_desc: "Easy mobile payments everywhere",
+
+        app_5_title: "5. Delivery: Baemin, Yogiyo, Coupang Eats",
+        app_5_desc: "Order food to your doorstep",
+
+        app_6_title: "6. University: Everytime, Campuspick, Ssgsag",
+        app_6_desc: "Timetables & Campus Community",
+
         house_app_desc: "Good for checking average prices (Market Price).",
         house_agent_title: "2. Real Estate Agent (Budongsan)",
         house_agent_desc: "It is safest to visit a real estate agent near the school (West Gate/Main Gate).",
@@ -660,6 +692,21 @@ const translations = {
 
         // Holiday Pay
         holiday_pay_label: "予想週休手当:",
+        // Apps
+        apps_title: "必須アプリ",
+        apps_desc: "韓国生活の必需品",
+        app_1_title: "1. カカオトーク (KakaoTalk)",
+        app_1_desc: "韓国No.1メッセンジャー",
+        app_2_title: "2. 地図: カカオマップ, Naverマップ",
+        app_2_desc: "最速ルートと美味しいお店検索",
+        app_3_title: "3. Papago (翻訳)",
+        app_3_desc: "必須の翻訳アプリ",
+        app_4_title: "4. オンライン決済: Naver Pay, Kakao Pay",
+        app_4_desc: "便利なスマホ決済",
+        app_5_title: "5. フードデリバリー: 配達の民族, ヨギヨ, クーパンイーツ",
+        app_5_desc: "韓国のフードデリバリー",
+        app_6_title: "6. 大学生活: エブリタイム, キャンパスピック, スクサク",
+        app_6_desc: "時間割とキャンパスライフ",
     },
     ru: {
         landing_title: "Ваша мечта в\nУниверситете Пэчжэ",
@@ -880,6 +927,21 @@ const translations = {
 
         // Holiday Pay
         holiday_pay_label: "Прим. отпускные (в неделю):",
+        // Apps
+        apps_title: "Важные приложения",
+        apps_desc: "Жизнь в Корее",
+        app_1_title: "1. KakaoTalk",
+        app_1_desc: "Мессенджер №1 в Корее",
+        app_2_title: "2. Карты: KakaoMap, Naver Map",
+        app_2_desc: "Карты и поиск ресторанов",
+        app_3_title: "3. Papago (Переводчик)",
+        app_3_desc: "Лучший переводчик",
+        app_4_title: "4. Онлайн-оплата: Naver Pay, Kakao Pay",
+        app_4_desc: "Удобные мобильные платежи",
+        app_5_title: "5. Доставка еды: Baemin, Yogiyo, Coupang Eats",
+        app_5_desc: "Доставка еды на дом",
+        app_6_title: "6. Университет: Everytime, Campuspick, Ssgsag",
+        app_6_desc: "Расписание и жизнь кампуса",
     },
     cn: {
         landing_title: "在培材大学\n实现你的梦想",
@@ -1100,6 +1162,21 @@ const translations = {
 
         // Holiday Pay
         holiday_pay_label: "预计周休津贴:",
+        // Apps
+        apps_title: "必备APP",
+        apps_desc: "韩国生活必需",
+        app_1_title: "1. KakaoTalk (Kakao Talk)",
+        app_1_desc: "韩国国民聊天软件",
+        app_2_title: "2. 地图: KakaoMap, Naver Map",
+        app_2_desc: "韩国地图与美食搜索",
+        app_3_title: "3. Papago (翻译)",
+        app_3_desc: "最准确的翻译软件",
+        app_4_title: "4. 在线支付: Naver Pay, Kakao Pay",
+        app_4_desc: "便捷的移动支付",
+        app_5_title: "5. 外卖配送: 揟达的民族, Yogiyo, Coupang Eats",
+        app_5_desc: "点餐必备APP",
+        app_6_title: "6. 大学生活: Everytime, Campuspick, Ssgsag",
+        app_6_desc: "课程表与校园生活",
     },
     vn: {
         landing_title: "Ước mơ của bạn\ntại Đại học Pai Chai",
@@ -1319,5 +1396,20 @@ const translations = {
 
         // Holiday Pay
         holiday_pay_label: "Trợ cấp nghỉ tuần (Dự kiến):",
+        // Apps
+        apps_title: "Ứng dụng cần thiết",
+        apps_desc: "Cuộc sống tại Hàn Quốc",
+        app_1_title: "1. KakaoTalk",
+        app_1_desc: "Ứng dụng nhắn tin số 1 Hàn Quốc",
+        app_2_title: "2. Bản đồ: KakaoMap, Naver Map",
+        app_2_desc: "Tìm đường và quán ăn ngon",
+        app_3_title: "3. Papago (Dịch thuật)",
+        app_3_desc: "Dịch thuật chính xác nhất",
+        app_4_title: "4. Thanh toán online: Naver Pay, Kakao Pay",
+        app_4_desc: "Thanh toán di động tiện lợi",
+        app_5_title: "5. Giao đồ ăn: Baemin, Yogiyo, Coupang Eats",
+        app_5_desc: "Đặt đồ ăn nhanh chóng",
+        app_6_title: "6. Đời sống ĐH: Everytime, Campuspick, Ssgsag",
+        app_6_desc: "Thời khóa biểu & Đời sống ĐH",
     }
 };

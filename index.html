@@ -1001,120 +1001,134 @@
                         </div>
                     </div>
 
-                    <div class="space-y-3">
-                        <!-- Messenger -->
-                        <div class="bg-white p-4 rounded-2xl border border-green-50 shadow-sm">
-                            <h3 class="font-bold text-gray-800 mb-2 flex items-center">
-                                <i class="fa-solid fa-comment-dots text-yellow-500 mr-2"></i>
-                                <span data-i18n="app_messenger_title">Messenger</span>
-                            </h3>
-                            <div class="grid grid-cols-1 gap-2 text-sm">
-                                <div class="bg-yellow-50 p-2 rounded-lg text-center cursor-pointer hover:bg-yellow-100 transition-colors"
-                                    onclick="openApp('362057947', 'com.iwilab.KakaoTalk')">
-                                    <p class="font-bold text-gray-700">카카오톡</p>
-                                    <p class="text-xs text-gray-500">KakaoTalk</p>
-                                </div>
-                            </div>
+                    <div class="mb-8">
+                        <h2 class="text-xl font-bold mb-4 text-gray-800" data-i18n="apps_title">Essential Apps</h2>
+                        <div class="bg-blue-50 border border-blue-100 rounded-lg p-3 mb-4 flex items-start">
+                            <i class="fa-solid fa-circle-info text-blue-500 mt-1 mr-2"></i>
+                            <p class="text-sm text-blue-800" data-i18n="apps_desc">Life in Korea</p>
                         </div>
 
-                        <!-- Delivery -->
-                        <div class="bg-white p-4 rounded-2xl border border-green-50 shadow-sm">
-                            <h3 class="font-bold text-gray-800 mb-2 flex items-center">
-                                <i class="fa-solid fa-bowl-food text-orange-500 mr-2"></i>
-                                <span data-i18n="app_delivery_title">Food Delivery</span>
-                            </h3>
-                            <div class="grid grid-cols-2 gap-2 text-sm">
-                                <div class="bg-teal-50 p-2 rounded-lg text-center cursor-pointer hover:bg-teal-100 transition-colors"
-                                    onclick="openApp('378084485', 'kr.co.woowahan.baemin1')">
-                                    <p class="font-bold text-gray-700">배달의민족</p>
-                                    <p class="text-xs text-gray-500">Baemin</p>
-                                </div>
-                                <div class="bg-purple-50 p-2 rounded-lg text-center cursor-pointer hover:bg-purple-100 transition-colors"
-                                    onclick="openApp('1445504255', 'com.coupangeats.android.consumer')">
-                                    <p class="font-bold text-gray-700">쿠팡이츠</p>
-                                    <p class="text-xs text-gray-500">Coupang Eats</p>
+                        <div class="space-y-4">
+                            <!-- 1. Messenger -->
+                            <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+                                <h3 class="font-bold text-lg text-gray-900 mb-2 flex items-center">
+                                    <i class="fa-solid fa-comment-dots text-yellow-400 mr-2 text-xl"></i>
+                                    <span data-i18n="app_1_title">1. Messenger</span>
+                                </h3>
+                                <p class="text-gray-600 text-sm mb-4 leading-relaxed" data-i18n="app_1_desc">
+                                    Description...</p>
+                                <div class="flex space-x-2">
+                                    <button onclick="openApp('362057947', 'com.iwilab.KakaoTalk')"
+                                        class="bg-yellow-400 text-black px-4 py-2 rounded-lg text-sm font-bold shadow-sm hover:bg-yellow-500 transition-colors flex-1">
+                                        KakaoTalk
+                                    </button>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Transport -->
-                        <div class="bg-white p-4 rounded-2xl border border-green-50 shadow-sm">
-                            <h3 class="font-bold text-gray-800 mb-2 flex items-center">
-                                <i class="fa-solid fa-bus text-blue-500 mr-2"></i>
-                                <span data-i18n="app_transport_title">Transport & Navigation</span>
-                            </h3>
-                            <div class="grid grid-cols-3 gap-2 text-sm">
-                                <div class="bg-blue-50 p-2 rounded-lg text-center cursor-pointer hover:bg-blue-100 transition-colors"
-                                    onclick="openApp('304608425', 'net.daum.android.map')">
-                                    <p class="font-bold text-gray-700">카카오맵</p>
-                                    <p class="text-xs text-gray-500">Kakao Map</p>
-                                </div>
-                                <div class="bg-green-50 p-2 rounded-lg text-center cursor-pointer hover:bg-green-100 transition-colors"
-                                    onclick="openApp('311867728', 'com.nhn.android.nmap')">
-                                    <p class="font-bold text-gray-700">네이버지도</p>
-                                    <p class="text-xs text-gray-500">Naver Map</p>
-                                </div>
-                                <div class="bg-yellow-50 p-2 rounded-lg text-center cursor-pointer hover:bg-yellow-100 transition-colors"
-                                    onclick="openApp('981110422', 'com.kakao.taxi')">
-                                    <p class="font-bold text-gray-700">카카오T</p>
-                                    <p class="text-xs text-gray-500">Kakao T</p>
+                            <!-- 2. Map -->
+                            <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+                                <h3 class="font-bold text-lg text-gray-900 mb-2 flex items-center">
+                                    <i class="fa-solid fa-map-location-dot text-green-500 mr-2 text-xl"></i>
+                                    <span data-i18n="app_2_title">2. Map</span>
+                                </h3>
+                                <p class="text-gray-600 text-sm mb-4 leading-relaxed" data-i18n="app_2_desc">
+                                    Description...</p>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <button onclick="openApp('304608425', 'net.daum.android.map')"
+                                        class="bg-blue-100 text-blue-800 px-3 py-2 rounded-lg text-sm font-bold hover:bg-blue-200 transition-colors">
+                                        KakaoMap
+                                    </button>
+                                    <button onclick="openApp('311867728', 'com.nhn.android.nmap')"
+                                        class="bg-green-100 text-green-800 px-3 py-2 rounded-lg text-sm font-bold hover:bg-green-200 transition-colors">
+                                        Naver Map
+                                    </button>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Banking & Payment -->
-                        <div class="bg-white p-4 rounded-2xl border border-green-50 shadow-sm">
-                            <h3 class="font-bold text-gray-800 mb-2 flex items-center">
-                                <i class="fa-solid fa-credit-card text-yellow-500 mr-2"></i>
-                                <span data-i18n="app_payment_title">Payment & Banking</span>
-                            </h3>
-                            <div class="grid grid-cols-2 gap-2 text-sm">
-                                <div class="bg-yellow-50 p-2 rounded-lg text-center cursor-pointer hover:bg-yellow-100 transition-colors"
-                                    onclick="openApp('1464496236', 'com.kakaopay.app')">
-                                    <p class="font-bold text-gray-700">카카오페이</p>
-                                    <p class="text-xs text-gray-500">Kakao Pay</p>
-                                </div>
-                                <div class="bg-green-50 p-2 rounded-lg text-center cursor-pointer hover:bg-green-100 transition-colors"
-                                    onclick="openApp('839333328', 'viva.republica.toss')">
-                                    <p class="font-bold text-gray-700">토스</p>
-                                    <p class="text-xs text-gray-500">Toss</p>
+                            <!-- 3. Translation -->
+                            <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+                                <h3 class="font-bold text-lg text-gray-900 mb-2 flex items-center">
+                                    <i class="fa-solid fa-language text-blue-500 mr-2 text-xl"></i>
+                                    <span data-i18n="app_3_title">3. Translation</span>
+                                </h3>
+                                <p class="text-gray-600 text-sm mb-4 leading-relaxed" data-i18n="app_3_desc">
+                                    Description...</p>
+                                <div class="flex space-x-2">
+                                    <button onclick="openApp('1147874819', 'com.naver.labs.translator')"
+                                        class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-bold shadow-sm hover:bg-blue-600 transition-colors flex-1">
+                                        Papago
+                                    </button>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Shopping -->
-                        <div class="bg-white p-4 rounded-2xl border border-green-50 shadow-sm">
-                            <h3 class="font-bold text-gray-800 mb-2 flex items-center">
-                                <i class="fa-solid fa-shopping-cart text-pink-500 mr-2"></i>
-                                <span data-i18n="app_shopping_title">Shopping</span>
-                            </h3>
-                            <div class="grid grid-cols-2 gap-2 text-sm">
-                                <div class="bg-orange-50 p-2 rounded-lg text-center cursor-pointer hover:bg-orange-100 transition-colors"
-                                    onclick="openApp('454434967', 'com.coupang.mobile')">
-                                    <p class="font-bold text-gray-700">쿠팡</p>
-                                    <p class="text-xs text-gray-500">Coupang</p>
-                                </div>
-                                <div class="bg-red-50 p-2 rounded-lg text-center cursor-pointer hover:bg-red-100 transition-colors"
-                                    onclick="openApp('1080244833', 'com.dbs.kurly.m2')">
-                                    <p class="font-bold text-gray-700">마켓컬리</p>
-                                    <p class="text-xs text-gray-500">Market Kurly</p>
+                            <!-- 4. Payment -->
+                            <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+                                <h3 class="font-bold text-lg text-gray-900 mb-2 flex items-center">
+                                    <i class="fa-solid fa-credit-card text-gray-700 mr-2 text-xl"></i>
+                                    <span data-i18n="app_4_title">4. Payment</span>
+                                </h3>
+                                <p class="text-gray-600 text-sm mb-4 leading-relaxed" data-i18n="app_4_desc">
+                                    Description...</p>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <button onclick="openApp('393499958', 'com.naverfin.payapp')"
+                                        class="bg-green-500 text-white px-3 py-2 rounded-lg text-sm font-bold hover:bg-green-600 transition-colors">
+                                        Naver Pay
+                                    </button>
+                                    <button onclick="openApp('1464496236', 'com.kakaopay.app')"
+                                        class="bg-yellow-400 text-black px-3 py-2 rounded-lg text-sm font-bold hover:bg-yellow-500 transition-colors">
+                                        Kakao Pay
+                                    </button>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Second-hand Market -->
-                        <div class="bg-white p-4 rounded-2xl border border-green-50 shadow-sm">
-                            <h3 class="font-bold text-gray-800 mb-2 flex items-center">
-                                <i class="fa-solid fa-handshake text-orange-500 mr-2"></i>
-                                <span data-i18n="app_market_title">Second-hand Market</span>
-                            </h3>
-                            <div class="grid grid-cols-1 gap-2 text-sm">
-                                <div class="bg-orange-50 p-2 rounded-lg text-center cursor-pointer hover:bg-orange-100 transition-colors"
-                                    onclick="openApp('1018769995', 'com.towneers.www')">
-                                    <p class="font-bold text-gray-700">당근</p>
-                                    <p class="text-xs text-gray-500">Daangn (Carrot Market)</p>
+                            <!-- 5. Delivery -->
+                            <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+                                <h3 class="font-bold text-lg text-gray-900 mb-2 flex items-center">
+                                    <i class="fa-solid fa-motorcycle text-teal-500 mr-2 text-xl"></i>
+                                    <span data-i18n="app_5_title">5. Delivery</span>
+                                </h3>
+                                <p class="text-gray-600 text-sm mb-4 leading-relaxed" data-i18n="app_5_desc">
+                                    Description...</p>
+                                <div class="grid grid-cols-3 gap-2 text-xs">
+                                    <button onclick="openApp('378084485', 'kr.co.woowahan.baemin1')"
+                                        class="bg-teal-500 text-white px-2 py-2 rounded-lg font-bold hover:bg-teal-600 transition-colors">
+                                        Baemin
+                                    </button>
+                                    <button onclick="openApp('654322647', 'com.fineapp.yogiyo')"
+                                        class="bg-red-500 text-white px-2 py-2 rounded-lg font-bold hover:bg-red-600 transition-colors">
+                                        Yogiyo
+                                    </button>
+                                    <button onclick="openApp('1445504255', 'com.coupangeats.android.consumer')"
+                                        class="bg-blue-500 text-white px-2 py-2 rounded-lg font-bold hover:bg-blue-600 transition-colors">
+                                        Coupang
+                                    </button>
                                 </div>
                             </div>
+
+                            <!-- 6. University -->
+                            <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+                                <h3 class="font-bold text-lg text-gray-900 mb-2 flex items-center">
+                                    <i class="fa-solid fa-graduation-cap text-red-500 mr-2 text-xl"></i>
+                                    <span data-i18n="app_6_title">6. University</span>
+                                </h3>
+                                <p class="text-gray-600 text-sm mb-4 leading-relaxed" data-i18n="app_6_desc">
+                                    Description...</p>
+                                <div class="grid grid-cols-3 gap-2 text-xs">
+                                    <button onclick="openApp('1289391432', 'com.everytime.v2')"
+                                        class="bg-red-100 text-red-600 px-2 py-2 rounded-lg font-bold hover:bg-red-200 transition-colors">
+                                        Everytime
+                                    </button>
+                                    <button onclick="openApp('1193606934', 'com.vinulabs.campuspick')"
+                                        class="bg-purple-100 text-purple-600 px-2 py-2 rounded-lg font-bold hover:bg-purple-200 transition-colors">
+                                        CampusPick
+                                    </button>
+                                    <button onclick="openApp('1450849206', 'com.icoo.ssgsag_android')"
+                                        class="bg-blue-100 text-blue-600 px-2 py-2 rounded-lg font-bold hover:bg-blue-200 transition-colors">
+                                        Ssgsag
+                                    </button>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
