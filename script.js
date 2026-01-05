@@ -474,3 +474,126 @@ function loadFormData() {
         updateSalary();
     } catch (e) { }
 }
+
+// --- 7. F-KILLER (ATTENDANCE CALCULATOR) ---
+
+// Toggle Rules Guide
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleBtn = document.getElementById('fk-toggle-rules');
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', function() {
+            const guide = document.getElementById('fk-rules-guide');
+            const t = translations[currentLang];
+            if (guide.classList.contains('hidden')) {
+                guide.classList.remove('hidden');
+                this.textContent = t.fk_rules_close || "[규정 접기]";
+            } else {
+                guide.classList.add('hidden');
+                this.textContent = t.fk_rules_toggle || "[규정 보기]";
+            }
+        });
+    }
+});
+
+function calculateFKiller() {
+    // 1. Get Inputs
+    const creditsRadio = document.querySelector('input[name="fk-credits"]:checked');
+    const freqRadio = document.querySelector('input[name="fk-freq"]:checked');
+
+    const t = translations[currentLang];
+
+    if (!creditsRadio || !freqRadio) {
+        alert(t.fk_alert_select || "⚠️ 학점과 수업 횟수를 모두 선택해주세요!");
+        return;
+    }
+
+    const credits = parseInt(creditsRadio.value);
+    const frequency = parseInt(freqRadio.value);
+
+    const absentCnt = parseInt(document.getElementById('fk-absent').value) || 0;
+    const lateCnt = parseInt(document.getElementById('fk-late').value) || 0;
+    const excusedCnt = parseInt(document.getElementById('fk-excused').value) || 0;
+
+    // 2. Logic (Pai Chai Univ Rules)
+    // (1) Total Course Hours (15 weeks)
+    const totalCourseHours = credits * 15;
+
+    // (2) Hours Per Class
+    const hoursPerClass = credits / frequency;
+
+    // (3) F Limit (Must attend at least 2/3) -> Fail if absent > 1/3
+    const maxLostHoursLimit = totalCourseHours / 3.0;
+
+    // (4) My Lost Hours
+    let effectiveAbsentCnt = absentCnt - excusedCnt;
+    if (effectiveAbsentCnt < 0) effectiveAbsentCnt = 0;
+
+    const latePenalty = Math.floor(lateCnt / 3); // 3 lates = 1 absent
+    const myLostHours = (effectiveAbsentCnt + latePenalty) * hoursPerClass;
+
+    // (5) Remaining Safe Hours
+    const remainingSafeHours = maxLostHoursLimit - myLostHours;
+
+    // (6) Remaining Safe Absences (Count)
+    // Add epsilon for float precision issues
+    const remainingSafeAbsences = Math.floor((remainingSafeHours + 0.0001) / hoursPerClass);
+
+    // 3. Render Result
+    const resultDiv = document.getElementById('fk-result');
+    let title = "";
+    let desc = "";
+    let cssClass = ""; // Tailwind classes for color
+
+    // Reset classes
+    resultDiv.className = "hidden mt-6 p-6 rounded-xl border-2 text-center transition-all";
+
+    if (myLostHours > (maxLostHoursLimit + 0.0001)) {
+        // F Confirmed
+        title = t.fk_result_f_confirmed || "🚨 F 학점 확정 (재수강 요망)";
+        desc = `아쉽지만 규정된 출석 미달입니다.<br>
+                총 시수 <strong>${totalCourseHours}시간</strong> 중 
+                <strong>${myLostHours}시간</strong>을 결석했습니다.<br>
+                (F 기준: ${maxLostHoursLimit.toFixed(1)}시간 초과 시)`;
+        // Danger Style
+        resultDiv.classList.add('bg-red-50', 'border-red-200', 'text-red-800');
+    } else if (remainingSafeAbsences === 0) {
+        // Warning (Last Chance)
+        title = t.fk_result_warning || "⚠️ 벼랑 끝! 더 이상 결석하면 F";
+        desc = `<strong>현재 턱걸이 상태입니다.</strong><br>
+                지금부터는 <strong>지각 한 번</strong>만 해도 F 학점 처리됩니다.<br>
+                (현재 결석 시수: <strong>${myLostHours}시간</strong> / 한계: ${maxLostHoursLimit.toFixed(1)}시간)`;
+        // Warning Style
+        resultDiv.classList.add('bg-yellow-50', 'border-yellow-200', 'text-yellow-800');
+    } else {
+        // Safe
+        title = t.fk_result_safe || "✅ 아직 안전합니다";
+        desc = `앞으로 <strong>${remainingSafeAbsences}번</strong> 더 결석해도 F는 아닙니다.<br>
+                (단, 성적 감점은 있을 수 있습니다!)<br><br>
+                <small class='text-gray-500'>
+                - 총 수업: ${totalCourseHours}시간 (15주)<br>
+                - 현재 결석 시수: ${myLostHours}시간<br>
+                - 1회 수업 당 인정 시수: ${hoursPerClass}시간
+                </small>`;
+        // Safe Style
+        resultDiv.classList.add('bg-green-50', 'border-green-200', 'text-green-800');
+    }
+
+    resultDiv.innerHTML = `
+        <div class="text-xl font-bold mb-2">${title}</div>
+        <div class="text-sm leading-relaxed">
+            ${desc}
+            <div class="mt-4 pt-4 border-t border-dashed border-gray-300 text-gray-500 text-xs">
+                <strong>${t.fk_retake_rules || "ℹ️ 재수강 관련 규정"}</strong><br>
+                - 현재 과목 성적이 <strong>B0 이상</strong>인 경우 재수강 불가<br>
+                - 재수강 시 취득 가능한 최고 성적은 <strong>A0</strong>로 제한됨
+            </div>
+        </div>
+    `;
+    resultDiv.classList.remove('hidden');
+    resultDiv.classList.add('animate-fade-in');
+    
+    // Auto-scroll
+    setTimeout(() => {
+        resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 100);
+}
