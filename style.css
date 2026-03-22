@@ -55,7 +55,7 @@ html {
     height: 100%;
     z-index: 1;
     /* Ensure it stays below headers if needed */
-    touch-action: pan-x pan-y;
+    touch-action: none;
 }
 
 /* Mobile optimization for map container */

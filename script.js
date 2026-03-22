@@ -44,7 +44,9 @@ function showLanguageModal() {
 
 // --- 3. TAB LOGIC ---
 
-function switchTab(tabName) {
+let _currentTab = 'landing';
+
+function switchTab(tabName, pushState = true) {
     // Hide all
     ['landing', 'check', 'guide', 'job', 'living', 'safety'].forEach(id => {
         const sec = document.getElementById(`section-${id}`);
@@ -60,12 +62,12 @@ function switchTab(tabName) {
     const btn = document.getElementById(`tab-${tabName}`);
     if (btn) btn.classList.add('text-blue-600', 'tab-active');
 
-    // Reset Scroll Position with smooth behavior
-    window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-    });
+    // Reset Scroll Position with smooth behavior (fallback for iOS < 15.4)
+    try {
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    } catch (e) {
+        window.scrollTo(0, 0);
+    }
 
     // Fix Map
     if (tabName === 'living' && map) {
@@ -84,7 +86,19 @@ function switchTab(tabName) {
             bottomNav.classList.remove('hidden');
         }
     }
+
+    // Android back button: push history state
+    if (pushState && tabName !== _currentTab) {
+        history.pushState({ tab: tabName }, '', '');
+    }
+    _currentTab = tabName;
 }
+
+// Handle Android hardware back button via popstate
+window.addEventListener('popstate', function(e) {
+    var tab = (e.state && e.state.tab) ? e.state.tab : 'landing';
+    switchTab(tab, false);
+});
 
 // --- 4. VISA CALCULATOR LOGIC (ENHANCED) ---
 
@@ -202,9 +216,13 @@ function calculateVisa() {
         desc.innerHTML = `<span class="font-bold text-lg">${resultText}</span>`;
     }
 
-    // Auto-scroll to result (UX Improvement)
-    setTimeout(() => {
-        box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // Auto-scroll to result with fallback for iOS < 15.4
+    setTimeout(function() {
+        try {
+            box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } catch (e) {
+            box.scrollIntoView(false);
+        }
     }, 100);
 }
 
@@ -311,16 +329,21 @@ function initMap() {
 // --- App Store Redirection Logic ---
 function openApp(iosId, androidPackage) {
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    const playStoreUrl = `https://play.google.com/store/apps/details?id=${androidPackage}`;
 
     // Check for iOS (iPhone, iPad, iPod)
     if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
         window.location.href = `https://apps.apple.com/app/id${iosId}`;
     } else if (/android/i.test(userAgent)) {
-        // Android: Open directly in Play Store app
+        // Android: Try market:// scheme, fall back to Play Store web URL
+        const fallbackTimer = setTimeout(() => {
+            window.location.href = playStoreUrl;
+        }, 1500);
         window.location.href = `market://details?id=${androidPackage}`;
+        window.addEventListener('blur', () => clearTimeout(fallbackTimer), { once: true });
     } else {
         // Desktop / Other: Open in Browser
-        window.location.href = `https://play.google.com/store/apps/details?id=${androidPackage}`;
+        window.location.href = playStoreUrl;
     }
 }
 
@@ -407,10 +430,14 @@ function generateResume() {
     const visa = document.getElementById('resume-visa').value;
     const topik = document.getElementById('resume-topic').value;
 
+    const resumeError = document.getElementById('resume-error');
+    const resumeErrorMsg = document.getElementById('resume-error-msg');
     if (!name || !age) {
-        alert("Please enter Name and Age!");
+        resumeErrorMsg.textContent = translations[currentLang].resume_error || "Please enter Name and Age!";
+        resumeError.classList.remove('hidden');
         return;
     }
+    resumeError.classList.add('hidden');
 
     // Always use Korean template for the output message (for Korean employers)
     const t = translations[currentLang];
@@ -502,10 +529,14 @@ function calculateFKiller() {
 
     const t = translations[currentLang];
 
+    const fkError = document.getElementById('fk-error');
+    const fkErrorMsg = document.getElementById('fk-error-msg');
     if (!creditsRadio || !freqRadio) {
-        alert(t.fk_alert_select || "⚠️ 학점과 수업 횟수를 모두 선택해주세요!");
+        fkErrorMsg.textContent = t.fk_alert_select || "학점과 수업 횟수를 모두 선택해주세요!";
+        fkError.classList.remove('hidden');
         return;
     }
+    fkError.classList.add('hidden');
 
     const credits = parseInt(creditsRadio.value);
     const frequency = parseInt(freqRadio.value);
@@ -590,10 +621,17 @@ function calculateFKiller() {
         </div>
     `;
     resultDiv.classList.remove('hidden');
+    // Re-trigger animation on repeated calculations
+    resultDiv.classList.remove('animate-fade-in');
+    void resultDiv.offsetWidth; // force reflow
     resultDiv.classList.add('animate-fade-in');
-    
-    // Auto-scroll
-    setTimeout(() => {
-        resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    // Auto-scroll with fallback for iOS < 15.4
+    setTimeout(function() {
+        try {
+            resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } catch (e) {
+            resultDiv.scrollIntoView(false);
+        }
     }, 100);
 }
